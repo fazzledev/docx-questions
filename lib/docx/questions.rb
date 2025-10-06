@@ -12,12 +12,20 @@ module Docx
       text_content = []
 
       Zip::File.open(docx_path) do |zip_file|
-        # Find and read the main document XML file
+        # Find and read the main document XML file and relationships file
         document_xml = zip_file.find_entry("word/document.xml")
-        next unless document_xml
+        rels_xml = zip_file.find_entry("word/_rels/document.xml.rels")
+        next unless document_xml && rels_xml
 
         # Parse the XML content
         doc = Nokogiri::XML(document_xml.get_input_stream.read)
+        rels = Nokogiri::XML(rels_xml.get_input_stream.read)
+        
+        # Create a map of relationship IDs to targets
+        relationship_targets = {}
+        rels.xpath('//xmlns:Relationship').each do |rel|
+          relationship_targets[rel['Id']] = rel['Target']
+        end
 
         # Define namespaces for XPath queries
         namespaces = {
@@ -51,10 +59,11 @@ module Docx
                 text_parts << '<img>'
               end
               
-              # If this paragraph contains equations or math objects, add the eqn tag
-              if node.at_xpath('.//m:oMath', namespaces) || node.at_xpath('.//m:oMathPara', namespaces) || 
-                 node.at_xpath('.//w:object', namespaces) || node.at_xpath('.//o:OLEObject', namespaces)
-                text_parts << '<eqn> '
+              # If this paragraph contains an OLE object, add its target path
+              if ole_object = node.at_xpath('.//o:OLEObject', namespaces)
+                if target = relationship_targets[ole_object['r:id']]
+                  text_parts << "#{target} "
+                end
               end
             end
           end
