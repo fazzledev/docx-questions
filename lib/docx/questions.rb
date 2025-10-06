@@ -50,6 +50,12 @@ module Docx
               if node.at_xpath('.//w:drawing', namespaces) || node.at_xpath('.//w:pict', namespaces)
                 text_parts << '<img>'
               end
+              
+              # If this paragraph contains equations or math objects, add the eqn tag
+              if node.at_xpath('.//m:oMath', namespaces) || node.at_xpath('.//m:oMathPara', namespaces) || 
+                 node.at_xpath('.//w:object', namespaces) || node.at_xpath('.//o:OLEObject', namespaces)
+                text_parts << '<eqn> '
+              end
             end
           end
           
