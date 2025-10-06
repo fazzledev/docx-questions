@@ -19,9 +19,42 @@ module Docx
         # Parse the XML content
         doc = Nokogiri::XML(document_xml.get_input_stream.read)
 
-        # Extract text from all text nodes in the document
-        doc.xpath("//w:t").each do |text_node|
-          text_content << text_node.text
+        # Define namespaces for XPath queries
+        namespaces = {
+          'w' => 'http://schemas.openxmlformats.org/wordprocessingml/2006/main',
+          'm' => 'http://schemas.openxmlformats.org/officeDocument/2006/math',
+          'o' => 'urn:schemas-microsoft-com:office:office'
+        }
+
+        # Process the document body
+        body = doc.at_xpath('//w:body', namespaces)
+        if body
+          text_parts = []
+          
+          # Process nodes in document order
+          body.children.each do |node|
+            if node.name == 'p'
+              para_text = []
+              node.xpath('.//w:t', namespaces).each do |text_node|
+                curr_text = text_node.text
+                if curr_text && !curr_text.strip.empty?
+                  para_text << curr_text
+                end
+              end
+
+              # Add text from this paragraph
+              para_content = para_text.join
+              text_parts << para_content unless para_content.empty?
+              
+              # If this paragraph contains an image, add the img tag after the paragraph text
+              if node.at_xpath('.//w:drawing', namespaces) || node.at_xpath('.//w:pict', namespaces)
+                text_parts << '<img>'
+              end
+            end
+          end
+          
+          text = text_parts.join
+          text_content << text.strip unless text.empty?
         end
       end
 
