@@ -5,6 +5,10 @@ source "https://rubygems.org"
 # Specify your gem's dependencies in docx-questions.gemspec
 gemspec
 
+group :development, :test do
+  gem 'pry'
+end
+
 gem "irb"
 gem "rake", "~> 13.0"
 

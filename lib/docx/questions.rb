@@ -3,10 +3,36 @@
 require_relative "questions/version"
 require "zip"
 require "nokogiri"
+require "mathtype_to_mathml"
+require "tempfile"
 
 module Docx
   module Questions
     class Error < StandardError; end
+    
+    def self.convert_mathtype_to_latex(ole_data)
+      # Create a temporary file to store the OLE data
+      temp_file = Tempfile.new(['equation', '.bin'])
+      begin
+        temp_file.binmode
+        temp_file.write(ole_data)
+        temp_file.close
+        
+        # Convert using the file path
+        mathml = MathTypeToMathML::Converter.new(temp_file.path).convert
+        # Extract just the <math> tag part and remove extra whitespace
+        if mathml =~ /(<math.*?<\/math>)/m
+          mathml = $1.gsub(/\s+/, ' ').strip
+        end
+        mathml
+      rescue => e
+        puts "Conversion error: #{e.class} - #{e.message}"
+        puts e.backtrace
+        nil
+      ensure
+        temp_file.unlink
+      end
+    end
 
     def self.extract_text(docx_path)
       text_content = []
@@ -59,10 +85,24 @@ module Docx
                 text_parts << '<img>'
               end
               
-              # If this paragraph contains an OLE object, add its target path
+              # If this paragraph contains an OLE object, convert it to LaTeX
               if ole_object = node.at_xpath('.//o:OLEObject', namespaces)
-                if target = relationship_targets[ole_object['r:id']]
-                  text_parts << "#{target} "
+                rel_id = ole_object['r:id']
+                if target = relationship_targets[rel_id]
+                  # Read the OLE object data
+                  ole_entry = zip_file.find_entry("word/#{target}")
+                  if ole_entry
+                    begin
+                      ole_data = ole_entry.get_input_stream.read
+                      mathml = convert_mathtype_to_latex(ole_data)
+                      text_parts << "{eqn id:#{rel_id},target:#{target},mathml:#{mathml}} "
+                    rescue => e
+                      # If conversion fails, fall back to the target path
+                      text_parts << "{eqn id:#{rel_id},target:#{target}} "
+                    end
+                  else
+                    text_parts << "{eqn id:#{rel_id},target:#{target}} "
+                  end
                 end
               end
             end
