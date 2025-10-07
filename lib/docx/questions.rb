@@ -95,13 +95,13 @@ module Docx
                     begin
                       ole_data = ole_entry.get_input_stream.read
                       mathml = convert_mathtype_to_latex(ole_data)
-                      text_parts << "{eqn id:#{rel_id},target:#{target},mathml:#{mathml}} "
+                      text_parts << "#{mathml} "
                     rescue => e
-                      # If conversion fails, fall back to the target path
-                      text_parts << "{eqn id:#{rel_id},target:#{target}} "
+                      # If conversion fails, skip this equation
+                      next
                     end
                   else
-                    text_parts << "{eqn id:#{rel_id},target:#{target}} "
+                    next
                   end
                 end
               end
