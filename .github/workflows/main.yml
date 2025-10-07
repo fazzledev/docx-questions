@@ -8,14 +8,13 @@ on:
   pull_request:
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
-    name: Ruby ${{ matrix.ruby }}
+    name: Tests (Ruby ${{ matrix.ruby }})
     strategy:
       matrix:
         ruby:
           - '3.4.6'
-
     steps:
       - uses: actions/checkout@v4
       - name: Set up Ruby
@@ -25,5 +24,20 @@ jobs:
           bundler-cache: true
       - name: Run tests
         run: bundle exec rake test
+
+  rubocop:
+    runs-on: ubuntu-latest
+    name: RuboCop (Ruby ${{ matrix.ruby }})
+    strategy:
+      matrix:
+        ruby:
+          - '3.4.6'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby }}
+          bundler-cache: true
       - name: Run RuboCop
         run: bundle exec rake rubocop
