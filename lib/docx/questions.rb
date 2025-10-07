@@ -10,6 +10,46 @@ module Docx
   module Questions
     class Error < StandardError; end
     
+    def self.is_question?(text)
+      # Check if the text starts with a whole number followed by a dot and then a capital letter
+      # This matches "6.The", "17.The", "18.Assertion" but excludes "1.1", "SESSION", etc.
+      text.strip.match?(/^\d+\.[A-Z]/)
+    end
+
+    def self.convert_office_math_to_mathml(math_node, namespaces)
+      # Convert Office Math (m:oMath) to MathML
+      elements = []
+      
+      # Handle subscripts (m:sSub)
+      math_node.xpath('.//m:sSub', namespaces).each do |sub|
+        base = sub.at_xpath('.//m:e//m:t', namespaces)&.text
+        subscript = sub.at_xpath('.//m:sub//m:t', namespaces)&.text
+        if base && subscript
+          elements << "<msub><mi>#{base}</mi><mn>#{subscript}</mn></msub>"
+        end
+      end
+      
+      # Handle fractions (m:f)
+      math_node.xpath('.//m:f', namespaces).each do |frac|
+        num = frac.at_xpath('.//m:num//m:t', namespaces)&.text
+        den = frac.at_xpath('.//m:den//m:t', namespaces)&.text
+        if num && den
+          elements << "<mfrac><mrow><mi>#{num}</mi></mrow><mrow><mn>#{den}</mn></mrow></mfrac>"
+        end
+      end
+      
+      # Handle operators and equals
+      if math_node.to_xml.include?('=')
+        elements << '<mo>=</mo>'
+      end
+      
+      unless elements.empty?
+        "<math display=\"block\"><mrow>#{elements.join}</mrow></math>"
+      else
+        ""
+      end
+    end
+
     def self.convert_mathtype_to_latex(ole_data)
       # Create a temporary file to store the OLE data
       temp_file = Tempfile.new(['equation', '.bin'])
@@ -37,7 +77,7 @@ module Docx
     def self.extract_text(docx_path)
       text_content = []
 
-      Zip::File.open(docx_path) do |zip_file|
+      ::Zip::File.open(docx_path) do |zip_file|
         # Find and read the main document XML file and relationships file
         document_xml = zip_file.find_entry("word/document.xml")
         rels_xml = zip_file.find_entry("word/_rels/document.xml.rels")
@@ -63,30 +103,47 @@ module Docx
         # Process the document body
         body = doc.at_xpath('//w:body', namespaces)
         if body
-          text_parts = []
+          current_question = []
+          inside_question = false
           
           # Process nodes in document order
           body.children.each do |node|
             if node.name == 'p'
-              para_text = []
+              para_parts = []
+              
+              # Extract text content
               node.xpath('.//w:t', namespaces).each do |text_node|
                 curr_text = text_node.text
                 if curr_text && !curr_text.strip.empty?
-                  para_text << curr_text
+                  para_parts << curr_text
                 end
               end
 
-              # Add text from this paragraph
-              para_content = para_text.join
-              text_parts << para_content unless para_content.empty?
+              para_text = para_parts.join
               
-              # If this paragraph contains an image, add the img tag after the paragraph text
-              if node.at_xpath('.//w:drawing', namespaces) || node.at_xpath('.//w:pict', namespaces)
-                text_parts << '<img>'
+              # Check if this paragraph starts a new question
+              if !para_text.empty? && is_question?(para_text)
+                # Save previous question if we have one
+                if inside_question && !current_question.empty?
+                  question_text = current_question.join(' ').strip
+                  text_content << question_text unless question_text.empty?
+                end
+                
+                # Start new question
+                current_question = [para_text]
+                inside_question = true
+              elsif inside_question && !para_text.empty?
+                # Continue current question
+                current_question << para_text
               end
               
-              # If this paragraph contains an OLE object, convert it to LaTeX
-              if ole_object = node.at_xpath('.//o:OLEObject', namespaces)
+              # If this paragraph contains an image and we're inside a question
+              if inside_question && (node.at_xpath('.//w:drawing', namespaces) || node.at_xpath('.//w:pict', namespaces))
+                current_question << '<img>'
+              end
+              
+              # If this paragraph contains an OLE object and we're inside a question
+              if inside_question && (ole_object = node.at_xpath('.//o:OLEObject', namespaces))
                 rel_id = ole_object['r:id']
                 if target = relationship_targets[rel_id]
                   # Read the OLE object data
@@ -95,8 +152,8 @@ module Docx
                     begin
                       ole_data = ole_entry.get_input_stream.read
                       mathml = convert_mathtype_to_latex(ole_data)
-                      text_parts << "#{mathml} "
-                    rescue => e
+                      current_question << mathml
+                    rescue
                       # If conversion fails, skip this equation
                       next
                     end
@@ -105,15 +162,30 @@ module Docx
                   end
                 end
               end
+              
+              # Process Office Math (m:oMath) elements if we're inside a question
+              if inside_question
+                node.xpath('.//m:oMath', namespaces).each do |math_obj|
+                  puts "DEBUG: Found Office Math element, converting..." if ENV['DEBUG']
+                  mathml = convert_office_math_to_mathml(math_obj, namespaces)
+                  unless mathml.empty?
+                    current_question << mathml
+                    puts "DEBUG: Converted Office Math to MathML: #{mathml}" if ENV['DEBUG']
+                  end
+                end
+              end
             end
           end
           
-          text = text_parts.join
-          text_content << text.strip unless text.empty?
+          # Don't forget the last question
+          if inside_question && !current_question.empty?
+            question_text = current_question.join(' ').strip
+            text_content << question_text unless question_text.empty?
+          end
         end
       end
 
-      text_content.join
+      text_content.join("\n\n")
     end
   end
 end
