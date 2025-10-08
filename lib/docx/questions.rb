@@ -19,34 +19,28 @@ module Docx
     def self.convert_office_math_to_mathml(math_node, namespaces)
       # Convert Office Math (m:oMath) to MathML
       elements = []
-      
+
       # Handle subscripts (m:sSub)
-      math_node.xpath('.//m:sSub', namespaces).each do |sub|
-        base = sub.at_xpath('.//m:e//m:t', namespaces)&.text
-        subscript = sub.at_xpath('.//m:sub//m:t', namespaces)&.text
-        if base && subscript
-          elements << "<msub><mi>#{base}</mi><mn>#{subscript}</mn></msub>"
-        end
+      math_node.xpath(".//m:sSub", namespaces).each do |sub|
+        base = sub.at_xpath(".//m:e//m:t", namespaces)&.text
+        subscript = sub.at_xpath(".//m:sub//m:t", namespaces)&.text
+        elements << "<msub><mi>#{base}</mi><mn>#{subscript}</mn></msub>" if base && subscript
       end
-      
+
       # Handle fractions (m:f)
-      math_node.xpath('.//m:f', namespaces).each do |frac|
-        num = frac.at_xpath('.//m:num//m:t', namespaces)&.text
-        den = frac.at_xpath('.//m:den//m:t', namespaces)&.text
-        if num && den
-          elements << "<mfrac><mrow><mi>#{num}</mi></mrow><mrow><mn>#{den}</mn></mrow></mfrac>"
-        end
+      math_node.xpath(".//m:f", namespaces).each do |frac|
+        num = frac.at_xpath(".//m:num//m:t", namespaces)&.text
+        den = frac.at_xpath(".//m:den//m:t", namespaces)&.text
+        elements << "<mfrac><mrow><mi>#{num}</mi></mrow><mrow><mn>#{den}</mn></mrow></mfrac>" if num && den
       end
-      
+
       # Handle operators and equals
-      if math_node.to_xml.include?('=')
-        elements << '<mo>=</mo>'
-      end
-      
-      unless elements.empty?
-        "<math display=\"block\"><mrow>#{elements.join}</mrow></math>"
-      else
+      elements << "<mo>=</mo>" if math_node.to_xml.include?("=")
+
+      if elements.empty?
         ""
+      else
+        "<math display=\"block\"><mrow>#{elements.join}</mrow></math>"
       end
     end
 
@@ -143,7 +137,7 @@ module Docx
             # If this paragraph contains an OLE object and we're inside a question
             if inside_question && (ole_object = node.at_xpath(".//o:OLEObject", namespaces))
               rel_id = ole_object["r:id"]
-              if target = relationship_targets[rel_id]
+              if (target = relationship_targets[rel_id])
                 # Read the OLE object data
                 ole_entry = zip_file.find_entry("word/#{target}")
                 if ole_entry
@@ -158,13 +152,13 @@ module Docx
                 end
               end
             end
-            
+
             # Process Office Math (m:oMath) elements if we're inside a question
-            if inside_question
-              node.xpath('.//m:oMath', namespaces).each do |math_obj|
-                mathml = convert_office_math_to_mathml(math_obj, namespaces)
-                current_question << mathml unless mathml.empty?
-              end
+            next unless inside_question
+
+            node.xpath(".//m:oMath", namespaces).each do |math_obj|
+              mathml = convert_office_math_to_mathml(math_obj, namespaces)
+              current_question << mathml unless mathml.empty?
             end
           end
 
