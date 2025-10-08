@@ -46,7 +46,7 @@ module Docx
 
     def self.convert_mathtype_to_latex(ole_data)
       # Create a temporary file to store the OLE data
-      temp_file = Tempfile.new(["equation", ".bin"])
+      temp_file = Tempfile.new([ "equation", ".bin" ])
       begin
         temp_file.binmode
         temp_file.write(ole_data)
@@ -121,7 +121,7 @@ module Docx
               end
 
               # Start new question
-              current_question = [para_text]
+              current_question = [ para_text ]
               inside_question = true
             elsif inside_question && !para_text.empty?
               # Continue current question
