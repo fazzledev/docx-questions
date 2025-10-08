@@ -104,10 +104,27 @@ module Docx
 
             para_parts = []
 
-            # Extract text content
-            node.xpath(".//w:t", namespaces).each do |text_node|
-              curr_text = text_node.text
-              para_parts << curr_text if curr_text && !curr_text.strip.empty?
+            # Extract text content with proper handling of special characters including math operators
+            node.xpath(".//w:r", namespaces).each do |run|
+              # Extract regular text nodes
+              text_nodes = run.xpath(".//w:t", namespaces)
+              text_nodes.each do |text_node|
+                curr_text = text_node.text
+                para_parts << curr_text if curr_text && !curr_text.strip.empty?
+              end
+              
+              # Extract symbol nodes (like multiplication symbols)
+              symbol_nodes = run.xpath(".//w:sym", namespaces)
+              symbol_nodes.each do |symbol_node|
+                char_code = symbol_node["w:char"]
+                # Convert common symbol character codes to their Unicode equivalents
+                case char_code
+                when "F0B4"
+                  para_parts << "×"  # Multiplication symbol
+                when "F0B1"
+                  para_parts << "±"  # Plus-minus symbol
+                end
+              end
             end
 
             para_text = para_parts.join
