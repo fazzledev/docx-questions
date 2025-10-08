@@ -41,3 +41,27 @@ jobs:
           bundler-cache: true
       - name: Run RuboCop
         run: bundle exec rake rubocop
+
+  check-main:
+    runs-on: ubuntu-latest
+    name: Check Main
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Check Main
+        run: |
+          git fetch origin main
+          MERGE_BASE=$(git merge-base HEAD origin/main)
+          LATEST_MAIN=$(git rev-parse origin/main)
+
+          if [ "$MERGE_BASE" = "$LATEST_MAIN" ]; then
+            echo "Branch is up to date with main"
+            exit 0
+          else
+            echo "Branch is not up to date with main"
+            echo "Latest main: $LATEST_MAIN"
+            echo "Merge base: $MERGE_BASE"
+            echo "Please update with latest main"
+            exit 1
+          fi
