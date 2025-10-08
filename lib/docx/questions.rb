@@ -31,7 +31,7 @@ module Docx
           subscript = subscript_nodes.map(&:text).join
           elements << "<msub><mi>#{base}</mi><mn>#{subscript}</mn></msub>" if base && !subscript.empty?
         when "sSup"
-          # Handle superscript  
+          # Handle superscript
           base = child.at_xpath(".//m:e//m:t", namespaces)&.text
           # Collect all text nodes in the superscript to handle cases like "-19"
           superscript_nodes = child.xpath(".//m:sup//m:t", namespaces)
@@ -88,7 +88,7 @@ module Docx
         end
       end
 
-      # Process denominator  
+      # Process denominator
       den_node = frac_node.at_xpath(".//m:den", namespaces)
       if den_node
         den_node.children.each do |child|
@@ -165,21 +165,21 @@ module Docx
 
             # Extract text content with superscript/subscript handling
             temp_parts = []
-            
+
             node.xpath(".//w:r", namespaces).each do |run|
               # Check if this run has superscript or subscript formatting
               vert_align = run.at_xpath(".//w:vertAlign", namespaces)
               text_nodes = run.xpath(".//w:t", namespaces)
-              
+
               text_nodes.each do |text_node|
                 curr_text = text_node.text
                 next if curr_text.nil? || curr_text.strip.empty?
-                
+
                 if vert_align
                   case vert_align["w:val"]
                   when "superscript"
                     temp_parts << { type: :superscript, text: curr_text }
-                  when "subscript" 
+                  when "subscript"
                     temp_parts << { type: :subscript, text: curr_text }
                   else
                     temp_parts << { type: :normal, text: curr_text }
@@ -189,12 +189,12 @@ module Docx
                 end
               end
             end
-            
+
             # Process the parts to create proper MathML
             i = 0
             while i < temp_parts.length
               part = temp_parts[i]
-              
+
               if part[:type] == :superscript && i > 0 && temp_parts[i-1][:type] == :normal
                 # Look for pattern like "10" followed by superscript
                 prev_text = temp_parts[i-1][:text]
@@ -224,7 +224,7 @@ module Docx
               else
                 para_parts << part[:text] # Fallback
               end
-              
+
               i += 1
             end
 
