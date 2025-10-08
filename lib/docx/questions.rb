@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative "questions/version"
+require_relative "mathematical_symbols"
 require "zip"
 require "nokogiri"
 require "mathtype_to_mathml"
@@ -17,140 +18,9 @@ module Docx
     end
 
     def self.convert_symbol_to_unicode(char_code, font)
-      # Comprehensive mapping of symbol character codes to Unicode equivalents
-      # Using hash for better performance and no duplicate issues
-      
-      return nil unless char_code
-      
-      case font&.downcase
-      when "symbol"
-        # Symbol font character mappings (most common in mathematical documents)
-        symbol_map = {
-          # Basic arithmetic operators
-          "F02B" => "+",        # Plus
-          "F02D" => "−",        # Minus (Unicode minus, not hyphen)
-          "F0B4" => "×",        # Multiplication
-          "F0B8" => "÷",        # Division
-          "F0B1" => "±",        # Plus-minus
-          "F0F1" => "∓",        # Minus-plus
-          
-          # Comparison and equality
-          "F03D" => "=",        # Equals
-          "F0B9" => "≠",        # Not equal
-          "F03C" => "<",        # Less than
-          "F03E" => ">",        # Greater than
-          "F0A3" => "≤",        # Less than or equal
-          "F0B3" => "≥",        # Greater than or equal
-          "F0BB" => "≈",        # Approximately equal
-          "F040" => "≅",        # Congruent
-          "F07E" => "∼",        # Similar
-          
-          # Greek letters (lowercase)
-          "F061" => "α",        # Alpha
-          "F062" => "β",        # Beta
-          "F067" => "γ",        # Gamma
-          "F064" => "δ",        # Delta
-          "F065" => "ε",        # Epsilon
-          "F07A" => "ζ",        # Zeta
-          "F068" => "η",        # Eta
-          "F071" => "θ",        # Theta
-          "F069" => "ι",        # Iota
-          "F06B" => "κ",        # Kappa
-          "F06C" => "λ",        # Lambda
-          "F06D" => "μ",        # Mu
-          "F06E" => "ν",        # Nu
-          "F078" => "ξ",        # Xi
-          "F06F" => "ο",        # Omicron
-          "F070" => "π",        # Pi
-          "F072" => "ρ",        # Rho
-          "F073" => "σ",        # Sigma
-          "F074" => "τ",        # Tau
-          "F075" => "υ",        # Upsilon
-          "F066" => "φ",        # Phi
-          "F063" => "χ",        # Chi
-          "F079" => "ψ",        # Psi
-          "F077" => "ω",        # Omega
-          
-          # Greek letters (uppercase)
-          "F041" => "Α",        # Alpha
-          "F042" => "Β",        # Beta
-          "F047" => "Γ",        # Gamma
-          "F044" => "Δ",        # Delta
-          "F045" => "Ε",        # Epsilon
-          "F05A" => "Ζ",        # Zeta
-          "F048" => "Η",        # Eta
-          "F051" => "Θ",        # Theta
-          "F049" => "Ι",        # Iota
-          "F04B" => "Κ",        # Kappa
-          "F04C" => "Λ",        # Lambda
-          "F04D" => "Μ",        # Mu
-          "F04E" => "Ν",        # Nu
-          "F058" => "Ξ",        # Xi
-          "F04F" => "Ο",        # Omicron
-          "F050" => "Π",        # Pi
-          "F052" => "Ρ",        # Rho
-          "F053" => "Σ",        # Sigma
-          "F054" => "Τ",        # Tau
-          "F055" => "Υ",        # Upsilon
-          "F046" => "Φ",        # Phi
-          "F043" => "Χ",        # Chi
-          "F059" => "Ψ",        # Psi
-          "F057" => "Ω",        # Omega
-          
-          # Mathematical operators and symbols
-          "F0A5" => "∞",        # Infinity
-          "F0B0" => "°",        # Degree
-          "F027" => "∀",        # For all
-          "F024" => "∃",        # There exists
-          "F0D1" => "∇",        # Nabla/Del
-          "F0B6" => "∂",        # Partial differential
-          "F0F2" => "∫",        # Integral
-          "F0E5" => "∑",        # Summation
-          "F0D5" => "∏",        # Product
-          "F0D6" => "√",        # Square root
-          "F0B5" => "∝",        # Proportional to
-          "F0A4" => "∴",        # Therefore
-          "F0C8" => "∈",        # Element of
-          "F0CA" => "∋",        # Contains
-          "F0CC" => "∩",        # Intersection
-          "F0CD" => "∪",        # Union
-          "F0CE" => "∅",        # Empty set
-          "F0CF" => "∧",        # Logical and
-          "F0D0" => "∨",        # Logical or
-          "F0A8" => "¬",        # Logical not
-          "F0E0" => "∠",        # Angle
-          
-          # Arrows
-          "F0AC" => "←",        # Left arrow
-          "F0AE" => "→",        # Right arrow
-          "F0AD" => "↑",        # Up arrow
-          "F0AF" => "↓",        # Down arrow
-          "F0DB" => "↔",        # Left right arrow
-          "F0DC" => "⇐",        # Left double arrow
-          "F0DD" => "⇒",        # Right double arrow
-          "F0DE" => "⇔",        # Left right double arrow
-          
-          # Fractions
-          "F0BD" => "½",        # One half
-          "F0BC" => "¼",        # One quarter
-          "F0BE" => "¾"         # Three quarters
-        }
-        
-        symbol_map[char_code&.upcase] || "[#{char_code}]"
-        
-      when "wingdings", "webdings"
-        # Handle other symbol fonts if needed
-        wingdings_map = {
-          "F04A" => "☺",        # Smiley face
-          "F04B" => "☻"         # Black smiley face
-        }
-        
-        wingdings_map[char_code&.upcase] || "[#{char_code}]"
-        
-      else
-        # Unknown font or no font specified
-        "[#{char_code}]"
-      end
+      # Delegate to the dedicated mathematical symbols library
+      symbol = MathematicalSymbols.convert(char_code, font)
+      symbol || "[#{char_code}]"
     end
 
     def self.convert_office_math_to_mathml(math_node, namespaces)
