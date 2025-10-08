@@ -17,31 +17,90 @@ module Docx
     end
 
     def self.convert_office_math_to_mathml(math_node, namespaces)
-      # Convert Office Math (m:oMath) to MathML
+      # Convert Office Math (m:oMath) to MathML by processing elements in document order
       elements = []
 
-      # Handle subscripts (m:sSub)
-      math_node.xpath(".//m:sSub", namespaces).each do |sub|
-        base = sub.at_xpath(".//m:e//m:t", namespaces)&.text
-        subscript = sub.at_xpath(".//m:sub//m:t", namespaces)&.text
-        elements << "<msub><mi>#{base}</mi><mn>#{subscript}</mn></msub>" if base && subscript
+      # Process direct children of m:oMath in order
+      math_node.children.each do |child|
+        case child.name
+        when "sSub"
+          # Handle subscript
+          base = child.at_xpath(".//m:e//m:t", namespaces)&.text
+          # Collect all text nodes in the subscript
+          subscript_nodes = child.xpath(".//m:sub//m:t", namespaces)
+          subscript = subscript_nodes.map(&:text).join
+          elements << "<msub><mi>#{base}</mi><mn>#{subscript}</mn></msub>" if base && !subscript.empty?
+        when "sSup"
+          # Handle superscript  
+          base = child.at_xpath(".//m:e//m:t", namespaces)&.text
+          # Collect all text nodes in the superscript to handle cases like "-19"
+          superscript_nodes = child.xpath(".//m:sup//m:t", namespaces)
+          superscript = superscript_nodes.map(&:text).join
+          elements << "<msup><mi>#{base}</mi><mn>#{superscript}</mn></msup>" if base && !superscript.empty?
+        when "f"
+          # Handle fraction
+          elements << convert_fraction_to_mathml(child, namespaces)
+        when "r"
+          # Handle run (text/operators)
+          text = child.at_xpath(".//m:t", namespaces)&.text
+          if text
+            case text.strip
+            when "="
+              elements << "<mo>=</mo>"
+            when "×", "*"
+              elements << "<mo>×</mo>"
+            when "+"
+              elements << "<mo>+</mo>"
+            when "-"
+              elements << "<mo>-</mo>"
+            else
+              elements << "<mi>#{text}</mi>" unless text.strip.empty?
+            end
+          end
+        end
       end
-
-      # Handle fractions (m:f)
-      math_node.xpath(".//m:f", namespaces).each do |frac|
-        num = frac.at_xpath(".//m:num//m:t", namespaces)&.text
-        den = frac.at_xpath(".//m:den//m:t", namespaces)&.text
-        elements << "<mfrac><mrow><mi>#{num}</mi></mrow><mrow><mn>#{den}</mn></mrow></mfrac>" if num && den
-      end
-
-      # Handle operators and equals
-      elements << "<mo>=</mo>" if math_node.to_xml.include?("=")
 
       if elements.empty?
         ""
       else
         "<math display=\"block\"><mrow>#{elements.join}</mrow></math>"
       end
+    end
+
+    def self.convert_fraction_to_mathml(frac_node, namespaces)
+      # Handle fraction with proper numerator and denominator processing
+      num_content = []
+      den_content = []
+
+      # Process numerator
+      num_node = frac_node.at_xpath(".//m:num", namespaces)
+      if num_node
+        num_node.children.each do |child|
+          case child.name
+          when "sSub"
+            base = child.at_xpath(".//m:e//m:t", namespaces)&.text
+            subscript = child.at_xpath(".//m:sub//m:t", namespaces)&.text
+            num_content << "<msub><mi>#{base}</mi><mn>#{subscript}</mn></msub>" if base && subscript
+          when "r"
+            text = child.at_xpath(".//m:t", namespaces)&.text
+            num_content << "<mi>#{text}</mi>" if text && !text.strip.empty?
+          end
+        end
+      end
+
+      # Process denominator  
+      den_node = frac_node.at_xpath(".//m:den", namespaces)
+      if den_node
+        den_node.children.each do |child|
+          case child.name
+          when "r"
+            text = child.at_xpath(".//m:t", namespaces)&.text
+            den_content << "<mn>#{text}</mn>" if text && !text.strip.empty?
+          end
+        end
+      end
+
+      "<mfrac><mrow>#{num_content.join}</mrow><mrow>#{den_content.join}</mrow></mfrac>"
     end
 
     def self.convert_mathtype_to_latex(ole_data)
@@ -104,10 +163,69 @@ module Docx
 
             para_parts = []
 
-            # Extract text content
-            node.xpath(".//w:t", namespaces).each do |text_node|
-              curr_text = text_node.text
-              para_parts << curr_text if curr_text && !curr_text.strip.empty?
+            # Extract text content with superscript/subscript handling
+            temp_parts = []
+            
+            node.xpath(".//w:r", namespaces).each do |run|
+              # Check if this run has superscript or subscript formatting
+              vert_align = run.at_xpath(".//w:vertAlign", namespaces)
+              text_nodes = run.xpath(".//w:t", namespaces)
+              
+              text_nodes.each do |text_node|
+                curr_text = text_node.text
+                next if curr_text.nil? || curr_text.strip.empty?
+                
+                if vert_align
+                  case vert_align["w:val"]
+                  when "superscript"
+                    temp_parts << { type: :superscript, text: curr_text }
+                  when "subscript" 
+                    temp_parts << { type: :subscript, text: curr_text }
+                  else
+                    temp_parts << { type: :normal, text: curr_text }
+                  end
+                else
+                  temp_parts << { type: :normal, text: curr_text }
+                end
+              end
+            end
+            
+            # Process the parts to create proper MathML
+            i = 0
+            while i < temp_parts.length
+              part = temp_parts[i]
+              
+              if part[:type] == :superscript && i > 0 && temp_parts[i-1][:type] == :normal
+                # Look for pattern like "10" followed by superscript
+                prev_text = temp_parts[i-1][:text]
+                if prev_text.match?(/\d+$/)
+                  base = prev_text.match(/(\d+)$/)[1]
+                  prefix = prev_text.gsub(/#{Regexp.escape(base)}$/, "")
+                  para_parts.pop if para_parts.any? # Remove the last added part
+                  para_parts << prefix unless prefix.empty?
+                  para_parts << "<math><msup><mn>#{base}</mn><mn>#{part[:text]}</mn></msup></math>"
+                else
+                  para_parts << part[:text] # Just add as normal text if no pattern
+                end
+              elsif part[:type] == :subscript && i > 0 && temp_parts[i-1][:type] == :normal
+                # Look for pattern like "v" followed by subscript
+                prev_text = temp_parts[i-1][:text]
+                if prev_text.match?(/[A-Za-z]$/)
+                  base = prev_text.match(/([A-Za-z])$/)[1]
+                  prefix = prev_text.gsub(/#{Regexp.escape(base)}$/, "")
+                  para_parts.pop if para_parts.any? # Remove the last added part
+                  para_parts << prefix unless prefix.empty?
+                  para_parts << "<math><msub><mi>#{base}</mi><mn>#{part[:text]}</mn></msub></math>"
+                else
+                  para_parts << part[:text] # Just add as normal text if no pattern
+                end
+              elsif part[:type] == :normal
+                para_parts << part[:text]
+              else
+                para_parts << part[:text] # Fallback
+              end
+              
+              i += 1
             end
 
             para_text = para_parts.join
@@ -128,14 +246,16 @@ module Docx
               current_question << para_text
             end
 
-            # If this paragraph contains an image and we're inside a question
-            if inside_question && (node.at_xpath(".//w:drawing",
-                                                 namespaces) || node.at_xpath(".//w:pict", namespaces))
+            # Process all special elements in this paragraph if we're inside a question
+            next unless inside_question
+
+            # Check for images
+            if node.at_xpath(".//w:drawing", namespaces) || node.at_xpath(".//w:pict", namespaces)
               current_question << "<img>"
             end
 
-            # If this paragraph contains an OLE object and we're inside a question
-            if inside_question && (ole_object = node.at_xpath(".//o:OLEObject", namespaces))
+            # Check for OLE objects (MathType equations)
+            if (ole_object = node.at_xpath(".//o:OLEObject", namespaces))
               rel_id = ole_object["r:id"]
               if (target = relationship_targets[rel_id])
                 # Read the OLE object data
@@ -153,9 +273,7 @@ module Docx
               end
             end
 
-            # Process Office Math (m:oMath) elements if we're inside a question
-            next unless inside_question
-
+            # Check for Office Math elements
             node.xpath(".//m:oMath", namespaces).each do |math_obj|
               mathml = convert_office_math_to_mathml(math_obj, namespaces)
               current_question << mathml unless mathml.empty?
