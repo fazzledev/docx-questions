@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative "questions/version"
+require_relative "mathematical_symbols"
 require "zip"
 require "nokogiri"
 require "mathtype_to_mathml"
@@ -14,6 +15,12 @@ module Docx
       # Check if the text starts with a whole number followed by a dot and then a capital letter
       # This matches "6.The", "17.The", "18.Assertion" but excludes "1.1", "SESSION", etc.
       text.strip.match?(/^\d+\.[A-Z]/)
+    end
+
+    def self.convert_symbol_to_unicode(char_code, font)
+      # Delegate to the dedicated mathematical symbols library
+      symbol = MathematicalSymbols.convert(char_code, font)
+      symbol || "[#{char_code}]"
     end
 
     def self.convert_office_math_to_mathml(math_node, namespaces)
@@ -169,8 +176,9 @@ module Docx
             node.xpath(".//w:r", namespaces).each do |run|
               # Check if this run has superscript or subscript formatting
               vert_align = run.at_xpath(".//w:vertAlign", namespaces)
-              text_nodes = run.xpath(".//w:t", namespaces)
 
+              # Extract regular text nodes
+              text_nodes = run.xpath(".//w:t", namespaces)
               text_nodes.each do |text_node|
                 curr_text = text_node.text
                 next if curr_text.nil? || curr_text.strip.empty?
@@ -186,6 +194,30 @@ module Docx
                   end
                 else
                   temp_parts << { type: :normal, text: curr_text }
+                end
+              end
+
+              # Extract symbol nodes (mathematical and special symbols)
+              symbol_nodes = run.xpath(".//w:sym", namespaces)
+              symbol_nodes.each do |symbol_node|
+                char_code = symbol_node["w:char"]
+                font = symbol_node["w:font"]
+
+                # Convert symbol character codes to their Unicode equivalents
+                symbol = convert_symbol_to_unicode(char_code, font)
+                if symbol
+                  if vert_align
+                    case vert_align["w:val"]
+                    when "superscript"
+                      temp_parts << { type: :superscript, text: symbol }
+                    when "subscript"
+                      temp_parts << { type: :subscript, text: symbol }
+                    else
+                      temp_parts << { type: :normal, text: symbol }
+                    end
+                  else
+                    temp_parts << { type: :normal, text: symbol }
+                  end
                 end
               end
             end
