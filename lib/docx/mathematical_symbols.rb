@@ -13,7 +13,7 @@ module Docx
       "F0B8" => "÷",        # Division
       "F0B1" => "±",        # Plus-minus
       "F0F1" => "∓",        # Minus-plus
-      
+
       # Comparison and equality
       "F03D" => "=",        # Equals
       "F0B9" => "≠",        # Not equal
@@ -24,7 +24,7 @@ module Docx
       "F0BB" => "≈",        # Approximately equal
       "F040" => "≅",        # Congruent
       "F07E" => "∼",        # Similar
-      
+
       # Greek letters (lowercase)
       "F061" => "α",        # Alpha
       "F062" => "β",        # Beta
@@ -50,7 +50,7 @@ module Docx
       "F063" => "χ",        # Chi
       "F079" => "ψ",        # Psi
       "F077" => "ω",        # Omega
-      
+
       # Greek letters (uppercase)
       "F041" => "Α",        # Alpha
       "F042" => "Β",        # Beta
@@ -76,7 +76,7 @@ module Docx
       "F043" => "Χ",        # Chi
       "F059" => "Ψ",        # Psi
       "F057" => "Ω",        # Omega
-      
+
       # Mathematical operators and symbols
       "F0A5" => "∞",        # Infinity
       "F0B0" => "°",        # Degree
@@ -99,7 +99,7 @@ module Docx
       "F0D0" => "∨",        # Logical or
       "F0A8" => "¬",        # Logical not
       "F0E0" => "∠",        # Angle
-      
+
       # Arrows
       "F0AC" => "←",        # Left arrow
       "F0AE" => "→",        # Right arrow
@@ -109,7 +109,7 @@ module Docx
       "F0DC" => "⇐",        # Left double arrow
       "F0DD" => "⇒",        # Right double arrow
       "F0DE" => "⇔",        # Left right double arrow
-      
+
       # Fractions
       "F0BD" => "½",        # One half
       "F0BC" => "¼",        # One quarter
@@ -213,7 +213,7 @@ module Docx
       def describe_symbol(unicode)
         descriptions = {
           "×" => "Multiplication operator",
-          "÷" => "Division operator", 
+          "÷" => "Division operator",
           "±" => "Plus-minus operator",
           "≠" => "Not equal operator",
           "≤" => "Less than or equal operator",
@@ -229,7 +229,7 @@ module Docx
           "→" => "Right arrow",
           "←" => "Left arrow"
         }
-        
+
         descriptions[unicode] || "Mathematical symbol"
       end
     end

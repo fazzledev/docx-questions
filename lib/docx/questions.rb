@@ -119,13 +119,13 @@ module Docx
                 curr_text = text_node.text
                 para_parts << curr_text if curr_text && !curr_text.strip.empty?
               end
-              
+
               # Extract symbol nodes (mathematical and special symbols)
               symbol_nodes = run.xpath(".//w:sym", namespaces)
               symbol_nodes.each do |symbol_node|
                 char_code = symbol_node["w:char"]
                 font = symbol_node["w:font"]
-                
+
                 # Convert symbol character codes to their Unicode equivalents
                 symbol = convert_symbol_to_unicode(char_code, font)
                 para_parts << symbol if symbol

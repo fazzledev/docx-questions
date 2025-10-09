@@ -9,16 +9,16 @@ puts "=" * 40
 
 # Test some common mathematical symbols
 test_symbols = [
-  ["F0B4", "Symbol", "Multiplication"],
-  ["F0B8", "Symbol", "Division"], 
-  ["F070", "Symbol", "Pi"],
-  ["F044", "Symbol", "Delta (uppercase)"],
-  ["F061", "Symbol", "Alpha (lowercase)"],
-  ["F0A5", "Symbol", "Infinity"],
-  ["F0F2", "Symbol", "Integral"],
-  ["F0E5", "Symbol", "Summation"],
-  ["F0AE", "Symbol", "Right arrow"],
-  ["F0BD", "Symbol", "One half"]
+  [ "F0B4", "Symbol", "Multiplication" ],
+  [ "F0B8", "Symbol", "Division" ],
+  [ "F070", "Symbol", "Pi" ],
+  [ "F044", "Symbol", "Delta (uppercase)" ],
+  [ "F061", "Symbol", "Alpha (lowercase)" ],
+  [ "F0A5", "Symbol", "Infinity" ],
+  [ "F0F2", "Symbol", "Integral" ],
+  [ "F0E5", "Symbol", "Summation" ],
+  [ "F0AE", "Symbol", "Right arrow" ],
+  [ "F0BD", "Symbol", "One half" ]
 ]
 
 puts "\n🔢 Symbol Conversion Examples:"
