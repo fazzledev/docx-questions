@@ -6,3 +6,6 @@
 /pkg/
 /spec/reports/
 /tmp/
+
+# Demo output files
+*_demo_output.json

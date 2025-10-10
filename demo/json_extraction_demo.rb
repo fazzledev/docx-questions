@@ -2,7 +2,6 @@
 # frozen_string_literal: true
 
 # Demo script for JSON question extraction
-
 require_relative '../lib/docx/questions'
 require 'json'
 
@@ -22,38 +21,25 @@ test_files.each do |file|
   puts "-" * 30
 
   begin
-    # Extract as structured data
     questions = Docx::Questions.extract_questions(file)
-
     puts "📊 Found #{questions.length} questions"
 
     questions.each_with_index do |q, i|
       puts "\n📝 Question #{i + 1}:"
-
-      # Show qstem preview
-      qstem = q[:qstem] || "No stem"
-      qstem_preview = qstem.length > 80 ? "#{qstem[0..77]}..." : qstem
+      qstem_preview = q[:qstem].length > 80 ? "#{q[:qstem][0..77]}..." : q[:qstem]
       puts "   Stem: #{qstem_preview}"
+      puts "   Answer: #{q[:key]}"
 
-      # Count options
-      option_count = [ :optA, :optB, :optC, :optD ].count { |opt| q[opt] }
-      puts "   Options: #{option_count}"
-      puts "   Answer: #{q[:key] || 'N/A'}"
-      puts "   Hint: #{q[:hint] ? 'Yes' : 'No'}"
-
-      # Check for mathematical content
-      has_math = [ q[:qstem], q[:optA], q[:optB], q[:optC], q[:optD], q[:hint] ]
-                   .compact.any? { |text| text.include?('<math>') }
+      has_math = q.values.compact.any? { |text| text.include?('<math>') }
       puts "   Math symbols: #{has_math ? 'Yes' : 'No'}"
     end
 
-    # Save as JSON
-    json_file = file.gsub('.docx', '_demo_output.json')
-    File.write(json_file, JSON.pretty_generate(questions))
-    puts "\n💾 Saved JSON to: #{json_file}"
+    # Output as JSON
+    puts "\n💾 JSON Output:"
+    puts JSON.pretty_generate(questions)
 
   rescue => e
-    puts "❌ Error processing #{file}: #{e.message}"
+    puts "❌ Error: #{e.message}"
   end
 end
 
