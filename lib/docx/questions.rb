@@ -146,6 +146,7 @@ module Docx
               # Save previous question if we have one
               if inside_question && !current_question.empty?
                 question_text = current_question.join(" ").strip
+                question_text = strip_question_number(question_text)
                 unless question_text.empty?
                   questions << { text: question_text }
                 end
@@ -196,6 +197,7 @@ module Docx
           # Don't forget the last question
           if inside_question && !current_question.empty?
             question_text = current_question.join(" ").strip
+            question_text = strip_question_number(question_text)
             unless question_text.empty?
               questions << { text: question_text }
             end
@@ -510,6 +512,14 @@ module Docx
       end
 
       text_content.join("\n\n")
+    end
+
+    private
+
+    def self.strip_question_number(text)
+      # Remove question numbers like "6.", "17.", "18." from the beginning of questions
+      # while preserving mathematical symbols and content
+      text.gsub(/^\d+\./, '').strip
     end
   end
 end

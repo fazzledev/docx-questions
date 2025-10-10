@@ -83,5 +83,28 @@ module Docx
       assert subscript_question["text"].include?("<mi>v</mi>"), "Should preserve variables in subscripts"
       assert superscript_question["text"].include?("<mn>10</mn>"), "Should preserve numbers in superscripts"
     end
+
+    def test_strips_question_numbers_while_preserving_math
+      docx_path = File.join(__dir__, "fixtures", "files", "Phy-3ques.docx")
+      
+      # Extract questions as JSON
+      json_output = Docx::Questions.extract_questions_json(docx_path)
+      questions = JSON.parse(json_output)
+      
+      # Verify question numbers are stripped
+      questions.each do |question|
+        # Questions should not start with digits followed by a period
+        refute_match(/^\d+\./, question["text"], "Question should not start with number")
+      end
+      
+      # Verify content is still intact - should start with meaningful text
+      assert questions[0]["text"].start_with?("The velocity"), "First question should start with 'The velocity'"
+      assert questions[1]["text"].start_with?("The charge"), "Second question should start with 'The charge'"
+      assert questions[2]["text"].start_with?("Assertion"), "Third question should start with 'Assertion'"
+      
+      # Verify mathematical symbols are still preserved
+      math_questions = questions.select { |q| q["text"].include?("<math>") }
+      assert_equal 2, math_questions.length, "Should preserve mathematical symbols in 2 questions"
+    end
   end
 end
