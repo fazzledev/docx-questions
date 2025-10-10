@@ -27,10 +27,10 @@ begin
   puts "Successfully extracted #{questions.length} questions to #{output_file}"
   puts "\nQuestion breakdown:"
   questions.each_with_index do |q, i|
-    qstem_text = q['qstem'] ? q['qstem'].gsub(/\s+/, ' ').strip : 'No stem'
+    qstem_text = q[:qstem] ? q[:qstem].gsub(/\s+/, ' ').strip : 'No stem'
     qstem_preview = qstem_text.length > 80 ? "#{qstem_text[0..77]}..." : qstem_text
     puts "  #{i+1}. #{qstem_preview}"
-    puts "     Options: #{q['options'] ? q['options'].length : 0}, Answer: #{q['anskey'] || 'N/A'}"
+    puts "     Options: #{q[:options] ? q[:options].length : 0}, Answer: #{q[:anskey] || 'N/A'}, Hint: #{q[:hint] ? 'Yes' : 'No'}"
   end
   
 rescue => e

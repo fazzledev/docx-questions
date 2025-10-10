@@ -148,7 +148,11 @@ module Docx
                 question_text = current_question.join(" ").strip
                 question_text = strip_question_number(question_text)
                 unless question_text.empty?
-                  questions << { text: question_text }
+                  # Parse into structured components while preserving mathematical symbols
+                  structured_question = parse_question_components(question_text)
+                  # Keep original text for backward compatibility
+                  structured_question[:text] = question_text
+                  questions << structured_question
                 end
               end
 
@@ -199,7 +203,11 @@ module Docx
             question_text = current_question.join(" ").strip
             question_text = strip_question_number(question_text)
             unless question_text.empty?
-              questions << { text: question_text }
+              # Parse into structured components while preserving mathematical symbols
+              structured_question = parse_question_components(question_text)
+              # Keep original text for backward compatibility
+              structured_question[:text] = question_text
+              questions << structured_question
             end
           end
         end
@@ -512,6 +520,58 @@ module Docx
       end
 
       text_content.join("\n\n")
+    end
+
+    def self.parse_question_components(question_text)
+      # Parse question into structured components while preserving mathematical symbols
+      result = {
+        qstem: nil,
+        options: [],
+        anskey: nil,
+        hint: nil
+      }
+
+      # Extract hint first (usually at the end)
+      hint_match = question_text.match(/Hint:(.+?)$/m)
+      if hint_match
+        result[:hint] = hint_match[1].strip
+        question_text = question_text.sub(/Hint:.+$/m, '').strip
+      end
+
+      # Extract answer key
+      key_match = question_text.match(/Key:\s*([a-d])\b/i)
+      if key_match
+        result[:anskey] = key_match[1].downcase
+        question_text = question_text.sub(/Key:\s*[a-d]\b/i, '').strip
+      end
+
+      # Find the first occurrence of options pattern (a), b), c), d))
+      first_option_match = question_text.match(/\s+([a-d]\s*\))/i)
+      
+      if first_option_match
+        # Split at the first option
+        split_pos = first_option_match.begin(0)
+        result[:qstem] = question_text[0...split_pos].strip
+        
+        # Extract all options from the remaining text
+        options_text = question_text[split_pos..-1]
+        
+        # Improved pattern to match options with mathematical content
+        # Look for a), b), c), d) followed by content until the next option or end
+        option_pattern = /([a-d]\s*\))\s*((?:(?![a-d]\s*\)).)+)/im
+        
+        options_text.scan(option_pattern) do |letter, content|
+          result[:options] << {
+            letter: letter.gsub(/[^\w]/, ''),
+            text: content.strip
+          }
+        end
+      else
+        # No clear options found, treat entire text as question stem
+        result[:qstem] = question_text.strip
+      end
+
+      result
     end
 
     private
