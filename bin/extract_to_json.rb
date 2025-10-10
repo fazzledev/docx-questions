@@ -30,7 +30,10 @@ begin
     qstem_text = q[:qstem] ? q[:qstem].gsub(/\s+/, ' ').strip : 'No stem'
     qstem_preview = qstem_text.length > 80 ? "#{qstem_text[0..77]}..." : qstem_text
     puts "  #{i+1}. #{qstem_preview}"
-    puts "     Options: #{q[:options] ? q[:options].length : 0}, Answer: #{q[:anskey] || 'N/A'}, Hint: #{q[:hint] ? 'Yes' : 'No'}"
+    
+    # Count non-nil options
+    option_count = [q[:optA], q[:optB], q[:optC], q[:optD]].count { |opt| !opt.nil? }
+    puts "     Options: #{option_count}, Answer: #{q[:key] || 'N/A'}, Hint: #{q[:hint] ? 'Yes' : 'No'}"
   end
   
 rescue => e

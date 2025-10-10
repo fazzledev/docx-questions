@@ -150,8 +150,6 @@ module Docx
                 unless question_text.empty?
                   # Parse into structured components while preserving mathematical symbols
                   structured_question = parse_question_components(question_text)
-                  # Keep original text for backward compatibility
-                  structured_question[:text] = question_text
                   questions << structured_question
                 end
               end
@@ -205,8 +203,6 @@ module Docx
             unless question_text.empty?
               # Parse into structured components while preserving mathematical symbols
               structured_question = parse_question_components(question_text)
-              # Keep original text for backward compatibility
-              structured_question[:text] = question_text
               questions << structured_question
             end
           end
@@ -526,8 +522,11 @@ module Docx
       # Parse question into structured components while preserving mathematical symbols
       result = {
         qstem: nil,
-        options: [],
-        anskey: nil,
+        optA: nil,
+        optB: nil,
+        optC: nil,
+        optD: nil,
+        key: nil,
         hint: nil
       }
 
@@ -535,36 +534,48 @@ module Docx
       hint_match = question_text.match(/Hint:(.+?)$/m)
       if hint_match
         result[:hint] = hint_match[1].strip
-        question_text = question_text.sub(/Hint:.+$/m, '').strip
+        question_text = question_text.sub(/Hint:.+$/m, "").strip
       end
 
       # Extract answer key
       key_match = question_text.match(/Key:\s*([a-d])\b/i)
       if key_match
-        result[:anskey] = key_match[1].downcase
-        question_text = question_text.sub(/Key:\s*[a-d]\b/i, '').strip
+        result[:key] = key_match[1].downcase
+        question_text = question_text.sub(/Key:\s*[a-d]\b/i, "").strip
       end
 
       # Find the first occurrence of options pattern (a), b), c), d))
       first_option_match = question_text.match(/\s+([a-d]\s*\))/i)
-      
+
       if first_option_match
         # Split at the first option
         split_pos = first_option_match.begin(0)
         result[:qstem] = question_text[0...split_pos].strip
-        
+
         # Extract all options from the remaining text
         options_text = question_text[split_pos..-1]
-        
-        # Improved pattern to match options with mathematical content
-        # Look for a), b), c), d) followed by content until the next option or end
-        option_pattern = /([a-d]\s*\))\s*((?:(?![a-d]\s*\)).)+)/im
-        
-        options_text.scan(option_pattern) do |letter, content|
-          result[:options] << {
-            letter: letter.gsub(/[^\w]/, ''),
-            text: content.strip
-          }
+
+        # Extract options one by one using different approaches based on spacing
+        # First try to split by option markers
+        options_parts = options_text.split(/(?=[a-d]\s*\))/)
+        options_parts.reject! { |part| part.strip.empty? }
+
+        options_parts.each do |part|
+          if match = part.match(/^([a-d]\s*\))\s*(.+?)$/m)
+            option_letter = match[1].gsub(/[^\w]/, "").upcase
+            option_content = match[2].strip
+            option_key = "opt#{option_letter}".to_sym
+            result[option_key] = option_content
+          end
+        end
+
+        # If that didn't work well, fall back to regex scanning
+        if result[:optA].nil?
+          option_pattern = /([a-d]\s*\))\s*((?:(?![a-d]\s*\)).)+)/im
+          options_text.scan(option_pattern) do |letter, content|
+            option_key = "opt#{letter.gsub(/[^\w]/, '').upcase}".to_sym
+            result[option_key] = content.strip
+          end
         end
       else
         # No clear options found, treat entire text as question stem
@@ -579,7 +590,7 @@ module Docx
     def self.strip_question_number(text)
       # Remove question numbers like "6.", "17.", "18." from the beginning of questions
       # while preserving mathematical symbols and content
-      text.gsub(/^\d+\./, '').strip
+      text.gsub(/^\d+\./, "").strip
     end
   end
 end
