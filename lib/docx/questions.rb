@@ -132,8 +132,8 @@ module Docx
       end
     end
 
-    def self.extract_text(docx_path)
-      text_content = []
+    def self.extract_questions(docx_path)
+      questions = []
 
       Zip::File.open(docx_path) do |zip_file|
         # Find and read the main document XML file and relationships file
@@ -267,7 +267,7 @@ module Docx
               # Save previous question if we have one
               if inside_question && !current_question.empty?
                 question_text = current_question.join(" ").strip
-                text_content << question_text unless question_text.empty?
+                questions << question_text unless question_text.empty?
               end
 
               # Start new question
@@ -315,12 +315,19 @@ module Docx
           # Don't forget the last question
           if inside_question && !current_question.empty?
             question_text = current_question.join(" ").strip
-            text_content << question_text unless question_text.empty?
+            questions << question_text unless question_text.empty?
           end
         end
       end
 
-      text_content.join("\n\n")
+      questions
+    end
+
+    def self.extract_json(docx_path)
+      questions = extract_questions(docx_path)
+      require 'json'
+      JSON.pretty_generate({ questions: questions })
     end
   end
 end
+
