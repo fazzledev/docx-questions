@@ -272,10 +272,19 @@ module Docx
                   if question_text.match(/^(\d+)\.(.+)$/)
                     question_number = $1.to_i
                     question_content = $2.strip
-                    questions << { number: question_number, text: question_content }
+                    
+                    # Extract hint from question content
+                    if question_content.include?('Hint:')
+                      parts = question_content.split('Hint:')
+                      main_text = parts[0].strip
+                      hint_text = parts[1].strip
+                      questions << { number: question_number, text: main_text, hint: hint_text }
+                    else
+                      questions << { number: question_number, text: question_content, hint: nil }
+                    end
                   else
                     # Fallback if pattern doesn't match
-                    questions << { number: nil, text: question_text }
+                    questions << { number: nil, text: question_text, hint: nil }
                   end
                 end
               end
@@ -330,10 +339,19 @@ module Docx
               if question_text.match(/^(\d+)\.(.+)$/)
                 question_number = $1.to_i
                 question_content = $2.strip
-                questions << { number: question_number, text: question_content }
+                
+                # Extract hint from question content
+                if question_content.include?('Hint:')
+                  parts = question_content.split('Hint:')
+                  main_text = parts[0].strip
+                  hint_text = parts[1].strip
+                  questions << { number: question_number, text: main_text, hint: hint_text }
+                else
+                  questions << { number: question_number, text: question_content, hint: nil }
+                end
               else
                 # Fallback if pattern doesn't match
-                questions << { number: nil, text: question_text }
+                questions << { number: nil, text: question_text, hint: nil }
               end
             end
           end
