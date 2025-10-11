@@ -132,8 +132,29 @@ module Docx
       end
     end
 
-    def self.extract_text(docx_path)
-      text_content = []
+    def self.extract_options(text)
+      # Extract options using the pattern a) ... b) ... c) ... d) ...
+      parts = text.split(/([a-d]\))/)
+      options = {}
+
+      (1...parts.length).step(2) do |i|
+        letter = parts[i].gsub(")", "")
+        text_part = parts[i+1] || ""
+        options[letter] = text_part.strip
+      end
+
+      options
+    end
+
+    def self.remove_options_from_text(text)
+      # Remove options pattern from text to get clean question text
+      # Split by options and take only the first part (before any options)
+      parts = text.split(/([a-d]\))/)
+      parts[0].strip
+    end
+
+    def self.extract_questions(docx_path)
+      questions = []
 
       Zip::File.open(docx_path) do |zip_file|
         # Find and read the main document XML file and relationships file
@@ -267,7 +288,63 @@ module Docx
               # Save previous question if we have one
               if inside_question && !current_question.empty?
                 question_text = current_question.join(" ").strip
-                text_content << question_text unless question_text.empty?
+                unless question_text.empty?
+                  # Extract question number and text
+                  if question_text.match(/^(\d+)\.(.+)$/)
+                    question_number = $1.to_i
+                    question_content = $2.strip
+
+                    # Extract key and hint from question content
+                    if question_content.include?("Hint:")
+                      parts = question_content.split("Hint:")
+                      main_content = parts[0].strip
+                      hint_text = parts[1].strip
+
+                      # Extract key from main content
+                      if main_content.include?("Key:")
+                        key_parts = main_content.split("Key:")
+                        main_text = key_parts[0].strip
+                        key_text = key_parts[1].strip
+
+                        # Extract options from main text
+                        options = extract_options(main_text)
+                        question_text = remove_options_from_text(main_text)
+
+                        questions << { number: question_number, text: question_text, options: options, key: key_text, hint: hint_text }
+                      else
+                        # Extract options from main content
+                        options = extract_options(main_content)
+                        question_text = remove_options_from_text(main_content)
+
+                        questions << { number: question_number, text: question_text, options: options, key: nil, hint: hint_text }
+                      end
+                    else
+                      # No hint, check for key only
+                      if question_content.include?("Key:")
+                        key_parts = question_content.split("Key:")
+                        main_text = key_parts[0].strip
+                        key_text = key_parts[1].strip
+
+                        # Extract options from main text
+                        options = extract_options(main_text)
+                        question_text = remove_options_from_text(main_text)
+
+                        questions << { number: question_number, text: question_text, options: options, key: key_text, hint: nil }
+                      else
+                        # Extract options from question content
+                        options = extract_options(question_content)
+                        question_text = remove_options_from_text(question_content)
+
+                        questions << { number: question_number, text: question_text, options: options, key: nil, hint: nil }
+                      end
+                    end
+                  else
+                    # Fallback if pattern doesn't match
+                    options = extract_options(question_text)
+                    clean_text = remove_options_from_text(question_text)
+                    questions << { number: nil, text: clean_text, options: options, key: nil, hint: nil }
+                  end
+                end
               end
 
               # Start new question
@@ -315,12 +392,74 @@ module Docx
           # Don't forget the last question
           if inside_question && !current_question.empty?
             question_text = current_question.join(" ").strip
-            text_content << question_text unless question_text.empty?
+            unless question_text.empty?
+              # Extract question number and text
+              if question_text.match(/^(\d+)\.(.+)$/)
+                question_number = $1.to_i
+                question_content = $2.strip
+
+                # Extract key and hint from question content
+                if question_content.include?("Hint:")
+                  parts = question_content.split("Hint:")
+                  main_content = parts[0].strip
+                  hint_text = parts[1].strip
+
+                  # Extract key from main content
+                  if main_content.include?("Key:")
+                    key_parts = main_content.split("Key:")
+                    main_text = key_parts[0].strip
+                    key_text = key_parts[1].strip
+
+                    # Extract options from main text
+                    options = extract_options(main_text)
+                    question_text = remove_options_from_text(main_text)
+
+                    questions << { number: question_number, text: question_text, options: options, key: key_text, hint: hint_text }
+                  else
+                    # Extract options from main content
+                    options = extract_options(main_content)
+                    question_text = remove_options_from_text(main_content)
+
+                    questions << { number: question_number, text: question_text, options: options, key: nil, hint: hint_text }
+                  end
+                else
+                  # No hint, check for key only
+                  if question_content.include?("Key:")
+                    key_parts = question_content.split("Key:")
+                    main_text = key_parts[0].strip
+                    key_text = key_parts[1].strip
+
+                    # Extract options from main text
+                    options = extract_options(main_text)
+                    question_text = remove_options_from_text(main_text)
+
+                    questions << { number: question_number, text: question_text, options: options, key: key_text, hint: nil }
+                  else
+                    # Extract options from question content
+                    options = extract_options(question_content)
+                    question_text = remove_options_from_text(question_content)
+
+                    questions << { number: question_number, text: question_text, options: options, key: nil, hint: nil }
+                  end
+                end
+              else
+                # Fallback if pattern doesn't match
+                options = extract_options(question_text)
+                clean_text = remove_options_from_text(question_text)
+                questions << { number: nil, text: clean_text, options: options, key: nil, hint: nil }
+              end
+            end
           end
         end
       end
 
-      text_content.join("\n\n")
+      questions
+    end
+
+    def self.extract_json(docx_path)
+      questions = extract_questions(docx_path)
+      require "json"
+      JSON.pretty_generate({ questions: questions })
     end
   end
 end

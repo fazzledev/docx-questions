@@ -8,32 +8,32 @@ module Docx
       refute_nil ::Docx::Questions::VERSION
     end
 
-    def test_extracts_text_from_docx_file
+    def test_extracts_json_from_docx_file
       docx_path = File.join(__dir__, "..", "fixtures", "files", "p6.docx")
-      expected_text_path = File.join(__dir__, "..", "fixtures", "files", "p6.txt")
+      expected_json_path = File.join(__dir__, "..", "fixtures", "files", "p6.json")
 
-      # Read expected text content
-      expected_text = File.read(expected_text_path).strip
+      # Read expected JSON content
+      expected_json = File.read(expected_json_path).strip
 
-      # Extract text from DOCX file
-      extracted_text = Docx::Questions.extract_text(docx_path)
+      # Extract JSON from DOCX file
+      extracted_json = Docx::Questions.extract_json(docx_path)
 
-      # Assert that the extracted text matches the expected text
-      assert_equal expected_text, extracted_text.strip
+      # Assert that the extracted JSON matches the expected JSON
+      assert_equal expected_json, extracted_json.strip
     end
 
-    def test_extracts_multiple_questions_from_docx_file
+    def test_extracts_multiple_questions_json_from_docx_file
       docx_path = File.join(__dir__, "..", "fixtures", "files", "Phy-3ques.docx")
-      expected_text_path = File.join(__dir__, "..", "fixtures", "files", "Phy-3ques.txt")
+      expected_json_path = File.join(__dir__, "..", "fixtures", "files", "Phy-3ques.json")
 
-      # Read expected text content
-      expected_text = File.read(expected_text_path).strip
+      # Read expected JSON content
+      expected_json = File.read(expected_json_path).strip
 
-      # Extract text from DOCX file
-      extracted_text = Docx::Questions.extract_text(docx_path)
+      # Extract JSON from DOCX file
+      extracted_json = Docx::Questions.extract_json(docx_path)
 
-      # Assert that the extracted text matches the expected text
-      assert_equal expected_text, extracted_text.strip
+      # Assert that the extracted JSON matches the expected JSON
+      assert_equal expected_json, extracted_json.strip
     end
   end
 end
