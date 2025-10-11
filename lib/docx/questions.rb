@@ -273,18 +273,35 @@ module Docx
                     question_number = $1.to_i
                     question_content = $2.strip
                     
-                    # Extract hint from question content
+                    # Extract key and hint from question content
                     if question_content.include?('Hint:')
                       parts = question_content.split('Hint:')
-                      main_text = parts[0].strip
+                      main_content = parts[0].strip
                       hint_text = parts[1].strip
-                      questions << { number: question_number, text: main_text, hint: hint_text }
+                      
+                      # Extract key from main content
+                      if main_content.include?('Key:')
+                        key_parts = main_content.split('Key:')
+                        main_text = key_parts[0].strip
+                        key_text = key_parts[1].strip
+                        questions << { number: question_number, text: main_text, key: key_text, hint: hint_text }
+                      else
+                        questions << { number: question_number, text: main_content, key: nil, hint: hint_text }
+                      end
                     else
-                      questions << { number: question_number, text: question_content, hint: nil }
+                      # No hint, check for key only
+                      if question_content.include?('Key:')
+                        key_parts = question_content.split('Key:')
+                        main_text = key_parts[0].strip
+                        key_text = key_parts[1].strip
+                        questions << { number: question_number, text: main_text, key: key_text, hint: nil }
+                      else
+                        questions << { number: question_number, text: question_content, key: nil, hint: nil }
+                      end
                     end
                   else
                     # Fallback if pattern doesn't match
-                    questions << { number: nil, text: question_text, hint: nil }
+                    questions << { number: nil, text: question_text, key: nil, hint: nil }
                   end
                 end
               end
@@ -340,18 +357,35 @@ module Docx
                 question_number = $1.to_i
                 question_content = $2.strip
                 
-                # Extract hint from question content
+                # Extract key and hint from question content
                 if question_content.include?('Hint:')
                   parts = question_content.split('Hint:')
-                  main_text = parts[0].strip
+                  main_content = parts[0].strip
                   hint_text = parts[1].strip
-                  questions << { number: question_number, text: main_text, hint: hint_text }
+                  
+                  # Extract key from main content
+                  if main_content.include?('Key:')
+                    key_parts = main_content.split('Key:')
+                    main_text = key_parts[0].strip
+                    key_text = key_parts[1].strip
+                    questions << { number: question_number, text: main_text, key: key_text, hint: hint_text }
+                  else
+                    questions << { number: question_number, text: main_content, key: nil, hint: hint_text }
+                  end
                 else
-                  questions << { number: question_number, text: question_content, hint: nil }
+                  # No hint, check for key only
+                  if question_content.include?('Key:')
+                    key_parts = question_content.split('Key:')
+                    main_text = key_parts[0].strip
+                    key_text = key_parts[1].strip
+                    questions << { number: question_number, text: main_text, key: key_text, hint: nil }
+                  else
+                    questions << { number: question_number, text: question_content, key: nil, hint: nil }
+                  end
                 end
               else
                 # Fallback if pattern doesn't match
-                questions << { number: nil, text: question_text, hint: nil }
+                questions << { number: nil, text: question_text, key: nil, hint: nil }
               end
             end
           end
