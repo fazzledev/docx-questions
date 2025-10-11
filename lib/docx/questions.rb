@@ -132,6 +132,27 @@ module Docx
       end
     end
 
+    def self.extract_options(text)
+      # Extract options using the pattern a) ... b) ... c) ... d) ...
+      parts = text.split(/([a-d]\))/)
+      options = {}
+      
+      (1...parts.length).step(2) do |i|
+        letter = parts[i].gsub(')', '')
+        text_part = parts[i+1] || ''
+        options[letter] = text_part.strip
+      end
+      
+      options
+    end
+
+    def self.remove_options_from_text(text)
+      # Remove options pattern from text to get clean question text
+      # Split by options and take only the first part (before any options)
+      parts = text.split(/([a-d]\))/)
+      parts[0].strip
+    end
+
     def self.extract_questions(docx_path)
       questions = []
 
@@ -284,9 +305,18 @@ module Docx
                         key_parts = main_content.split('Key:')
                         main_text = key_parts[0].strip
                         key_text = key_parts[1].strip
-                        questions << { number: question_number, text: main_text, key: key_text, hint: hint_text }
+                        
+                        # Extract options from main text
+                        options = extract_options(main_text)
+                        question_text = remove_options_from_text(main_text)
+                        
+                        questions << { number: question_number, text: question_text, options: options, key: key_text, hint: hint_text }
                       else
-                        questions << { number: question_number, text: main_content, key: nil, hint: hint_text }
+                        # Extract options from main content
+                        options = extract_options(main_content)
+                        question_text = remove_options_from_text(main_content)
+                        
+                        questions << { number: question_number, text: question_text, options: options, key: nil, hint: hint_text }
                       end
                     else
                       # No hint, check for key only
@@ -294,14 +324,25 @@ module Docx
                         key_parts = question_content.split('Key:')
                         main_text = key_parts[0].strip
                         key_text = key_parts[1].strip
-                        questions << { number: question_number, text: main_text, key: key_text, hint: nil }
+                        
+                        # Extract options from main text
+                        options = extract_options(main_text)
+                        question_text = remove_options_from_text(main_text)
+                        
+                        questions << { number: question_number, text: question_text, options: options, key: key_text, hint: nil }
                       else
-                        questions << { number: question_number, text: question_content, key: nil, hint: nil }
+                        # Extract options from question content
+                        options = extract_options(question_content)
+                        question_text = remove_options_from_text(question_content)
+                        
+                        questions << { number: question_number, text: question_text, options: options, key: nil, hint: nil }
                       end
                     end
                   else
                     # Fallback if pattern doesn't match
-                    questions << { number: nil, text: question_text, key: nil, hint: nil }
+                    options = extract_options(question_text)
+                    clean_text = remove_options_from_text(question_text)
+                    questions << { number: nil, text: clean_text, options: options, key: nil, hint: nil }
                   end
                 end
               end
@@ -368,9 +409,18 @@ module Docx
                     key_parts = main_content.split('Key:')
                     main_text = key_parts[0].strip
                     key_text = key_parts[1].strip
-                    questions << { number: question_number, text: main_text, key: key_text, hint: hint_text }
+                    
+                    # Extract options from main text
+                    options = extract_options(main_text)
+                    question_text = remove_options_from_text(main_text)
+                    
+                    questions << { number: question_number, text: question_text, options: options, key: key_text, hint: hint_text }
                   else
-                    questions << { number: question_number, text: main_content, key: nil, hint: hint_text }
+                    # Extract options from main content
+                    options = extract_options(main_content)
+                    question_text = remove_options_from_text(main_content)
+                    
+                    questions << { number: question_number, text: question_text, options: options, key: nil, hint: hint_text }
                   end
                 else
                   # No hint, check for key only
@@ -378,14 +428,25 @@ module Docx
                     key_parts = question_content.split('Key:')
                     main_text = key_parts[0].strip
                     key_text = key_parts[1].strip
-                    questions << { number: question_number, text: main_text, key: key_text, hint: nil }
+                    
+                    # Extract options from main text
+                    options = extract_options(main_text)
+                    question_text = remove_options_from_text(main_text)
+                    
+                    questions << { number: question_number, text: question_text, options: options, key: key_text, hint: nil }
                   else
-                    questions << { number: question_number, text: question_content, key: nil, hint: nil }
+                    # Extract options from question content
+                    options = extract_options(question_content)
+                    question_text = remove_options_from_text(question_content)
+                    
+                    questions << { number: question_number, text: question_text, options: options, key: nil, hint: nil }
                   end
                 end
               else
                 # Fallback if pattern doesn't match
-                questions << { number: nil, text: question_text, key: nil, hint: nil }
+                options = extract_options(question_text)
+                clean_text = remove_options_from_text(question_text)
+                questions << { number: nil, text: clean_text, options: options, key: nil, hint: nil }
               end
             end
           end

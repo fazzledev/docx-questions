@@ -2,7 +2,13 @@
   "questions": [
     {
       "number": 6,
-      "text": "The velocity of an electron at point <math><msub><mi>A</mi><mn>1</mn></msub></math>, where cross sectional area is A, <math><msub><mi>v</mi><mn>0</mn></msub></math>.  The velocity of electron just the end of contraction at point B, where cross sectional area is 2A, is <math><msub><mi>v</mi><mn>1</mn></msub></math>. Find the correct option. <img> a) <math><msub><mi>v</mi><mn>1</mn></msub></math> < <math><msub><mi>v</mi><mn>0</mn></msub></math>b) <math><msub><mi>v</mi><mn>1</mn></msub></math> = <math><msub><mi>v</mi><mn>0</mn></msub></math>c) <math><msub><mi>v</mi><mn>1</mn></msub></math> > <math><msub><mi>v</mi><mn>0</mn></msub></math>d)  <math display=\"block\"> <mrow> <msub> <mrow> <mi>v</mi> </mrow> <mrow> <mn>1</mn> </mrow> </msub> <mo>=</mo> <mfrac> <mrow> <msub> <mrow> <mi>v</mi> </mrow> <mrow> <mn>0</mn> </mrow> </msub> </mrow> <mrow> <mn>2</mn> </mrow> </mfrac> </mrow> </math>",
+      "text": "The velocity of an electron at point <math><msub><mi>A</mi><mn>1</mn></msub></math>, where cross sectional area is A, <math><msub><mi>v</mi><mn>0</mn></msub></math>.  The velocity of electron just the end of contraction at point B, where cross sectional area is 2A, is <math><msub><mi>v</mi><mn>1</mn></msub></math>. Find the correct option. <img>",
+      "options": {
+        "a": "<math><msub><mi>v</mi><mn>1</mn></msub></math> < <math><msub><mi>v</mi><mn>0</mn></msub></math>",
+        "b": "<math><msub><mi>v</mi><mn>1</mn></msub></math> = <math><msub><mi>v</mi><mn>0</mn></msub></math>",
+        "c": "<math><msub><mi>v</mi><mn>1</mn></msub></math> > <math><msub><mi>v</mi><mn>0</mn></msub></math>",
+        "d": "<math display=\"block\"> <mrow> <msub> <mrow> <mi>v</mi> </mrow> <mrow> <mn>1</mn> </mrow> </msub> <mo>=</mo> <mfrac> <mrow> <msub> <mrow> <mi>v</mi> </mrow> <mrow> <mn>0</mn> </mrow> </msub> </mrow> <mrow> <mn>2</mn> </mrow> </mfrac> </mrow> </math>"
+      },
       "key": "c",
       "hint": "As the electrons comes near the throat, positive charges are induced on the throat. The induced charges attract the electron and velocity increases. So <math><msub><mi>v</mi><mn>1 </mn></msub></math>> <math><msub><mi>v</mi><mn>0</mn></msub></math>."
     }
