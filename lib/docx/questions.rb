@@ -267,7 +267,17 @@ module Docx
               # Save previous question if we have one
               if inside_question && !current_question.empty?
                 question_text = current_question.join(" ").strip
-                questions << question_text unless question_text.empty?
+                unless question_text.empty?
+                  # Extract question number and text
+                  if question_text.match(/^(\d+)\.(.+)$/)
+                    question_number = $1.to_i
+                    question_content = $2.strip
+                    questions << { number: question_number, text: question_content }
+                  else
+                    # Fallback if pattern doesn't match
+                    questions << { number: nil, text: question_text }
+                  end
+                end
               end
 
               # Start new question
@@ -315,7 +325,17 @@ module Docx
           # Don't forget the last question
           if inside_question && !current_question.empty?
             question_text = current_question.join(" ").strip
-            questions << question_text unless question_text.empty?
+            unless question_text.empty?
+              # Extract question number and text
+              if question_text.match(/^(\d+)\.(.+)$/)
+                question_number = $1.to_i
+                question_content = $2.strip
+                questions << { number: question_number, text: question_content }
+              else
+                # Fallback if pattern doesn't match
+                questions << { number: nil, text: question_text }
+              end
+            end
           end
         end
       end
