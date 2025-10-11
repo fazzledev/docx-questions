@@ -52,7 +52,7 @@ module Docx
         end
       end
       
-      # Compare with fixture folders
+      # Compare with fixture folders (JSON files)
       Dir.glob(File.join(fixture_dir, "**", "*.json")).each do |fixture_file|
         relative_path = Pathname.new(fixture_file).relative_path_from(Pathname.new(fixture_dir)).to_s
         expected_content = File.read(fixture_file)
@@ -64,6 +64,18 @@ module Docx
         actual_normalized = extracted_contents[relative_path].force_encoding('UTF-8').strip
         
         assert_equal expected_normalized, actual_normalized, "Content mismatch for #{relative_path}"
+      end
+      
+      # Compare image files if they exist
+      Dir.glob(File.join(fixture_dir, "**", "images", "*")).each do |fixture_file|
+        next if File.directory?(fixture_file)
+        relative_path = Pathname.new(fixture_file).relative_path_from(Pathname.new(fixture_dir)).to_s
+        expected_content = File.read(fixture_file, mode: 'rb')
+        
+        assert extracted_contents.key?(relative_path), "Missing image file in zip: #{relative_path}"
+        
+        # Compare binary content for images
+        assert_equal expected_content, extracted_contents[relative_path], "Image content mismatch for #{relative_path}"
       end
       
       # Ensure no extra files in zip

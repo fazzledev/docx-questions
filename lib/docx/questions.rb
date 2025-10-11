@@ -153,8 +153,48 @@ module Docx
       parts[0].strip
     end
 
+    def self.extract_image_from_node(node, zip_file, relationship_targets, question_number)
+      # Define namespaces for image extraction
+      image_namespaces = {
+        "w" => "http://schemas.openxmlformats.org/wordprocessingml/2006/main",
+        "a" => "http://schemas.openxmlformats.org/drawingml/2006/main",
+        "r" => "http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+      }
+      
+      # Look for image relationships in the node
+      image_rel = node.at_xpath(".//a:blip", image_namespaces)
+      
+      if image_rel && image_rel["r:embed"]
+        rel_id = image_rel["r:embed"]
+        if (target = relationship_targets[rel_id])
+          # Read the image data
+          image_entry = zip_file.find_entry("word/#{target}")
+          if image_entry
+            @image_counter += 1
+            image_data = image_entry.get_input_stream.read
+            
+            # Determine file extension from target
+            extension = File.extname(target).downcase
+            extension = ".jpg" if extension.empty? # Default to jpg
+            
+            filename = "image_#{@image_counter}#{extension}"
+            
+            # Store image data for this specific question
+            @question_images[question_number] ||= {}
+            @question_images[question_number][filename] = image_data
+            
+            return filename
+          end
+        end
+      end
+      
+      nil
+    end
+
     def self.extract_questions(docx_path)
       questions = []
+      @image_counter = 0
+      @question_images = {}
 
       Zip::File.open(docx_path) do |zip_file|
         # Find and read the main document XML file and relationships file
@@ -360,7 +400,21 @@ module Docx
 
             # Check for images
             if node.at_xpath(".//w:drawing", namespaces) || node.at_xpath(".//w:pict", namespaces)
-              current_question << "<img>"
+              # We need to determine the current question number
+              current_q_num = nil
+              if inside_question && !current_question.empty?
+                question_text = current_question.join(" ").strip
+                if question_text.match(/^(\d+)\./)
+                  current_q_num = $1.to_i
+                end
+              end
+              
+              image_filename = extract_image_from_node(node, zip_file, relationship_targets, current_q_num)
+              if image_filename
+                current_question << "<img src=\"#{image_filename}\"/>"
+              else
+                current_question << "<img>"
+              end
             end
 
             # Check for OLE objects (MathType equations)
@@ -481,6 +535,16 @@ module Docx
           # Add the question.json file to the zip
           zip.put_next_entry("#{folder_name}/question.json")
           zip.write(question_json)
+          
+          # Add images folder and images for this question
+          question_number = question[:number] || (index + 1)
+          if @question_images && @question_images[question_number] && !@question_images[question_number].empty?
+            zip.put_next_entry("#{folder_name}/images/")
+            @question_images[question_number].each do |filename, image_data|
+              zip.put_next_entry("#{folder_name}/images/#{filename}")
+              zip.write(image_data)
+            end
+          end
         end
       end
       
