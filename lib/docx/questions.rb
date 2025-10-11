@@ -458,8 +458,37 @@ module Docx
 
     def self.extract_json(docx_path)
       questions = extract_questions(docx_path)
+      create_questions_zip(questions)
+    end
+
+    def self.create_questions_zip(questions)
+      require "zip"
       require "json"
-      JSON.pretty_generate({ questions: questions })
+      require "tempfile"
+      
+      # Create a temporary zip file
+      temp_zip = Tempfile.new(["questions", ".zip"])
+      temp_zip.close
+      
+      Zip::OutputStream.open(temp_zip.path) do |zip|
+        questions.each_with_index do |question, index|
+          # Create folder name for each question
+          folder_name = "question_#{question[:number] || (index + 1)}"
+          
+          # Create JSON content for this question
+          question_json = JSON.pretty_generate(question)
+          
+          # Add the question.json file to the zip
+          zip.put_next_entry("#{folder_name}/question.json")
+          zip.write(question_json)
+        end
+      end
+      
+      # Read the zip file content and return it
+      zip_content = File.read(temp_zip.path)
+      temp_zip.unlink
+      
+      zip_content
     end
   end
 end
