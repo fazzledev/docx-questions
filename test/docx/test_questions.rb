@@ -17,7 +17,7 @@ module Docx
 
       # Extract JSON from DOCX file
       extracted_json = Docx::Questions.extract_json(docx_path)
-      
+
       # Assert that the extracted JSON matches the expected JSON
       assert_equal expected_json, extracted_json.strip
     end
@@ -31,7 +31,7 @@ module Docx
 
       # Extract JSON from DOCX file
       extracted_json = Docx::Questions.extract_json(docx_path)
-      
+
       # Assert that the extracted JSON matches the expected JSON
       assert_equal expected_json, extracted_json.strip
     end
