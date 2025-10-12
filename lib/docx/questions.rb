@@ -191,10 +191,11 @@ module Docx
       nil
     end
 
-    def self.extract_questions(docx_path)
+    def self.extract_questions(docx_path, debug: false)
       questions = []
       @image_counter = 0
       @question_images = {}
+      @debug = debug
 
       Zip::File.open(docx_path) do |zip_file|
         # Find and read the main document XML file and relationships file
@@ -337,14 +338,18 @@ module Docx
                     # Extract key and hint from question content
                     if question_content.include?("Hint:")
                       parts = question_content.split("Hint:")
+                      puts "DEBUG: Hint split parts: #{parts.inspect}" if @debug
                       main_content = parts[0].strip
-                      hint_text = parts[1].strip
+                      hint_text = parts[1]&.strip
+                      puts "DEBUG: hint_text: #{hint_text.inspect}" if @debug
 
                       # Extract key from main content
                       if main_content.include?("Key:")
                         key_parts = main_content.split("Key:")
+                        puts "DEBUG: Key split parts: #{key_parts.inspect}" if @debug
                         main_text = key_parts[0].strip
-                        key_text = key_parts[1].strip
+                        key_text = key_parts[1]&.strip
+                        puts "DEBUG: key_text: #{key_text.inspect}" if @debug
 
                         # Extract options from main text
                         options = extract_options(main_text)
@@ -360,10 +365,13 @@ module Docx
                       end
                     else
                       # No hint, check for key only
+                      puts "DEBUG: No hint found, question_content: #{question_content.inspect}" if @debug
                       if question_content.include?("Key:")
                         key_parts = question_content.split("Key:")
+                        puts "DEBUG: Key split parts (no hint): #{key_parts.inspect}" if @debug
                         main_text = key_parts[0].strip
-                        key_text = key_parts[1].strip
+                        key_text = key_parts[1]&.strip
+                        puts "DEBUG: key_text (no hint): #{key_text.inspect}" if @debug
 
                         # Extract options from main text
                         options = extract_options(main_text)
@@ -510,8 +518,8 @@ module Docx
       questions
     end
 
-    def self.extract_json(docx_path)
-      questions = extract_questions(docx_path)
+    def self.extract_json(docx_path, debug: false)
+      questions = extract_questions(docx_path, debug: debug)
       create_questions_zip(questions)
     end
 
