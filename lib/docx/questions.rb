@@ -160,10 +160,10 @@ module Docx
         "a" => "http://schemas.openxmlformats.org/drawingml/2006/main",
         "r" => "http://schemas.openxmlformats.org/officeDocument/2006/relationships"
       }
-      
+
       # Look for image relationships in the node
       image_rel = node.at_xpath(".//a:blip", image_namespaces)
-      
+
       if image_rel && image_rel["r:embed"]
         rel_id = image_rel["r:embed"]
         if (target = relationship_targets[rel_id])
@@ -172,22 +172,22 @@ module Docx
           if image_entry
             @image_counter += 1
             image_data = image_entry.get_input_stream.read
-            
+
             # Determine file extension from target
             extension = File.extname(target).downcase
             extension = ".jpg" if extension.empty? # Default to jpg
-            
+
             filename = "image_#{@image_counter}#{extension}"
-            
+
             # Store image data for this specific question
             @question_images[question_number] ||= {}
             @question_images[question_number][filename] = image_data
-            
+
             return filename
           end
         end
       end
-      
+
       nil
     end
 
@@ -408,7 +408,7 @@ module Docx
                   current_q_num = $1.to_i
                 end
               end
-              
+
               image_filename = extract_image_from_node(node, zip_file, relationship_targets, current_q_num)
               if image_filename
                 current_question << "<img src=\"#{image_filename}\"/>"
@@ -519,23 +519,23 @@ module Docx
       require "zip"
       require "json"
       require "tempfile"
-      
+
       # Create a temporary zip file
-      temp_zip = Tempfile.new(["questions", ".zip"])
+      temp_zip = Tempfile.new([ "questions", ".zip" ])
       temp_zip.close
-      
+
       Zip::OutputStream.open(temp_zip.path) do |zip|
         questions.each_with_index do |question, index|
           # Create folder name for each question
           folder_name = "question_#{question[:number] || (index + 1)}"
-          
+
           # Create JSON content for this question
           question_json = JSON.pretty_generate(question)
-          
+
           # Add the question.json file to the zip
           zip.put_next_entry("#{folder_name}/question.json")
           zip.write(question_json)
-          
+
           # Add images folder and images for this question
           question_number = question[:number] || (index + 1)
           if @question_images && @question_images[question_number] && !@question_images[question_number].empty?
@@ -547,11 +547,11 @@ module Docx
           end
         end
       end
-      
+
       # Read the zip file content and return it
       zip_content = File.read(temp_zip.path)
       temp_zip.unlink
-      
+
       zip_content
     end
   end
