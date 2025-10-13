@@ -1,0 +1,12 @@
+{
+  "number": 36,
+  "text": "A conducting sphere is negatively charged. Which of the following statements is true?",
+  "options": {
+    "a": "The charge is uniformly distributed throughout the entire volume",
+    "b": "The charge is located at the center of the sphere",
+    "c": "The charge is located at the bottom of the sphere because of gravity",
+    "d": "The charge is uniformly distributed on the surface of the sphere."
+  },
+  "key": "d",
+  "hint": "When a conducting sphere get charged, the charge is uniformly distributed on the surface of the sphere."
+}

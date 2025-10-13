@@ -13,14 +13,28 @@ module Docx
 
     def self.is_question?(text)
       # Check if the text starts with a whole number followed by a dot and then a capital letter
-      # This matches "6.The", "17.The", "18.Assertion" but excludes "1.1", "SESSION", etc.
-      text.strip.match?(/^\d+\.[A-Z]/)
+      # This matches "6.The", "17.The", "18.Assertion", "10. An" but excludes "1.1", "SESSION", etc.
+      text.strip.match?(/^\d+\.\s*[A-Z]/)
     end
 
     def self.convert_symbol_to_unicode(char_code, font)
       # Delegate to the dedicated mathematical symbols library
       symbol = MathematicalSymbols.convert(char_code, font)
       symbol || "[#{char_code}]"
+    end
+
+    def self.extract_hint_safely(hint_text)
+      # Extract hint text but stop at the next question boundary
+      return hint_text unless hint_text
+
+      # Look for the next question pattern (number.space.Capital letter)
+      next_question_match = hint_text.match(/(\d+\.\s*[A-Z].*)/)
+      if next_question_match
+        # Return only the part before the next question
+        hint_text[0, next_question_match.begin(0)].strip
+      else
+        hint_text.strip
+      end
     end
 
     def self.convert_office_math_to_mathml(math_node, namespaces)
@@ -342,7 +356,7 @@ module Docx
                       parts = question_content.split("Hint:")
                       puts "DEBUG: Hint split parts: #{parts.inspect}" if @debug
                       main_content = parts[0].strip
-                      hint_text = parts[1]&.strip
+                      hint_text = extract_hint_safely(parts[1])
                       puts "DEBUG: hint_text: #{hint_text.inspect}" if @debug
 
                       # Extract key from main content
@@ -466,7 +480,7 @@ module Docx
                 if question_content.include?("Hint:")
                   parts = question_content.split("Hint:")
                   main_content = parts[0].strip
-                  hint_text = parts[1].strip
+                  hint_text = extract_hint_safely(parts[1])
 
                   # Extract key from main content
                   if main_content.include?("Key:")

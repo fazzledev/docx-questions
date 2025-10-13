@@ -1,0 +1,12 @@
+{
+  "number": 35,
+  "text": "A method for charging a conductor without bringing a charged body in contact with it is called",
+  "options": {
+    "a": "Magnetization",
+    "b": "electrification",
+    "c": "Electrostatic induction",
+    "d": "electromagnetic induction"
+  },
+  "key": "c",
+  "hint": null
+}

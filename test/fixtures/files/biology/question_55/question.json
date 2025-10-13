@@ -1,0 +1,12 @@
+{
+  "number": 55,
+  "text": "In pollen grain, exine has prominent apertures called germ pores where sporopollenin is absent.",
+  "options": {
+    "a": "True",
+    "b": "False",
+    "c": "True; exine is thickest at pores",
+    "d": "False; pores have suberin"
+  },
+  "key": "a",
+  "hint": "Germ pores are exine thinning/absent regions lacking sporopollenin; the pollen tube emerges here."
+}

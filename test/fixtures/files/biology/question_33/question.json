@@ -2,11 +2,11 @@
   "number": 33,
   "text": "The cytoplasm of a pollen grain is surrounded by a:",
   "options": {
-    "a": "Endothecium",
-    "b": "Middle layers",
-    "c": "Epidermis",
-    "d": "Tapetum"
+    "a": "Cell wall only",
+    "b": "Plasma membrane",
+    "c": "Cuticle",
+    "d": "TonoplastAns: bHint/Explanation:The cytoplasm of pollen grain is surrounded by a plasma membrane. LEVEL - 2"
   },
-  "key": "d",
-  "hint": "From outer to inner the anther (pollen sac) wall has epidermis → endothecium → middle layers → tapetum; tapetum is innermost and nutritive. 38. There are two parts of a typical _____; the long and slender stalk is called _____ and the terminal generally bilobed structure is called _____. a) stamen; filament; anther b) carpel; style; stigmac) stamen; anther; filamentd) carpel; filament; anther Key: a"
+  "key": null,
+  "hint": null
 }

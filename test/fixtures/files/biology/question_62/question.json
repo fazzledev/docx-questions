@@ -1,0 +1,12 @@
+{
+  "number": 62,
+  "text": "Which of the following statements is true regarding the microsporocyte?",
+  "options": {
+    "a": "Microsporocytes are diploid cells that undergo meiosis to form microspores.",
+    "b": "Microsporocytes are haploid cells that divide to form pollen grains.",
+    "c": "Microsporocytes are formed inside the ovule.",
+    "d": "Microsporocytes are female gametophytes."
+  },
+  "key": "a",
+  "hint": "Microsporocytes are diploid cells found in the anther that undergo meiosis to produce haploid microspores."
+}

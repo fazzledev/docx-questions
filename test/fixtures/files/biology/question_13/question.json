@@ -1,0 +1,12 @@
+{
+  "number": 13,
+  "text": "The pollen viability period of Rice and in some Rosaceae members respectively is",
+  "options": {
+    "a": "Within 30 minutes and months",
+    "b": "Several months and 30 minutes",
+    "c": "Few days and few months",
+    "d": "Few days in both the cases"
+  },
+  "key": "a",
+  "hint": "In cereals like rice/wheat, viability ~30 min; in many Rosaceae/Leguminosae/Solanaceae, pollen remains viable for months."
+}

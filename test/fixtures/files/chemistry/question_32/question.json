@@ -1,0 +1,12 @@
+{
+  "number": 32,
+  "text": "Molality of a solution in aqueous medium is 0.8. Calculate its mole fraction fan the percentage by mass of solute if molar mass of solute is 60",
+  "options": {
+    "a": "4.5 %",
+    "b": "4.6 %",
+    "c": "4.7 %",
+    "d": "4.8 %"
+  },
+  "key": "a",
+  "hint": "We know that,  <math display=\"block\"> <mrow>m=<mfrac><mrow><msub><mrow>x</mrow><mrow>B</mrow></msub>&#x00D7;1000</mrow><mrow><mrow><mo>(</mo><mrow>1-<msub><mrow>x</mrow><mrow>B</mrow></msub></mrow><mo>)</mo></mrow>&#x00D7;<msub><mrow>m</mrow><mrow>A</mrow></msub></mrow></mfrac>......<mrow><mo>(</mo><mrow>i</mrow><mo>)</mo></mrow></mrow> </math> Where, <math><msub><mi>x</mi><mn>B</mn></msub></math> = mole fraction of solute  <math><msub><mi>m</mi><mn>A</mn></msub></math> = molar fraction of solvent  <math display=\"block\"> <mrow> <mn>0</mn> <mo>.</mo> <mn>8</mn> <mo>=</mo> <mfrac> <mrow> <msub> <mrow> <mi>x</mi> </mrow> <mrow> <mi>B</mi> </mrow> </msub> <mo>&#x00D7;</mo> <mn>1</mn> <mn>0</mn> <mn>0</mn> <mn>0</mn> </mrow> <mrow> <mrow> <mo>(</mo> <mrow> <mn>1</mn> <mo>&#x2212;</mo> <msub> <mrow> <mi>x</mi> </mrow> <mrow> <mi>B</mi> </mrow> </msub> </mrow> <mo>)</mo> </mrow> <mo>&#x00D7;</mo> <mn>1</mn> <mn>8</mn> </mrow> </mfrac> </mrow> </math> <math><msub><mi>x</mi><mn>B</mn></msub></math> = 0.014  Let <math><msub><mi>w</mi><mn>B</mn></msub></math> = x g, <math><msub><mi>w</mi><mn>A</mn></msub></math> = 100 g  <math display=\"block\"> <mtable columnalign=\"left\"> <mtr> <mtd> <mrow> <mi>m</mi> <mo>=</mo> <mfrac> <mrow> <msub> <mrow> <mi>w</mi> </mrow> <mrow> <mi>B</mi> </mrow> </msub> <mo>&#x00D7;</mo> <mn>1</mn> <mn>0</mn> <mn>0</mn> <mn>0</mn> </mrow> <mrow> <mn>6</mn> <mn>0</mn> <mo>&#x00D7;</mo> <msub> <mrow> <mi>w</mi> </mrow> <mrow> <mi>A</mi> </mrow> </msub> </mrow> </mfrac> </mrow> </mtd> </mtr> <mtr> <mtd> <mrow> <mn>0</mn> <mo>.</mo> <mn>8</mn> <mo>=</mo> <mfrac> <mrow> <mi>x</mi> <mo>&#x00D7;</mo> <mn>1</mn> <mn>0</mn> <mn>0</mn> <mn>0</mn> </mrow> <mrow> <mn>6</mn> <mn>0</mn> <mo>&#x00D7;</mo> <mn>1</mn> <mn>0</mn> <mn>0</mn> </mrow> </mfrac> </mrow> </mtd> </mtr> </mtable> </math> X = 4.8 %"
+}

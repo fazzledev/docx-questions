@@ -1,0 +1,12 @@
+{
+  "number": 23,
+  "text": "Molality (m) of 3M aqueous solution of NaCl is: (Given: Density of solution = 1.25 g mL-1, Molar mass in g mol-1 (Na -23, Cl-35.50",
+  "options": {
+    "a": "2.90 m",
+    "b": "2.79 m",
+    "c": "1.90 m",
+    "d": "3.85 m"
+  },
+  "key": "b",
+  "hint": "<math display=\"block\"> <mtable columnalign=\"left\"> <mtr> <mtd> <mrow>Molality&#x00A0;=<mfrac><mrow>M&#x00D7;1000</mrow><mrow>d&#x00D7;1000-<mrow><mo>(</mo><mrow>M&#x00D7;mm</mrow><mo>)</mo></mrow></mrow></mfrac></mrow> </mtd> </mtr> <mtr> <mtd> <mrow><mn>3</mn><mo>=</mo><mfrac><mrow><mn>3</mn><mo>&#x00D7;</mo><mn>1</mn><mn>0</mn><mn>0</mn></mrow><mrow><mn>1</mn><mo>.</mo><mn>2</mn><mn>5</mn><mo>&#x00D7;</mo><mn>1</mn><mn>0</mn><mn>0</mn><mn>0</mn><mo>&#x2212;</mo><mrow><mo>(</mo><mrow><mn>3</mn><mo>&#x00D7;</mo><mn>5</mn><mn>8</mn><mo>.</mo><mn>5</mn></mrow><mo>)</mo></mrow></mrow></mfrac><mo>=</mo><mn>2</mn><mo>.</mo><mn>7</mn><mn>9</mn>m</mrow> </mtd> </mtr> </mtable> </math>"
+}

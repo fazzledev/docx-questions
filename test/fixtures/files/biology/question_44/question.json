@@ -1,0 +1,12 @@
+{
+  "number": 44,
+  "text": "The development of pollen grains from microspores involves the formation of:",
+  "options": {
+    "a": "Male gametes",
+    "b": "Female gametes",
+    "c": "Zygote",
+    "d": "Embryo"
+  },
+  "key": "a",
+  "hint": "Pollen grains are formed from microspores and contain male gametes (sperm cells)."
+}

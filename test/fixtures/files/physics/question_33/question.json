@@ -1,0 +1,12 @@
+{
+  "number": 33,
+  "text": "Which of the following materials is the best conductor of electricity?",
+  "options": {
+    "a": "Platinum",
+    "b": "Gold",
+    "c": "Silicon",
+    "d": "Copper"
+  },
+  "key": "d",
+  "hint": "Among the gives material, copper is the best conductor of electricity."
+}

@@ -1,0 +1,12 @@
+{
+  "number": 39,
+  "text": "A typical angiosperm anther is _____.",
+  "options": {
+    "a": "monothecous and bisporangiate",
+    "b": "bilobed and tetrasporangiate",
+    "c": "trilobed and hexasporangiate",
+    "d": "bilobed and bisporangiate"
+  },
+  "key": "b",
+  "hint": "Most angiosperm anthers are bilobed, each lobe with two thecae → four microsporangia)"
+}

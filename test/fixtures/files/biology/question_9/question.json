@@ -1,0 +1,12 @@
+{
+  "number": 9,
+  "text": "Sexual reproduction involves",
+  "options": {
+    "a": "Gamete formation",
+    "b": "Gamete transfer",
+    "c": "Gamete fusion",
+    "d": "All the above"
+  },
+  "key": "d",
+  "hint": "Sexual reproduction entails formation, transfer and fusion of gametes."
+}

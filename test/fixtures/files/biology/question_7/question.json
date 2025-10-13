@@ -1,0 +1,12 @@
+{
+  "number": 7,
+  "text": "First whorl among the essential organs of a bisexual flower is",
+  "options": {
+    "a": "calyx",
+    "b": "corolla",
+    "c": "androecium",
+    "d": "gynoecium"
+  },
+  "key": "c",
+  "hint": "Whorl order from outside: calyx, corolla, androecium, gynoecium; the last two are the essential whorls."
+}

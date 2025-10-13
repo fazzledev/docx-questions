@@ -1,0 +1,12 @@
+{
+  "number": 21,
+  "text": "Choose the correct option:",
+  "options": {
+    "a": "",
+    "b": "Microsporangia are found in the style of a flower.",
+    "c": "Anther contains the ovules.",
+    "d": "Microsporangia produce ovules."
+  },
+  "key": "a",
+  "hint": "Anther consists of two lobes, and each lobe contains two microsporangia, making four in total."
+}

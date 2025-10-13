@@ -1,0 +1,12 @@
+{
+  "number": 31,
+  "text": "A solution has 25% of water, 25% ethanol and 50% acetic acid by mass. Calculate the mole fraction of each component.",
+  "options": {
+    "a": "0.50, 0.3, 0.19",
+    "b": "0.19, 0.3, 0.50",
+    "c": "0.3, 0.19, 0.50",
+    "d": "0.50, 0.19, 0.3"
+  },
+  "key": "d",
+  "hint": "Since 18 g of water = 1 mole 25 g of water = =1.38 mole <math display=\"block\"> <mrow> <mfrac> <mrow> <mn>2</mn> <mn>5</mn> </mrow> <mrow> <mn>1</mn> <mn>8</mn> </mrow> </mfrac> </mrow> </math> Similarly, 46 g of ethanol = 1 mole 25 g of ethanol = =0.55 moles <math display=\"block\"> <mrow> <mfrac> <mrow> <mn>2</mn> <mn>5</mn> </mrow> <mrow> <mn>4</mn> <mn>6</mn> </mrow> </mfrac> </mrow> </math> Again, 60 g of acetic acid = 1 mole 50 g of acetic acid = =0.83 mole <math display=\"block\"> <mrow> <mfrac> <mrow> <mn>5</mn> <mn>0</mn> </mrow> <mrow> <mn>6</mn> <mn>0</mn> </mrow> </mfrac> </mrow> </math> [F05C] Mole fraction of water = =0.50 <math display=\"block\"> <mrow> <mfrac> <mrow> <mn>1</mn> <mo>.</mo> <mn>3</mn> <mn>8</mn> </mrow> <mrow> <mn>1</mn> <mo>.</mo> <mn>3</mn> <mn>8</mn> <mo>+</mo> <mn>0</mn> <mo>.</mo> <mn>5</mn> <mn>5</mn> <mo>+</mo> <mn>0</mn> <mo>.</mo> <mn>8</mn> <mn>3</mn> </mrow> </mfrac> </mrow> </math> Similarly, Mole fraction of ethanol = =0.19 <math display=\"block\"> <mrow> <mfrac> <mrow> <mn>0</mn> <mo>.</mo> <mn>5</mn> <mn>5</mn> </mrow> <mrow> <mn>1</mn> <mo>.</mo> <mn>3</mn> <mn>8</mn> <mo>+</mo> <mn>0</mn> <mo>.</mo> <mn>5</mn> <mn>5</mn> <mo>+</mo> <mn>0</mn> <mo>.</mo> <mn>8</mn> <mn>3</mn> </mrow> </mfrac> </mrow> </math> Mole fraction of acetic acid = =0.3 <math display=\"block\"> <mrow> <mfrac> <mrow> <mn>0</mn> <mo>.</mo> <mn>8</mn> <mn>3</mn> </mrow> <mrow> <mn>1</mn> <mo>.</mo> <mn>3</mn> <mn>8</mn> <mo>+</mo> <mn>0</mn> <mo>.</mo> <mn>5</mn> <mn>5</mn> <mo>+</mo> <mn>0</mn> <mo>.</mo> <mn>8</mn> <mn>3</mn> </mrow> </mfrac> </mrow> </math>"
+}

@@ -1,0 +1,12 @@
+{
+  "number": 8,
+  "text": "Mole fraction of <math><msub><mi>C</mi><mn>3</mn></msub></math><math><msub><mi>H</mi><mn>5</mn></msub></math>(OH)3 in a solution of 36 g of water and 46 of glycerine is:",
+  "options": {
+    "a": "0.46",
+    "b": "0.36",
+    "c": "0.20",
+    "d": "0.40"
+  },
+  "key": "c",
+  "hint": "Mole of <math><msub><mi>H</mi><mn>2</mn></msub></math>O <math display=\"block\"> <mrow> <mo>=</mo> <mfrac> <mrow> <mn>3</mn> <mn>6</mn> </mrow> <mrow> <mn>1</mn> <mn>8</mn> </mrow> </mfrac> <mo>=</mo> <mn>2</mn> </mrow> </math> Mole of glycerine  <math display=\"block\"> <mrow> <mo>=</mo> <mfrac> <mrow> <mn>4</mn> <mn>6</mn> </mrow> <mrow> <mn>9</mn> <mn>2</mn> </mrow> </mfrac> <mo>=</mo> <mn>0</mn> <mo>.</mo> <mn>5</mn> </mrow> </math> Total mole = 2 + 0.5 = 2.5  Mole fractions of glycerine <math display=\"block\"> <mrow> <mo>=</mo> <mfrac> <mrow> <msub> <mrow> <mi>n</mi> </mrow> <mrow> <mn>1</mn> </mrow> </msub> </mrow> <mrow> <msub> <mrow> <mi>n</mi> </mrow> <mrow> <mn>1</mn> </mrow> </msub> <mo>+</mo> <msub> <mrow> <mi>n</mi> </mrow> <mrow> <mn>2</mn> </mrow> </msub> </mrow> </mfrac> <mo>=</mo> <mfrac> <mrow> <mn>0</mn> <mo>.</mo> <mn>5</mn> </mrow> <mrow> <mn>2</mn> <mo>.</mo> <mn>5</mn> </mrow> </mfrac> <msub> <mrow> <mi>X</mi> </mrow> <mrow> <mn>0</mn> </mrow> </msub> <mo>=</mo> <mn>0</mn> <mo>.</mo> <mn>2</mn> </mrow> </math>"
+}

@@ -1,0 +1,12 @@
+{
+  "number": 18,
+  "text": "Hardness of a water sample is 100 ppm CaC<math><msub><mi>O</mi><mn>3</mn></msub></math>. Thus, molarity of CaC<math><msub><mi>O</mi><mn>3</mn></msub></math> is",
+  "options": {
+    "a": "2 × <math><msup><mn>10</mn><mn>−</mn></msup></math>3 M",
+    "b": "1 × <math><msup><mn>10</mn><mn>−</mn></msup></math>3 M",
+    "c": "2 × <math><msup><mn>10</mn><mn>−</mn></msup></math>2 M",
+    "d": "2 × <math><msup><mn>10</mn><mn>−</mn></msup></math>4 M"
+  },
+  "key": "b",
+  "hint": "Hard water has hardness = 100 ppm Thus, <math><msup><mn>10</mn><mn>6</mn></msup></math> mL (= <math><msup><mn>10</mn><mn>3</mn></msup></math>) water has CaC<math><msub><mi>O</mi><mn>3</mn></msub></math> = 100 g = 1 mol Thus,  <math display=\"block\"> <mrow>Molarity=<mfrac><mrow>Moles</mrow><mrow>Litre</mrow></mfrac>=<mfrac><mrow>1</mrow><mrow>1<msup><mrow>0</mrow><mrow>3</mrow></msup></mrow></mfrac><mo>=</mo><mn>1</mn><mo>&#x00D7;</mo><mn>1</mn><msup><mrow><mn>0</mn></mrow><mrow><mo>&#x2212;</mo><mn>3</mn></mrow></msup>M</mrow> </math>"
+}

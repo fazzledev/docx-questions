@@ -1,0 +1,12 @@
+{
+  "number": 40,
+  "text": "The inner wall of pollen grain is called intine.",
+  "options": {
+    "a": "True",
+    "b": "False",
+    "c": "True only in wind-pollinated plants",
+    "d": "True only at germ pores."
+  },
+  "key": "a",
+  "hint": "Pollen wall: exine (outer, sporopollenin) and intine (inner, pecto-cellulosic)."
+}

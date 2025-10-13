@@ -1,0 +1,12 @@
+{
+  "number": 23,
+  "text": "When <math><msup><mn>10</mn><mn>19</mn></msup></math> electrons are removed from a neutral metal plate through some process, the charge on it becomes",
+  "options": {
+    "a": "-1.6C",
+    "b": "+1.6C",
+    "c": "<math><msup><mn>10</mn><mn>19</mn></msup></math>C",
+    "d": "<math><msup><mn>10</mn><mn>-19</mn></msup></math>C"
+  },
+  "key": "b",
+  "hint": "b"
+}

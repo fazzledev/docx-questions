@@ -1,0 +1,12 @@
+{
+  "number": 46,
+  "text": "What is the role of the pollen grain in fertilization?",
+  "options": {
+    "a": "It carries the female gamete.",
+    "b": "It carries the male gametes to the ovule.",
+    "c": "It produces ovules.",
+    "d": "It is involved in seed formation."
+  },
+  "key": "b",
+  "hint": "The pollen grain contains male gametes that travel to the ovule for fertilization."
+}

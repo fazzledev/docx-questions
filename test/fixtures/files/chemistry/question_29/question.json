@@ -1,0 +1,12 @@
+{
+  "number": 29,
+  "text": "Which of the following aqueous solutions has the highest concentration of Na+?",
+  "options": {
+    "a": "0.304 M N<math><msub><mi>a</mi><mn>2</mn></msub></math>S<math><msub><mi>O</mi><mn>4</mn></msub></math>",
+    "b": "A solution containing 2.06 g NaCl/100 mL",
+    "c": "A solution having 15.4 mg Na+/mL",
+    "d": "All have equal [Na+]"
+  },
+  "key": "c",
+  "hint": "(a) <math display=\"block\"> <mrow>N<msub><mrow>a</mrow><mrow>2</mrow></msub>S<msub><mrow>O</mrow><mrow>4</mrow></msub><mo>&#x21CC;</mo>2N<msup><mrow>a</mrow><mrow>+</mrow></msup>+S<msubsup><mrow>O</mrow><mrow>4</mrow><mrow>2-</mrow></msubsup></mrow> </math> [Na+] = 0.208 × 2 = 0.416 M (b) 2.07 g NaCl/100 mL = 10.5 g NaCl/L =  <math display=\"block\"> <mrow><mfrac><mrow><mn>2</mn><mn>0</mn><mo>.</mo><mn>7</mn></mrow><mrow><mn>5</mn><mn>8</mn><mo>.</mo><mn>5</mn></mrow></mfrac><mo>=</mo>mol&#x00A0;<msup><mrow>L</mrow><mrow>-1</mrow></msup></mrow> </math> = 0.353 M [Na+] = 0.353 M (c) = 15.4 mg Na+ = 15.4 × <math><msup><mn>10</mn><mn>-3 </mn></msup></math>g Na+mL-1 <math display=\"block\"> <mtable columnalign=\"left\"> <mtr> <mtd> <mrow>=15.4&#x00A0;N<msup><mrow>a</mrow><mrow><mo>+</mo></mrow></msup><msup><mrow>L</mrow><mrow>-1</mrow></msup><mo>=</mo><mfrac><mrow><mn>1</mn><mn>5</mn><mo>.</mo><mn>4</mn></mrow><mrow><mn>2</mn><mn>3</mn></mrow></mfrac>mol&#x00A0;N<msup><mrow>a</mrow><mrow><mo>+</mo></mrow></msup><msup><mrow>L</mrow><mrow>-1</mrow></msup></mrow> </mtd> </mtr> <mtr> <mtd> <mrow><mo>&#x2234;</mo><mrow><mo>[</mo><mrow>N<msup><mrow>a</mrow><mrow>+</mrow></msup></mrow><mo>]</mo></mrow>=<mfrac><mrow>15.4</mrow><mrow>23</mrow></mfrac>=0.669M</mrow> </mtd> </mtr> </mtable> </math>"
+}

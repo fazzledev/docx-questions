@@ -1,0 +1,12 @@
+{
+  "number": 30,
+  "text": "When two bodies are rubbed against each other, they acquire",
+  "options": {
+    "a": "Equal and similar charges",
+    "b": "Equal and opposite charges",
+    "c": "Unequal and similar charges",
+    "d": "unequal and opposite charges"
+  },
+  "key": "b",
+  "hint": "It is the property of some materials to acquire equal and opposite charge when rubbed against each other."
+}

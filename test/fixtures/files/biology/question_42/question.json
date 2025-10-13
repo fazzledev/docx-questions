@@ -1,0 +1,12 @@
+{
+  "number": 42,
+  "text": "Vegetative cell of mature pollen grain is bigger in size and with abundant food reserve.",
+  "options": {
+    "a": "True",
+    "b": "False",
+    "c": "True, but only in 3-celled pollen",
+    "d": "False; generative cell is larger."
+  },
+  "key": "a",
+  "hint": "The vegetative cell is larger, vacuolated, and rich in reserves; the generative cell is smaller and spindle-shaped)"
+}

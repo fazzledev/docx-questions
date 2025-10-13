@@ -1,0 +1,12 @@
+{
+  "number": 41,
+  "text": "Pollen grain represents the _____ generation.",
+  "options": {
+    "a": "male gametophytic",
+    "b": "male sporophytic",
+    "c": "microsporocyte",
+    "d": "microsporophyll."
+  },
+  "key": "a",
+  "hint": "The pollen grain is the male gametophyte (1- or 2-celled at shedding) that produces male gametes."
+}

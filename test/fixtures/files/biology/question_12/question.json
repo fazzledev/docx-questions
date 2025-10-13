@@ -1,0 +1,12 @@
+{
+  "number": 12,
+  "text": "In Angiosperms, male gametophyte is represented by",
+  "options": {
+    "a": "Microspore mother cell",
+    "b": "Megaspore",
+    "c": "Microsporangium",
+    "d": "Pollen grain"
+  },
+  "key": "d",
+  "hint": "The pollen grain is the male gametophyte (usually two-celled, sometimes three-celled at shed)."
+}

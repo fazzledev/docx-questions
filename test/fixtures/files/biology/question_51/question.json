@@ -1,0 +1,12 @@
+{
+  "number": 51,
+  "text": "A typical angiosperm anther in T.S. appears ______ and contains ______ microsporangia at the corners.",
+  "options": {
+    "a": "Triangular; three",
+    "b": "Circular; one",
+    "c": "Pentagonal; five",
+    "d": "Tetragonal; fourAns: dHint/Explanation:The anther is four-sided (tetragonal) with four microsporangia, two in each lobe, located at the corners."
+  },
+  "key": null,
+  "hint": null
+}

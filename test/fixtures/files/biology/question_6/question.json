@@ -1,0 +1,12 @@
+{
+  "number": 6,
+  "text": "Choose the correct statement from the following;",
+  "options": {
+    "a": "Unisexual flowers possess only one type of essential floral whorls",
+    "b": "A typical flower in dicots always possess one type of accessory floral whorls and two type of essential floral whorls",
+    "c": "Bisexual flowers always possess indistinct accessory organs",
+    "d": "All of these"
+  },
+  "key": "a",
+  "hint": "A complete flower has all four whorls; unisexual flowers lack one essential whorl."
+}

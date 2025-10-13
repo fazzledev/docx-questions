@@ -1,0 +1,12 @@
+{
+  "number": 24,
+  "text": "The concentration of a 100 ml solution containing x grams of N<math><msub><mi>a</mi><mn>2</mn></msub></math>C<math><msub><mi>O</mi><mn>3</mn></msub></math> is yM. The values of x and y are",
+  "options": {
+    "a": "2.12, 0.05",
+    "b": "1.06, 0.2",
+    "c": "1.06, 0.1",
+    "d": "2.12, 0.1"
+  },
+  "key": "c",
+  "hint": "<math display=\"block\"> <mtable columnalign=\"left\"> <mtr> <mtd> <mrow> <mi>M</mi> <mo>=</mo> <mfrac> <mrow> <mi>W</mi> </mrow> <mrow> <mi>M</mi> </mrow> </mfrac> <mo>=</mo> <mfrac> <mrow> <mn>1</mn> <mn>0</mn> <mn>0</mn> <mn>0</mn> </mrow> <mrow> <mi>V</mi> <mrow> <mo>(</mo> <mrow> <mi>m</mi> <mi>l</mi> </mrow> <mo>)</mo> </mrow> </mrow> </mfrac> </mrow> </mtd> </mtr> <mtr> <mtd> <mrow> <mi>y</mi> <mo>=</mo> <mfrac> <mrow> <mi>x</mi> </mrow> <mrow> <mn>1</mn> <mn>0</mn> <mn>6</mn> </mrow> </mfrac> <mo>&#x00D7;</mo> <mfrac> <mrow> <mn>1</mn> <mn>0</mn> <mn>0</mn> <mn>0</mn> </mrow> <mrow> <mn>1</mn> <mn>0</mn> <mn>0</mn> </mrow> </mfrac> <mo>=</mo> <mfrac> <mrow> <mi>x</mi> <mo>&#x00D7;</mo> <mn>1</mn> <mn>0</mn> </mrow> <mrow> <mn>1</mn> <mn>0</mn> <mn>6</mn> </mrow> </mfrac> </mrow> </mtd> </mtr> <mtr> <mtd> <mrow> <mfrac> <mrow> <mi>x</mi> </mrow> <mrow> <mi>y</mi> </mrow> </mfrac> <mo>=</mo> <mfrac> <mrow> <mn>1</mn> <mn>0</mn> <mn>6</mn> </mrow> <mrow> <mn>1</mn> <mn>0</mn> </mrow> </mfrac> <mo>=</mo> <mfrac> <mrow> <mn>1</mn> <mn>0</mn> <mo>.</mo> <mn>6</mn> </mrow> <mrow> <mn>1</mn> </mrow> </mfrac> <mo>=</mo> <mrow> <mo>(</mo> <mrow> <mi>o</mi> <mi>r</mi> </mrow> <mo>)</mo> </mrow> <mfrac> <mrow> <mn>1</mn> <mo>.</mo> <mn>0</mn> <mn>6</mn> </mrow> <mrow> <mn>0</mn> <mo>.</mo> <mn>1</mn> </mrow> </mfrac> </mrow> </mtd> </mtr> <mtr> <mtd> <mrow> <mi>x</mi> <mo>=</mo> <mn>1</mn> <mo>.</mo> <mn>0</mn> <mn>6</mn> <mo>;</mo> <mi>y</mi> <mo>=</mo> <mn>0</mn> <mo>.</mo> <mn>1</mn> </mrow> </mtd> </mtr> </mtable> </math>"
+}

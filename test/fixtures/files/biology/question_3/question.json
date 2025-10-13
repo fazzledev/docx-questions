@@ -1,0 +1,12 @@
+{
+  "number": 3,
+  "text": "The site of sexual reproduction is",
+  "options": {
+    "a": "Leaf",
+    "b": "Fruit",
+    "c": "Flower",
+    "d": "Seed"
+  },
+  "key": "c",
+  "hint": "The flower is the sexual reproductive structure of angiosperms. Male (stamens) and female (carpels) organs are borne on the flower."
+}

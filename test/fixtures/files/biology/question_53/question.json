@@ -1,0 +1,12 @@
+{
+  "number": 53,
+  "text": "In the centre of each microsporangium a compactly arranged tissue is present, called _____.",
+  "options": {
+    "a": "sporogenous tissue",
+    "b": "archesporium",
+    "c": "endothecium",
+    "d": "connective"
+  },
+  "key": "a",
+  "hint": "The central sporogenous tissue gives rise to microspore mother cells (MMCs) that undergo meiosis."
+}

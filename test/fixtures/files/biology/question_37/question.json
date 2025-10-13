@@ -1,0 +1,12 @@
+{
+  "number": 37,
+  "text": "The innermost wall layer of microsporangium is the _____",
+  "options": {
+    "a": "Endothecium",
+    "b": "Middle layers",
+    "c": "Epidermis",
+    "d": "Tapetum"
+  },
+  "key": "d",
+  "hint": "From outer to inner the anther (pollen sac) wall has epidermis → endothecium → middle layers → tapetum; tapetum is innermost and nutritive."
+}
