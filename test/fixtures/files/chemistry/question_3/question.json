@@ -1,0 +1,12 @@
+{
+  "number": 3,
+  "text": "A molal solution is one that contains one mole of a solute in",
+  "options": {
+    "a": "1000 g of the solvent",
+    "b": "one litre of the solvent",
+    "c": "one litre of the solution",
+    "d": "22.4 litres of the solution"
+  },
+  "key": "a",
+  "hint": "A 1 molal solution is one defined as a solution that contains one mole of solute dissolved in 1 kg of solvent."
+}

@@ -1,0 +1,12 @@
+{
+  "number": 17,
+  "text": "The charge on 500 cc of water due to protons will be",
+  "options": {
+    "a": "6.0 × <math><msup><mn>10</mn><mn>27</mn></msup></math>C",
+    "b": "2.67 × <math><msup><mn>10</mn><mn>7</mn></msup></math>C",
+    "c": "6 × <math><msup><mn>10</mn><mn>23</mn></msup></math>C",
+    "d": "1.67 × <math><msup><mn>10</mn><mn>23</mn></msup></math>C"
+  },
+  "key": "b",
+  "hint": "Q=ne, where n= number of moles ×6.02×<math><msup><mn>10</mn><mn>23</mn></msup></math>×10 <math display=\"block\"> <mrow><mo>&#x21D2;</mo><mtext>&#x2009;</mtext>Q=<mfrac><mrow><mn>5</mn><mn>0</mn><mn>0</mn></mrow><mrow><mn>1</mn><mn>8</mn></mrow></mfrac><mo>&#x00D7;</mo><mn>6</mn><mo>.</mo><mn>0</mn><mn>2</mn><mo>&#x00D7;</mo><mn>1</mn><msup><mrow><mn>0</mn></mrow><mrow><mn>2</mn><mn>3</mn></mrow></msup><mo>&#x00D7;</mo><mn>1</mn><mn>0</mn><mo>&#x00D7;</mo><mn>1</mn><mo>.</mo><mn>6</mn><mo>&#x00D7;</mo><mn>1</mn><msup><mrow><mn>0</mn></mrow><mrow><mo>&#x2212;</mo><mn>1</mn><mn>9</mn></mrow></msup></mrow> </math> =2.67 × <math><msup><mn>10</mn><mn>7</mn></msup></math>C"
+}

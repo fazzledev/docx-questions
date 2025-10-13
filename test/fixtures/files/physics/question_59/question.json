@@ -1,0 +1,12 @@
+{
+  "number": 59,
+  "text": "Which of the following charges cannot be present on an oil drop in Millikan's experiment:–",
+  "options": {
+    "a": "4.0 × <math><msup><mn>10</mn><mn>–19</mn></msup></math> C",
+    "b": "6.0 × <math><msup><mn>10</mn><mn>–19</mn></msup></math> C",
+    "c": "10.0 × <math><msup><mn>10</mn><mn>–19</mn></msup></math> C",
+    "d": "all of them"
+  },
+  "key": "d",
+  "hint": "if N is not an integer then Q is not possible. <math display=\"block\"> <mrow>N=<mfrac><mrow>Q</mrow><mrow>e</mrow></mfrac>,</mrow> </math>"
+}

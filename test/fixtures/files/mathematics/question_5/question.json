@@ -1,0 +1,12 @@
+{
+  "number": 5,
+  "text": "If , ,  and , then UV + XY = <math> <mrow> <mi>U</mi> <mo>=</mo> <mrow> <mo>[</mo> <mrow> <mtable/> </mrow> <mo>]</mo> </mrow> </mrow> </math>",
+  "options": {
+    "a": "20",
+    "b": "[20]",
+    "c": "[–20]",
+    "d": "–20"
+  },
+  "key": "b",
+  "hint": "<math> <mrow> <mi>U</mi> <mi>V</mi> <mo>+</mo> <mi>X</mi> <mi>Y</mi> <mo>=</mo> <mrow> <mo>[</mo> <mrow> <mtable/> </mrow> <mo>]</mo> </mrow> <mrow> <mo>[</mo> <mrow> <mtable> <mtr columnalign=\"center\"> <mtd columnalign=\"center\"> <mn>3</mn> </mtd> <mtd columnalign=\"center\"> <mn>2</mn> </mtd> <mtd columnalign=\"center\"> <mn>1</mn> </mtd> </mtr> </mtable> </mrow> <mo>]</mo> </mrow> <mo>+</mo> <mrow> <mo>[</mo> <mrow> <mtable/> </mrow> <mo>]</mo> </mrow> <mrow> <mo>[</mo> <mrow> <mtable> <mtr columnalign=\"center\"> <mtd columnalign=\"center\"> <mn>2</mn> </mtd> <mtd columnalign=\"center\"> <mn>2</mn> </mtd> <mtd columnalign=\"center\"> <mn>4</mn> </mtd> </mtr> </mtable> </mrow> <mo>]</mo> </mrow> </mrow> </math> = [6 – 6 + 4] + [0 + 4 + 12] = [4] + [16] = [20] LEVEL-2"
+}

@@ -9,28 +9,23 @@ module Docx
       refute_nil ::Docx::Questions::VERSION
     end
 
-    def test_extracts_json_from_docx_file
-      docx_path = File.join(__dir__, "..", "fixtures", "files", "p6.docx")
-      expected_fixture_dir = File.join(__dir__, "..", "fixtures", "files", "p6")
+    %w[
+      physics
+      chemistry
+      mathematics
+      biology
+    ].each do |subject|
+      define_method("test_#{subject}") do
+        docx_path = File.join(__dir__, "..", "fixtures", "files", "#{subject}.docx")
+        expected_fixture_dir = File.join(__dir__, "..", "fixtures", "files", "#{subject}")
 
-      # Extract zip from DOCX file
-      extracted_zip = Docx::Questions.extract_json(docx_path)
+        # Extract zip from DOCX file
+        extracted_zip = Docx::Questions.extract_json(docx_path)
 
-      # Compare extracted zip contents with expected fixture folders
-      compare_zip_with_fixture_folders(extracted_zip, expected_fixture_dir)
+        # Compare extracted zip contents with expected fixture folders
+        compare_zip_with_fixture_folders(extracted_zip, expected_fixture_dir)
+      end
     end
-
-    def test_extracts_multiple_questions_json_from_docx_file
-      docx_path = File.join(__dir__, "..", "fixtures", "files", "Phy-3ques.docx")
-      expected_fixture_dir = File.join(__dir__, "..", "fixtures", "files", "Phy-3ques")
-
-      # Extract zip from DOCX file
-      extracted_zip = Docx::Questions.extract_json(docx_path)
-
-      # Compare extracted zip contents with expected fixture folders
-      compare_zip_with_fixture_folders(extracted_zip, expected_fixture_dir)
-    end
-
     private
 
     def compare_zip_with_fixture_folders(zip_content, fixture_dir)

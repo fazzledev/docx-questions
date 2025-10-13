@@ -1,0 +1,12 @@
+{
+  "number": 11,
+  "text": "Four metal conductors having different shapes such that of  1.a sphere2. a cylinder 3. a pear4. a lightning conductor are mounted on insulating stands and charged.  The one which is best suited to retain the charges for a longer time is",
+  "options": {
+    "a": "1",
+    "b": "2",
+    "c": "3",
+    "d": "4"
+  },
+  "key": "a",
+  "hint": "In case of spherical metal conductor the charge quickly spreads uniformly over the entire surface because of which charges stay for longer time on the spherical surface. While in case of non-spherical surface, the charge concentration is different at different points due to which the charges do not stay on the surface for longer time. 12. If there are two metallic spheres of same radii but one is solid and the other is hollow, then a) Solid sphere can be given more charge b) Hollow sphere can be given more charge c) They can be charged equally (maximum) d) None of the above Key: c"
+}

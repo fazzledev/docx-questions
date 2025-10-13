@@ -1,0 +1,12 @@
+{
+  "number": 4,
+  "text": "An uncharged metal object M is insulated from its surroundings.  A positively charged metal sphere S is then brought near to M.  Which diagram best illustrates the resultant distributions of charge on S and M?",
+  "options": {
+    "a": "",
+    "b": "<img src=\"image_1.png\"/>",
+    "c": "",
+    "d": "<img src=\"image_2.png\"/>"
+  },
+  "key": "b",
+  "hint": "Negative charge are attracted to surface of M near S by electrostatic induction and positive charges are repelled to surface of M away from S such that entire M still remain neutral (uncharged) Charge on S is also redistributed to have more charge on surface near to M due to the field set up by negative charges on M Diagram b thus best illustrates the charge distribution on both S and M."
+}

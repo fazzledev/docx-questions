@@ -1,0 +1,12 @@
+{
+  "number": 25,
+  "text": "Which of the following statements, regarding the mole fraction (x) of a component in solution, is incorrect?",
+  "options": {
+    "a": "0 ≤ x ≤ 1",
+    "b": "x ≤ 1",
+    "c": "x is always non-negative",
+    "d": "None of these"
+  },
+  "key": "a",
+  "hint": "Mole fraction of any component A in solution <math display=\"block\"> <mrow> <mi>x</mi> <mo>=</mo> <mfrac> <mrow>No.&#x00A0;of&#x00A0;moles&#x00A0;of&#x00A0;A</mrow> <mrow>Total&#x00A0;no.&#x00A0;of&#x00A0;moles&#x00A0;of&#x00A0;solution</mrow> </mfrac> </mrow> </math> As total no. of moles of solution > No. of moles of A  Thus x can never be equal to one or zero. 26.9 of <math><msub><mi>H</mi><mn>2</mn></msub></math>S<math><msub><mi>O</mi><mn>4</mn></msub></math> is present in 2 litres of a solution. The molarity of the solution is a) 0.1 M b) 0.05 M  c) 0.2 M  d) 0.1 M Key: b"
+}

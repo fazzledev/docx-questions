@@ -1,0 +1,12 @@
+{
+  "number": 8,
+  "text": "The number of elements that a square matrix of order n has below its leading diagonal is",
+  "options": {
+    "a": "",
+    "b": "",
+    "c": "",
+    "d": "<math display=\"block\"> <mrow> <mfrac> <mrow> <mi>n</mi> <mrow> <mo>(</mo> <mrow> <mi>n</mi> <mo>+</mo> <mn>1</mn> </mrow> <mo>)</mo> </mrow> </mrow> <mrow> <mn>2</mn> </mrow> </mfrac> </mrow> </math>"
+  },
+  "key": "b",
+  "hint": "There are n2 elements in a square matrix of order n out of which n elements are in the leading diagonal. So, number of elements other than diagonal elements is (n2 – n). Half of these elements are above the diagonal and half are below the diagonal. So, required number of elements is  <math display=\"block\"> <mrow> <mfrac> <mrow> <msup> <mrow> <mi>n</mi> </mrow> <mrow> <mn>2</mn> </mrow> </msup> <mo>&#x2212;</mo> <mi>n</mi> </mrow> <mrow> <mn>2</mn> </mrow> </mfrac> <mo>=</mo> <mfrac> <mrow> <mn>1</mn> </mrow> <mrow> <mn>2</mn> </mrow> </mfrac> <mi>n</mi> <mrow> <mo>(</mo> <mrow> <mi>n</mi> <mo>&#x2212;</mo> <mn>1</mn> </mrow> <mo>)</mo> </mrow> </mrow> </math>"
+}

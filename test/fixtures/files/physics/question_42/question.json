@@ -1,0 +1,12 @@
+{
+  "number": 42,
+  "text": "When <math><msup><mn>10</mn><mn>14</mn></msup></math> electrons are removed from a neutral metal sphere, the charge on the sphere becomes:",
+  "options": {
+    "a": "16 μC",
+    "b": "32 μC",
+    "c": "–32 μC",
+    "d": "–16 μC"
+  },
+  "key": "a",
+  "hint": "As we know that, q = ne = <math><msup><mn>10</mn><mn>14</mn></msup></math>× 1.6 × <math><msup><mn>10</mn><mn>-19</mn></msup></math> [F05C] q = 1.6 × <math><msup><mn>10</mn><mn>-5</mn></msup></math>C = 16 μC Electrons are removed, so charge will be positive."
+}

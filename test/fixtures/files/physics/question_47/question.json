@@ -1,0 +1,12 @@
+{
+  "number": 47,
+  "text": "A charge given to any conductor resides on its outer surface, because:-",
+  "options": {
+    "a": "The free charge tends to be in its minimum potential energy state.",
+    "b": "The free charge tends to be in its minimum kinetic energy state.",
+    "c": "The free charge tends to be in its maximum potential energy state.",
+    "d": "The free charge tends to be in its maximum kinetic energy state"
+  },
+  "key": "a",
+  "hint": "Minimum PE → more stability"
+}

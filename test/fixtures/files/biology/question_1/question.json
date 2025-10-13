@@ -1,0 +1,12 @@
+{
+  "number": 1,
+  "text": "Which of the following are flowering plants?",
+  "options": {
+    "a": "Thallophytes",
+    "b": "Bryophytes",
+    "c": "Angiosperms",
+    "d": "Pteridophytes"
+  },
+  "key": "c",
+  "hint": "Angiosperms are the flowering plants bearing flowers and fruits.“Angiosperms” literally = flowering plants; the other groups are non-flowering."
+}

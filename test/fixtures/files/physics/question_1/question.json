@@ -1,0 +1,12 @@
+{
+  "number": 1,
+  "text": "If a body is charged by rubbing, its weight",
+  "options": {
+    "a": "Always decrease slightly",
+    "b": "Always increases slightly",
+    "c": "May increase slightly or may decrease slightly",
+    "d": "Remains precisely the same"
+  },
+  "key": "c",
+  "hint": "Weight may increase or decrease depending upon whether the body is charged negatively or positively."
+}

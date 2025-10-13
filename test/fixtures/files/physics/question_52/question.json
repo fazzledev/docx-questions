@@ -1,0 +1,12 @@
+{
+  "number": 52,
+  "text": "Match Column I and Column II.",
+  "options": {
+    "a": "(A) → (3), (B) → (2), (C) → (4), (D) → (1)",
+    "b": "(A) → (2), (B) → (4), (C) → (1), (D) → (3)",
+    "c": "(A) → (2), (B) →(1), (C) → (4), (D) → (3)",
+    "d": "(A) → (1), (B) → (2), (C) → (3), (D) → (4)"
+  },
+  "key": "c",
+  "hint": "(A) → (2); (B) →(1) because total charge on L.H.S. is equal to total charge on R.H.S. (C) → (4) charge q is integer times the charge on an electron (D) → (3) because both are positively charged."
+}

@@ -1,0 +1,12 @@
+{
+  "number": 63,
+  "text": "A sphere of lead of mass 10 g has net charge -2.5 nC. How many excess electrons are per lead atom? [<math><msub><mi>Z</mi><mn>Pb</mn></msub></math> = 82; its atomic mass is 207 g/mol]",
+  "options": {
+    "a": "0.563 nano unit",
+    "b": "0.635 pico unit",
+    "c": "0.536 pico unit",
+    "d": "0.753 nano unit"
+  },
+  "key": "c",
+  "hint": "Net charge on sphere = -2.5 nC No. of excess electrons = -2.5 x<math><msup><mn>10</mn><mn>-9</mn></msup></math>/-1.6x<math><msup><mn>10</mn><mn>-19</mn></msup></math> = 1.56 ×<math><msup><mn>10</mn><mn>10</mn></msup></math> electrons 10 g of lead will have  = 2.91×<math><msup><mn>10</mn><mn>21</mn></msup></math> atoms <math display=\"block\"> <mrow> <mfrac> <mrow> <mn>1</mn> <mn>0</mn> </mrow> <mrow> <mn>2</mn> <mn>0</mn> <mn>7</mn> </mrow> </mfrac> <mo>&#x00D7;</mo> <mn>6</mn> <mo>.</mo> <mn>0</mn> <mn>2</mn> <mn>3</mn> <mo>&#x00D7;</mo> <mn>1</mn> <msup> <mrow> <mn>0</mn> </mrow> <mrow> <mn>2</mn> <mn>3</mn> </mrow> </msup> </mrow> </math> The no. of excess electrons per lead atom is =5.36×<math><msup><mn>10</mn><mn>-13</mn></msup></math> electrons <math display=\"block\"> <mrow> <mfrac> <mrow> <mn>1</mn> <mo>.</mo> <mn>5</mn> <mn>6</mn> <mi>x</mi> <mn>1</mn> <msup> <mrow> <mn>0</mn> </mrow> <mrow> <mn>1</mn> <mn>0</mn> </mrow> </msup> </mrow> <mrow> <mn>2</mn> <mo>.</mo> <mn>9</mn> <mn>1</mn> <mi>x</mi> <mn>1</mn> <msup> <mrow> <mn>0</mn> </mrow> <mrow> <mn>2</mn> <mn>1</mn> </mrow> </msup> </mrow> </mfrac> </mrow> </math> No. excess electrons/atom in lead = 0.536 pico units"
+}

@@ -1,0 +1,12 @@
+{
+  "number": 40,
+  "text": "Assertion: When bodies are charged through friction, there is a transfer of electric charge from one body to another, but no creation or destruction of charge. Reason: This follows from conservation of electric charges.",
+  "options": {
+    "a": "If both assertion and reason are true and reason is the correct explanation of assertion",
+    "b": "If both assertion and reason are true but reason is not the correct explanation of assertion",
+    "c": "If assertion is true but reason is false",
+    "d": "If both assertion and reason are false"
+  },
+  "key": "a",
+  "hint": "Conservation of electric charges states that the total charge of an isolated system remains unchanged with time."
+}

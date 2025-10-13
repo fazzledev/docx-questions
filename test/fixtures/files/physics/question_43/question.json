@@ -1,0 +1,12 @@
+{
+  "number": 43,
+  "text": "Quantization of charge implies:",
+  "options": {
+    "a": "Charge cannot be destroyed",
+    "b": "Charge exists on particles",
+    "c": "There is a minimum permissible charge on a par-ticle",
+    "d": "Charge, which is a fraction of a coulomb is not possible"
+  },
+  "key": "d",
+  "hint": "Charge quantization means that charge cannot take any arbitrary values, but only values that are integral multiples of the fundamental charge."
+}

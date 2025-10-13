@@ -1,0 +1,12 @@
+{
+  "number": 15,
+  "text": "Three statements are given about mole fraction  i) Mole fraction of a solute + mole fraction of solvent = 1  ii) Equal weights of Helium and methane are present in a gaseous mixture. The mole fraction of He is 4/5 iii) The mole fraction of water in the aqueous solution of NaOH is 0.8. The molality of the solution is nearly 14 moles kg-1",
+  "options": {
+    "a": "i and ii are correct",
+    "b": "ii and iii are correct",
+    "c": "i and iii are correct",
+    "d": "All are correct"
+  },
+  "key": "a",
+  "hint": "Conceptual"
+}

@@ -1,0 +1,12 @@
+{
+  "number": 19,
+  "text": "Assertion: When charges are shared between any two bodies, no charge is really lost, but some loss of energy does occur. Reason: Energy disappear in the form of heat. Sparking, etc.",
+  "options": {
+    "a": "Both (A) and (R) are correct and (R) is not the correct explanation of (A)",
+    "b": "(A) is correct but (R) is not correct",
+    "c": "(A) is not correct but (R) is correct",
+    "d": "Both (A) and (R) are correct and (R) is the correct explanation of (A)"
+  },
+  "key": "d",
+  "hint": "Charge is always conserved but energy is lost in the terms of heat.  But it does not mean energy conservation is violated."
+}

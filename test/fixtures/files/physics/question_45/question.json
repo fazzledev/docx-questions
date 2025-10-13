@@ -1,0 +1,12 @@
+{
+  "number": 45,
+  "text": "In nature, the electric charge of any system is always equal to:",
+  "options": {
+    "a": "Half integral multiple of the least amount of charge",
+    "b": "Zero",
+    "c": "Square of the least amount of charge",
+    "d": "Integral multiple of the least amount of charge"
+  },
+  "key": "d",
+  "hint": "charge is quantized it always present in integral multiple of elementry charge."
+}

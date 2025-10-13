@@ -1,0 +1,12 @@
+{
+  "number": 60,
+  "text": "A conductor has been given a charge – 3 × <math><msup><mn>10</mn><mn>-7</mn></msup></math>C by transferring electron. Increase in mass (in kg) of the conductor and the number of electrons added to the conductor are respectively",
+  "options": {
+    "a": "2 × <math><msup><mn>10</mn><mn>-16</mn></msup></math>and 2 × <math><msup><mn>10</mn><mn>31</mn></msup></math>",
+    "b": "5 × <math><msup><mn>10</mn><mn>-31</mn></msup></math>and 5 × <math><msup><mn>10</mn><mn>19</mn></msup></math>",
+    "c": "3 × <math><msup><mn>10</mn><mn>-19 </mn></msup></math>and 9 × <math><msup><mn>10</mn><mn>16</mn></msup></math>",
+    "d": "2 × <math><msup><mn>10</mn><mn>-18</mn></msup></math> and 2 × <math><msup><mn>10</mn><mn>12</mn></msup></math>"
+  },
+  "key": "d",
+  "hint": "Here, q = -3 × <math><msup><mn>10</mn><mn>-7</mn></msup></math>C Number of electrons transferred to the conductor is  <math display=\"block\"> <mrow>n=<mfrac><mrow>q</mrow><mrow>e</mrow></mfrac>=<mfrac><mrow>-3&#x00D7;1<msup><mrow>0</mrow><mrow>-7</mrow></msup>C</mrow><mrow>-1.6&#x00D7;1<msup><mrow>0</mrow><mrow>-19</mrow></msup>C</mrow></mfrac><mo>&#x2248;</mo>2&#x00D7;1<msup><mrow>0</mrow><mrow>12</mrow></msup></mrow> </math> Mass of one electron, <math><msub><mi>m</mi><mn>e</mn></msub></math> = 9.1 × <math><msup><mn>10</mn><mn>-31</mn></msup></math> kg Increase mass of the conductor = <math><msub><mi>m</mi><mn>e</mn></msub></math>×n = 9.1 × <math><msup><mn>10</mn><mn>-31 </mn></msup></math>× 2 × <math><msup><mn>10</mn><mn>12</mn></msup></math> = 18.2 × <math><msup><mn>10</mn><mn>-19 </mn></msup></math>kg ≈ 2 × <math><msup><mn>10</mn><mn>-18</mn></msup></math>kg"
+}
