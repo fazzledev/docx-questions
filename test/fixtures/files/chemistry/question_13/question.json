@@ -8,5 +8,5 @@
     "d": "<math display=\"block\"> <mrow> <mfrac> <mrow> <msub> <mrow>n</mrow> <mrow>B</mrow> </msub> </mrow> <mrow><msub><mrow>n</mrow><mrow>A</mrow></msub>+<msub><mrow>n</mrow><mrow>B</mrow></msub></mrow> </mfrac> </mrow> </math>"
   },
   "key": "b",
-  "hint": "Mole fraction of ‘C’ = = <math display=\"block\"> <mrow> <mfrac> <mrow> <msub> <mrow>n</mrow> <mrow>C</mrow> </msub> </mrow> <mrow><msub><mrow>n</mrow><mrow>A</mrow></msub>+<msub><mrow>n</mrow><mrow>B</mrow></msub>+<msub><mrow>n</mrow><mrow>C</mrow></msub></mrow> </mfrac> </mrow> </math> 14. The molarity of the solution containing 7.1 g of N<math><msub><mi>a</mi><mn>2</mn></msub></math>S<math><msub><mi>O</mi><mn>4</mn></msub></math> in 100 ml of aqueous solution is a) 2 M b) 0.5 M c) 1 M d) 0.05 M Key: b"
+  "hint": "Mole fraction of ‘C’ = = <math display=\"block\"> <mrow> <mfrac> <mrow> <msub> <mrow>n</mrow> <mrow>C</mrow> </msub> </mrow> <mrow><msub><mrow>n</mrow><mrow>A</mrow></msub>+<msub><mrow>n</mrow><mrow>B</mrow></msub>+<msub><mrow>n</mrow><mrow>C</mrow></msub></mrow> </mfrac> </mrow> </math>"
 }

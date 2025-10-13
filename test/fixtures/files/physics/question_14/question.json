@@ -1,0 +1,12 @@
+{
+  "number": 14,
+  "text": "An electrically isolated hollow (initially uncharge",
+  "options": {
+    "d": "Equal in magnitude but opposite in direction to what it would be if the sphere wasn’t there",
+    "a": "Zero",
+    "b": "The same as if the sphere wasn’t there",
+    "c": "Twice what it would be if the sphere wasn’t there"
+  },
+  "key": "b",
+  "hint": "Let the charge on the ball at centre is q, then −q charge will be induced on the inner surface and +q on the outer surface. Field at any point outside the sphere due to inner charges q and −q will jointly be zero. <img src=\"image_9.png\"/> Outer charge q will produce the electric field at outside points as it would be produced by a charge at the centre. Hence, presence of sphere does not affect the electric field outside the sphere."
+}

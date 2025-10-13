@@ -1,0 +1,12 @@
+{
+  "number": 19,
+  "text": "The microsporangium of a young anther develops further and becomes:",
+  "options": {
+    "a": "a pollen sac containing pollen grains",
+    "b": "an ovule within the ovary",
+    "c": "a microsporophyll",
+    "d": "a megasporangium"
+  },
+  "key": "a",
+  "hint": "Each anther has four microsporangia which, on maturation, become pollen sacs containing pollen."
+}

@@ -1,0 +1,12 @@
+{
+  "number": 10,
+  "text": "An electroscope is given a positive charge, causing its foil leaves to separate.  When an object is brought near the top plate of the electroscope, the foils separate even further. We conclude <img src=\"image_7.png\"/>",
+  "options": {
+    "a": "That the object is positively charged",
+    "b": "that the object is electrically neutral",
+    "c": "That the object is negatively charged",
+    "d": "none of these"
+  },
+  "key": "a",
+  "hint": "The object should be positively charged. Being positively charged, it repels positive charge from top plate towards leaves causing to separate more."
+}

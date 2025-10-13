@@ -1,0 +1,12 @@
+{
+  "number": 14,
+  "text": "The molarity of the solution containing 7.1 g of N<math><msub><mi>a</mi><mn>2</mn></msub></math>S<math><msub><mi>O</mi><mn>4</mn></msub></math> in 100 ml of aqueous solution is",
+  "options": {
+    "a": "2 M",
+    "b": "0.5 M",
+    "c": "1 M",
+    "d": "0.05 M"
+  },
+  "key": "b",
+  "hint": "<math display=\"block\"> <mrow> <mi>M</mi> <mo>=</mo> <mfrac> <mrow> <mn>7</mn> <mo>.</mo> <mn>1</mn> </mrow> <mrow> <mn>1</mn> <mn>4</mn> <mn>2</mn> </mrow> </mfrac> <mo>&#x00D7;</mo> <mfrac> <mrow> <mn>1</mn> <mn>0</mn> <mn>0</mn> <mn>0</mn> </mrow> <mrow> <mn>1</mn> <mn>0</mn> <mn>0</mn> </mrow> </mfrac> <mo>=</mo> <mn>0</mn> <mo>.</mo> <mn>5</mn> <mi>M</mi> </mrow> </math>"
+}

@@ -1,0 +1,12 @@
+{
+  "number": 38,
+  "text": "Given below are two statements: One is labelled as Assertion and the other one is labelled as Reason.Assertion:undergoes <math><msub><mi>S</mi><mn>N</mn></msub></math>2 reaction faster than. Reason: Iodine is a better leaving group because of its large size.In the light of the above statements, choose the correct answer from the options given below.",
+  "options": {
+    "a": "Both assertion and reason are true and reason is the correct explanation of assertion.",
+    "b": "Both assertion and reason are true but reason is not the correct explanation of assertion.",
+    "c": "Assertion is true but reason is false.",
+    "d": "Assertion is false but reason is true."
+  },
+  "key": "a",
+  "hint": "Rate ofundergoes <math><msub><mi>S</mi><mn>N</mn></msub></math>2 reaction  faster than Because iodine is a good leaving group due to large size of iodine. Which stabilizes theI- ion.  ASSERTION AND REASON"
+}

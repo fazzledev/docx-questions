@@ -1,0 +1,12 @@
+{
+  "number": 24,
+  "text": "Consider a neutral conducting sphere. A positive point charge is placed outside the sphere.  The net charge on the sphere is then",
+  "options": {
+    "a": "Negative and distributed uniformly over the surface of the sphere",
+    "b": "Negative and appears only at the point on the sphere closest to the point charge",
+    "c": "Negative and distributed non-uniformly over the entire surface of the sphere",
+    "d": "Zero"
+  },
+  "key": "d",
+  "hint": "d"
+}

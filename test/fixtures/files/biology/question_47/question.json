@@ -1,0 +1,12 @@
+{
+  "number": 47,
+  "text": "Which of the following is the correct characteristic of a typical microsporangium?",
+  "options": {
+    "a": "It is composed of a single layer of cells.",
+    "b": "It contains pollen grains before dehiscence.",
+    "c": "It is found inside the ovary of a flower.",
+    "d": "It produces female gametes."
+  },
+  "key": "b",
+  "hint": "The microsporangium produces pollen grains, which are released after dehiscence."
+}

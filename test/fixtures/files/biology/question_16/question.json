@@ -1,0 +1,12 @@
+{
+  "number": 16,
+  "text": "Shedding of pollen grains at 3-celled stage and 2-celled stages occur in _____ and _____% of angiosperms respectively.",
+  "options": {
+    "a": "50 and 50",
+    "b": "40 and 60",
+    "c": "60 and 40",
+    "d": "70 and 30"
+  },
+  "key": "b",
+  "hint": "In over 60% angiosperms pollen shed at two-celled stage; in the rest (~40%) at three-celled stage."
+}

@@ -1,0 +1,12 @@
+{
+  "number": 59,
+  "text": "The process of pollen grain development involves the formation of:",
+  "options": {
+    "a": "A single-celled male gametophyte.",
+    "b": "A multi-celled male gametophyte.",
+    "c": "A multi-celled female gametophyte.",
+    "d": "A single-celled female gametophyte."
+  },
+  "key": "b",
+  "hint": "Pollen grain development involves the formation of a multi-celled male gametophyte, which includes two cells: the generative cell and the tube cell."
+}

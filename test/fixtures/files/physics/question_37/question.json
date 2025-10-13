@@ -1,0 +1,12 @@
+{
+  "number": 37,
+  "text": "If 109 electrons move out of a body to another body every second, then the time required to get a total charge of 1 C on the other body is (in years)",
+  "options": {
+    "a": "250",
+    "b": "100",
+    "c": "198",
+    "d": "150"
+  },
+  "key": "c",
+  "hint": "The charge given out in one second  = 1.6 × <math><msup><mn>10</mn><mn>-19 </mn></msup></math>C × <math><msup><mn>10</mn><mn>9</mn></msup></math> = 1.6 × <math><msup><mn>10</mn><mn>-10</mn></msup></math>C Time required to accumulate a charge of 1C <math display=\"block\"> <mrow>=<mfrac><mrow><mn>1</mn></mrow><mrow><mn>1</mn><mo>.</mo><mn>6</mn><mo>&#x00D7;</mo><mn>1</mn><msup><mrow><mn>0</mn></mrow><mrow><mo>&#x2212;</mo><mn>1</mn><mn>0</mn></mrow></msup></mrow></mfrac><mo>=</mo><mn>6</mn><mo>.</mo><mn>2</mn><mn>5</mn><mo>&#x00D7;</mo><mn>1</mn><msup><mrow><mn>0</mn></mrow><mrow><mn>9</mn></mrow></msup><mi>s</mi></mrow> </math> = 198 years"
+}

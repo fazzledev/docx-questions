@@ -1,0 +1,12 @@
+{
+  "number": 39,
+  "text": "Assertion: Molarity of a solution in liquid state changes with temperature.  Reason: The volume of a solution changes with change in temperature.",
+  "options": {
+    "a": "Assertion is correct, reason is correct; reason is a correct explanation for assertion.",
+    "b": "Assertion is correct, reason is correct; reason is not a correct explanation for assertion",
+    "c": "Assertion is correct, reason is incorrect",
+    "d": "Assertion is incorrect, reason is correct."
+  },
+  "key": "a",
+  "hint": "Conceptual"
+}

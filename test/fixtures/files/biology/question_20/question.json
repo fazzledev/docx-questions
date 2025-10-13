@@ -1,0 +1,12 @@
+{
+  "number": 20,
+  "text": "Choose the correct statement from the following:",
+  "options": {
+    "a": "A stamen consists of two parts: the anther and the filament.",
+    "b": "Stamen is not an essential part of a flower.",
+    "c": "The filament carries the pollen grains.",
+    "d": "The stamen is part of the accessory floral whorls."
+  },
+  "key": "a",
+  "hint": "A stamen is composed of an anther and a filament, which are essential parts of the male reproductive organ."
+}

@@ -1,0 +1,12 @@
+{
+  "number": 43,
+  "text": "Which of the following statements is correct about microsporangium?",
+  "options": {
+    "a": "Microsporangium produces megaspores.",
+    "b": "Microsporangium is a site for pollen grain development.",
+    "c": "Microsporangium is located in the pistil.",
+    "d": "Microsporangium is only found in female reproductive organs."
+  },
+  "key": "b",
+  "hint": "Microsporangium is the structure in which pollen grains develop in the anther."
+}

@@ -1,0 +1,12 @@
+{
+  "number": 58,
+  "text": "A coin is made up of aluminium and weighs 0.75 g.  It has a square shape and its diagonal measures 17 mm. It is electrically neutral and contains equal amounts of positive and negative charges. The magnitude of these charges is (Atomic mass of Al = 26.98 g)",
+  "options": {
+    "a": "3.47 × <math><msup><mn>10</mn><mn>4</mn></msup></math> C",
+    "b": "3.47 × <math><msup><mn>10</mn><mn>2</mn></msup></math>C",
+    "c": "1.67 × <math><msup><mn>10</mn><mn>20</mn></msup></math>C",
+    "d": "1.67 × <math><msup><mn>10</mn><mn>22</mn></msup></math>C"
+  },
+  "key": "a",
+  "hint": "Mass of the coin = 0.75g, Atomic mass of aluminium = 26.98 g Number of Al atoms in the coin, <math display=\"block\"> <mrow> <mi>N</mi> <mo>=</mo> <mfrac> <mrow> <mn>6</mn> <mo>.</mo> <mn>0</mn> <mn>2</mn> <mo>&#x00D7;</mo> <mn>1</mn> <msup> <mrow> <mn>0</mn> </mrow> <mrow> <mn>2</mn> <mn>3</mn> </mrow> </msup> </mrow> <mrow> <mn>2</mn> <mn>6</mn> <mo>.</mo> <mn>9</mn> <mn>8</mn> </mrow> </mfrac> <mo>&#x00D7;</mo> <mn>0</mn> <mo>.</mo> <mn>7</mn> <mn>5</mn> <mo>=</mo> <mn>1</mn> <mo>.</mo> <mn>6</mn> <mn>7</mn> <mo>&#x00D7;</mo> <mn>1</mn> <msup> <mrow> <mn>0</mn> </mrow> <mrow> <mn>2</mn> <mn>2</mn> </mrow> </msup> </mrow> </math> As atomic number (Z) of Al is 13, each atom of Al contain 13 protons and 13 electrons. Magnitude of positive and negative charges in one paisa coin  = NZe = 1.67 × <math><msup><mn>10</mn><mn>22</mn></msup></math>× 13 × 1.6 × <math><msup><mn>10</mn><mn>-19</mn></msup></math> C = 3.47 × <math><msup><mn>10</mn><mn>4</mn></msup></math>C"
+}

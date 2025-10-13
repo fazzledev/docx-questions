@@ -1,0 +1,12 @@
+{
+  "number": 28,
+  "text": "Molarity and molarity of an aqueous solution of a liquid (Mol. Wt = 50)are 9 and 10 respectively. What is the density of the solution?",
+  "options": {
+    "a": "1 g/cc",
+    "b": "0.95g/cc",
+    "c": "1.05 g/cc",
+    "d": "1.35 g/cc"
+  },
+  "key": "d",
+  "hint": "<math display=\"block\"> <mtable columnalign=\"left\"> <mtr> <mtd> <mrow>m=<mfrac><mrow>1000M</mrow><mrow>1000d-M&#x00D7;<msub><mrow>M</mrow><mrow>solute</mrow></msub></mrow></mfrac></mrow> </mtd> </mtr> <mtr> <mtd> <mrow>10=<mfrac><mrow>1000&#x00D7;9</mrow><mrow>1000&#x00D7;d-9&#x00D7;50</mrow></mfrac></mrow> </mtd> </mtr> <mtr> <mtd> <mrow>d=1.35g/cc</mrow> </mtd> </mtr> </mtable> </math> LEVEL - 3"
+}

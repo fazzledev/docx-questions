@@ -1,0 +1,12 @@
+{
+  "number": 31,
+  "text": "Identify the innermost layer of the microsporangium wall:",
+  "options": {
+    "a": "Tapetum",
+    "b": "Epidermis",
+    "c": "Endothecium",
+    "d": "Middle layersAns: aHint/Explanation:Wall layers from outside in: epidermis → endothecium → middle layers → tapetum (innermost, nutritive)."
+  },
+  "key": null,
+  "hint": null
+}

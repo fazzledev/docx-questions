@@ -1,0 +1,12 @@
+{
+  "number": 64,
+  "text": "Assertion (A): Petal is a non – essential part of flower.       Reason (R): Petal is not directly involved in sexual reproduction.",
+  "options": {
+    "a": "Both (A) & (R) are true, (R) is correct explanation of the assertion.",
+    "b": "Both (A) & (R) are true, but (R) is not correct explanation of the assertion",
+    "c": "Assertion is true (R) is false",
+    "d": "Assertion and Reason both are false"
+  },
+  "key": "a",
+  "hint": "Essential (reproductive) whorls: androecium & gynoecium. Non-essential: calyx & corolla (petals); petals aid attraction, not gamete formation. MATCH TYPE"
+}

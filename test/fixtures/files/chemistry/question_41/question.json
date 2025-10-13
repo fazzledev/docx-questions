@@ -1,0 +1,12 @@
+{
+  "number": 41,
+  "text": "Molarity and molality of a solution of NaOH is calculated. If now temperature of the solution is increased then which of the following statement(s) is/are correct?  (i) Molarity of solution decreases  (ii) Molality of the solution increases",
+  "options": {
+    "a": "Both statements are correct",
+    "b": "Statement (i) is correct only",
+    "c": "Statement (ii) is correct only",
+    "d": "Both statements are incorrect."
+  },
+  "key": "b",
+  "hint": "Molarity include volume thus with increase intemperature increases’ volume increases, hence molarity decreases while in case of molality mass of solvent is taken, which is not effected by temperature."
+}

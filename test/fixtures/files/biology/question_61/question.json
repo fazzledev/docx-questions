@@ -1,0 +1,12 @@
+{
+  "number": 61,
+  "text": "The layer that surrounds the pollen grain and protects it is known as:",
+  "options": {
+    "a": "Intine",
+    "b": "Exine",
+    "c": "Endothecium",
+    "d": "Sporopollenin"
+  },
+  "key": "b",
+  "hint": "The exine is the outermost layer of the pollen grain and protects it from environmental stress."
+}

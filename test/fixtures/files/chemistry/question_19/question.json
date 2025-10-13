@@ -1,0 +1,12 @@
+{
+  "number": 19,
+  "text": "Molarity and molality of a solution of caustic soda are respectively 11.12 M and 94.12. The density of the solution is",
+  "options": {
+    "a": "0.556 g mL-1",
+    "b": "5.56 g mL-1",
+    "c": "55.6 g mL-1",
+    "d": "None of these"
+  },
+  "key": "a",
+  "hint": "<math display=\"block\"> <mtable columnalign=\"left\"> <mtr> <mtd> <mrow>d=M<mrow><mo>(</mo><mrow><mfrac><mrow>1</mrow><mrow>m</mrow></mfrac>+<mfrac><mrow>molar&#x00A0;mass&#x00A0;of&#x00A0;solute</mrow><mrow>1000</mrow></mfrac></mrow><mo>)</mo></mrow></mrow> </mtd> </mtr> <mtr> <mtd> <mrow> <mi>d</mi> <mo>=</mo> <mn>1</mn> <mn>1</mn> <mo>.</mo> <mn>1</mn> <mn>2</mn> <mrow> <mo>(</mo> <mrow> <mfrac> <mrow> <mn>1</mn> </mrow> <mrow> <mn>9</mn> <mn>4</mn> <mo>.</mo> <mn>1</mn> <mn>2</mn> </mrow> </mfrac> <mo>+</mo> <mfrac> <mrow> <mn>4</mn> <mn>0</mn> </mrow> <mrow> <mn>1</mn> <mn>0</mn> <mn>0</mn> <mn>0</mn> </mrow> </mfrac> </mrow> <mo>)</mo> </mrow> </mrow> </mtd> </mtr> <mtr> <mtd> <mrow><mo>=</mo><mn>0</mn><mo>.</mo><mn>5</mn><mn>5</mn><mn>6</mn>g&#x00A0;m<msup><mrow>L</mrow><mrow><mo>&#x2212;</mo><mn>1</mn></mrow></msup></mrow> </mtd> </mtr> </mtable> </math>"
+}

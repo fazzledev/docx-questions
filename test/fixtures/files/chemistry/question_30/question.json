@@ -1,0 +1,12 @@
+{
+  "number": 30,
+  "text": "Calculate the molality and mole fraction of the solute in aqueous solution containing 3.0 g of urea per 250 gm of water (Mol.wt.urea = 60).",
+  "options": {
+    "a": "0.2 m, 0.00357",
+    "b": "0.4 m, 0.00357",
+    "c": "0.5 m, 0.00357",
+    "d": "0.7 m, 0.00357"
+  },
+  "key": "a",
+  "hint": "Wt. of solute (urea) dissolved = 3.0 g Wt. of the solvent (water) = 250 g Mol. Wt. of the solute = 60 3.0 gm of the solute =  <math display=\"block\"> <mrow><mfrac><mrow><mn>3</mn><mo>.</mo><mn>0</mn></mrow><mrow><mn>6</mn><mn>0</mn></mrow></mfrac>moles</mrow> </math> = 0.05 moles Thus 250 g of the solvent contain = 0.05 moles of solute  [F05C]1000 g of the solvent contain  <math display=\"block\"> <mrow><mo>=</mo><mfrac><mrow><mn>0</mn><mo>.</mo><mn>0</mn><mn>5</mn><mo>&#x00D7;</mo><mn>1</mn><mn>0</mn><mn>0</mn><mn>0</mn></mrow><mrow><mn>2</mn><mn>5</mn><mn>0</mn></mrow></mfrac><mo>=</mo><mn>0</mn><mo>.</mo><mn>2</mn>moles</mrow> </math> Hence molality of the solution = 0.2 m In short,  Molality = No. of moles of solute/100g of solvent  Molality  <math display=\"block\"> <mrow><mo>=</mo><mfrac><mrow><mn>3</mn><mo>/</mo><mn>6</mn><mn>0</mn></mrow><mrow><mn>2</mn><mn>5</mn><mn>0</mn></mrow></mfrac><mo>&#x00D7;</mo><mn>1</mn><mn>0</mn><mn>0</mn><mn>0</mn><mo>=</mo><mn>0</mn><mo>.</mo><mn>2</mn>m</mrow> </math> Calculation of mole fraction 3.0 g of solute = 3/60 moles = 0.05 mole 250 g of water = = 13.94 moles  <math display=\"block\"> <mrow><mfrac><mrow><mn>2</mn><mn>5</mn><mn>0</mn></mrow><mrow><mn>1</mn><mn>8</mn></mrow></mfrac>&#x00A0;moles</mrow> </math> [F05C] Mole fraction of the solute =  <math display=\"block\"> <mrow><mfrac><mrow><mn>0</mn><mo>.</mo><mn>0</mn><mn>5</mn></mrow><mrow><mn>0</mn><mo>.</mo><mn>0</mn><mn>5</mn><mo>+</mo><mn>1</mn><mn>3</mn><mo>.</mo><mn>9</mn><mn>4</mn></mrow></mfrac>=<mfrac><mrow><mn>0</mn><mo>.</mo><mn>0</mn><mn>5</mn></mrow><mrow><mn>1</mn><mn>3</mn><mo>.</mo><mn>9</mn><mn>9</mn></mrow></mfrac>=0.00357&#x00A0;</mrow> </math>"
+}

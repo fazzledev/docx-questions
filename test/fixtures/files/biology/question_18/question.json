@@ -1,0 +1,12 @@
+{
+  "number": 18,
+  "text": "Pollen products are available in the form of  A) Syrups B) Creams C) Tablets D) Energy shakes",
+  "options": {
+    "a": "A and C",
+    "b": "B and D",
+    "c": "A and D",
+    "d": "All of these"
+  },
+  "key": "a",
+  "hint": "In western countries, a large number of pollen products in the form of tablets and syrups are available in the market."
+}

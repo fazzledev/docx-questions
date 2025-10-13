@@ -1,0 +1,12 @@
+{
+  "number": 54,
+  "text": "The hard outer layer of pollen grain, called exine, is made up of _____.",
+  "options": {
+    "a": "cutin",
+    "b": "lignin",
+    "c": "sporopollenin",
+    "d": "suberin"
+  },
+  "key": "c",
+  "hint": "Exine is rich in sporopollenin, one of the most resistant biological materials."
+}

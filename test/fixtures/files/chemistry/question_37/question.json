@@ -1,0 +1,12 @@
+{
+  "number": 37,
+  "text": "Sea water, which can be considered as a 6 molar (6M) solution of NaCl, has a density of 2 g mL-1. The concentration of dissolved oxygen (<math><msub><mi>O</mi><mn>2</mn></msub></math>) in sea water is 5.8 ppm. Then the concentration of dissolved oxygen (<math><msub><mi>O</mi><mn>2</mn></msub></math>) in sea water, is x×<math><msup><mn>10</mn><mn>-4</mn></msup></math> m. x = ____________.(Nearest integer) Given: Molar mass of NaCl is 58.5 g mol-1Molar mass of <math><msub><mi>O</mi><mn>2</mn></msub></math> is 32 g mol-1",
+  "options": {
+    "a": "1",
+    "b": "2",
+    "c": "3",
+    "d": "4"
+  },
+  "key": "b",
+  "hint": "Sea water is 6 Molar in NaCl, So 1000 ml of sea water contains 6 mol of NaCl. Mass of solution = Volume × density = 1000 × 2 Mass of solution = 2000 g Ppm =  <math display=\"block\"> <mrow> <mfrac> <mrow>mass&#x00A0;of&#x00A0;<msub><mrow>O</mrow><mrow>2</mrow></msub></mrow> <mrow>2000</mrow> </mfrac> <mo>&#x00D7;</mo> <mn>1</mn> <msup> <mrow> <mn>0</mn> </mrow> <mrow> <mn>6</mn> </mrow> </msup> </mrow> </math> Mass of <math><msub><mi>O</mi><mn>2</mn></msub></math> = 5.8 × 2 × <math><msup><mn>10</mn><mn>-3</mn></msup></math> = 1.16 × <math><msup><mn>10</mn><mn>-2</mn></msup></math> g Molality for <math><msub><mi>O</mi><mn>2</mn></msub></math>,  <math display=\"block\"> <mtable columnalign=\"left\"> <mtr> <mtd> <mrow> <mo>=</mo> <mfrac> <mrow> <mn>1</mn> <mo>.</mo> <mn>1</mn> <mn>6</mn> <mo>&#x00D7;</mo> <mn>1</mn> <msup> <mrow> <mn>0</mn> </mrow> <mrow> <mo>&#x2212;</mo> <mn>2</mn> </mrow> </msup> <mo>/</mo> <mn>3</mn> <mn>2</mn> </mrow> <mrow> <mrow> <mo>(</mo> <mrow> <mn>2</mn> <mn>0</mn> <mn>0</mn> <mn>0</mn> <mo>&#x2212;</mo> <mn>6</mn> <mo>&#x00D7;</mo> <mn>5</mn> <mn>8</mn> <mo>.</mo> <mn>5</mn> </mrow> <mo>)</mo> </mrow> </mrow> </mfrac> <mo>&#x00D7;</mo> <mn>1</mn> <mn>0</mn> <mn>0</mn> <mn>0</mn> </mrow> </mtd> </mtr> <mtr> <mtd> <mrow> <mo>=</mo> <mfrac> <mrow> <mn>1</mn> <mo>.</mo> <mn>1</mn> <mn>6</mn> <mo>&#x00D7;</mo> <mn>1</mn> <mn>0</mn> </mrow> <mrow> <mn>3</mn> <mn>2</mn> <mo>&#x00D7;</mo> <mn>1</mn> <mn>6</mn> <mn>4</mn> <mn>9</mn> </mrow> </mfrac> </mrow> </mtd> </mtr> <mtr> <mtd> <mrow> <mo>=</mo> <mn>0</mn> <mo>.</mo> <mn>0</mn> <mn>0</mn> <mn>0</mn> <mn>2</mn> <mn>1</mn> <mn>9</mn> </mrow> </mtd> </mtr> <mtr> <mtd> <mrow> <mo>=</mo> <mn>2</mn> <mo>.</mo> <mn>1</mn> <mn>9</mn> <mo>&#x00D7;</mo> <mn>1</mn> <msup> <mrow> <mn>0</mn> </mrow> <mrow> <mo>&#x2212;</mo> <mn>4</mn> </mrow> </msup> </mrow> </mtd> </mtr> </mtable> </math> Correct answer = 2"
+}

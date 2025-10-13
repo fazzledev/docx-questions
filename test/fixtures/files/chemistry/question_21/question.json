@@ -1,0 +1,12 @@
+{
+  "number": 21,
+  "text": "The molality of a urea solution in which 0.0100 g of urea [(N<math><msub><mi>H</mi><mn>2</mn></msub></math>)2CO] is added to 0.3000 dm3 of water at STP is",
+  "options": {
+    "a": "0.555 m",
+    "b": "5.55 × <math><msup><mn>10</mn><mn>−</mn></msup></math>4 m",
+    "c": "3.33 m",
+    "d": "3.33 × <math><msup><mn>10</mn><mn>−</mn></msup></math>2 m"
+  },
+  "key": "b",
+  "hint": "<math display=\"block\"> <mrow>Molality=<mfrac><mrow>Mass&#x00A0;of&#x00A0;methyl&#x00A0;alcohol</mrow><mrow>mass&#x00A0;of&#x00A0;solution</mrow></mfrac><mn>1</mn><mn>0</mn><mn>0</mn></mrow> </math> <math display=\"block\"> <mrow>Moles&#x00A0;of&#x00A0;urea&#x00A0;=<mfrac><mrow>0.010</mrow><mrow>60</mrow></mfrac>mol</mrow> </math> Water at STP (d = 1 g/cm3 = 1 kg/dm3) = 0.3 dm3= 0.3 kg <math display=\"block\"> <mrow>Molality&#x00A0;=<mfrac><mrow>0.010</mrow><mrow>60<mo>&#x00D7;</mo>0.3</mrow></mfrac><mo>=</mo><mn>5</mn><mo>.</mo><mn>5</mn><mn>5</mn><mo>&#x00D7;</mo><mn>1</mn><msup><mrow><mn>0</mn></mrow><mrow><mo>&#x2212;</mo><mn>4</mn></mrow></msup>m</mrow> </math>"
+}

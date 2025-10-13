@@ -2,10 +2,10 @@
   "number": 30,
   "text": "Typical pollen grains are generally spherical and measure about:",
   "options": {
-    "a": "Microsporogenesis",
-    "b": "Microgametogenesis",
-    "c": "Megasporogenesis",
-    "d": "SyngamyAns: aHint/Explanation:microsporogenesisis the microspore formation from PMC throughmeiosis."
+    "a": "25–50 μm in diameter",
+    "b": "2–5 μm in diameter",
+    "c": "0.25–0.5 mm in diameter",
+    "d": "100–250 μm in diameterAns: aHint/Explanation:25–50 μmis the usual diameter range."
   },
   "key": null,
   "hint": null

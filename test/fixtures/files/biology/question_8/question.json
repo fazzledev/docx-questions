@@ -1,0 +1,12 @@
+{
+  "number": 8,
+  "text": "Stamen is equivalent to",
+  "options": {
+    "a": "and (",
+    "b": "",
+    "c": "Microsporophyll",
+    "d": "Both ("
+  },
+  "key": "c",
+  "hint": "Stamens bear microsporangia and produce microspores (pollen)."
+}

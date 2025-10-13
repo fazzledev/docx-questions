@@ -1,0 +1,12 @@
+{
+  "number": 24,
+  "text": "What is the function of the filament in a stamen?",
+  "options": {
+    "a": "It holds the pollen grains.",
+    "b": "It supports the anther.",
+    "c": "It produces pollen.",
+    "d": "It protects the ovary."
+  },
+  "key": "b",
+  "hint": "The filament is the stalk that supports the anther, where pollen grains are produced)"
+}

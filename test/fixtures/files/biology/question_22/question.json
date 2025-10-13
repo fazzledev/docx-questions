@@ -1,0 +1,12 @@
+{
+  "number": 22,
+  "text": "Identify the correct statement:",
+  "options": {
+    "a": "",
+    "b": "Pollen grains are found in the ovary.",
+    "c": "Ovary contains microsporangi",
+    "d": "Pollen grains are produced in the ovules."
+  },
+  "key": "a",
+  "hint": "Pollen grains are male gametophytes, and they are produced in the anther's microsporangium."
+}

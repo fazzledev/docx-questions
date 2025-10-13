@@ -1,0 +1,11 @@
+{
+  "number": 16,
+  "text": "Two isolated object A and B are charged either by friction, conduction or induction.  Initially, object A is charged and B is uncharged. If <math><msub><mi>q</mi><mn>A</mn></msub></math> and <math><msub><mi>q</mi><mn>B</mn></msub></math> are the magnitude of final charge on A and B, respectively, then match column I and column II and select the correct option from the codes given below.  A) (",
+  "options": {
+    "a": "-(r), (",
+    "b": "-(q), (",
+    "c": "-(p)"
+  },
+  "key": "b",
+  "hint": "(i) When two objects are charged by rubbing them against each they acquire equal and opposite charge. |<math><msub><mi>q</mi><mn>A</mn></msub></math>| = |<math><msub><mi>q</mi><mn>B</mn></msub></math>| or<math><msub><mi>q</mi><mn>A</mn></msub></math> = <math><msub><mi>q</mi><mn>B</mn></msub></math>, hence (q). (ii) If two objects say two identical conducting spheres are take and let <math><msup><mn>1</mn><mn>st</mn></msup></math> having charge (q = <math><msub><mi>q</mi><mn>A</mn></msub></math>) is touched with <math><msup><mn>2</mn><mn>nd</mn></msup></math> (Initially uncharged), then hence (p). <math display=\"block\"> <mrow><msub><mrow>q</mrow><mrow>B</mrow></msub>=<mfrac><mrow><msub><mrow>q</mrow><mrow>A</mrow></msub></mrow><mrow>2</mrow></mfrac>,</mrow> </math> (iii) When two objects are charged by induction, then magnitude of induced charge may be equal if objects are conducting.  If one object is conducting say A and other is non-conducting say B, then induced charge on B may be less than charge on A, hence (r)."
+}

@@ -1,0 +1,12 @@
+{
+  "number": 56,
+  "text": "Pollen grains can be stored in liquid nitrogen at −196 °C)",
+  "options": {
+    "a": "True",
+    "b": "False",
+    "c": "True only for monocots",
+    "d": "True only for a few hours"
+  },
+  "key": "A",
+  "hint": "Cryopreservation of pollen at −196 °C (LN₂) maintains viability for long-term storage."
+}

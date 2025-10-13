@@ -1,0 +1,12 @@
+{
+  "number": 38,
+  "text": "There are two parts of a typical _____; the long and slender stalk is called _____ and the terminal generally bilobed structure is called _____.",
+  "options": {
+    "a": "stamen; filament; anther",
+    "b": "carpel; style; stigma",
+    "c": "stamen; anther; filament",
+    "d": "carpel; filament; anther"
+  },
+  "key": "a",
+  "hint": "A stamen has a filament (stalk) and a terminal anther (usually bilobed)."
+}

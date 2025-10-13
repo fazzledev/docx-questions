@@ -1,0 +1,12 @@
+{
+  "number": 23,
+  "text": "Choose the correct description of a stamen:",
+  "options": {
+    "a": "It is a modified leaf.",
+    "b": "It is composed of an anther and a pistil.",
+    "c": "It is a reproductive organ that produces pollen grains.",
+    "d": "It contains both male and female gametes."
+  },
+  "key": "c",
+  "hint": "The stamen is the male reproductive organ of a flower that produces pollen grains."
+}

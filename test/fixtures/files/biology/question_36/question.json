@@ -1,0 +1,12 @@
+{
+  "number": 36,
+  "text": "Find the incorrect pair",
+  "options": {
+    "a": "Exine — sporopollenin-rich, highly resistant",
+    "b": "Intine — made of cellulose & pectin",
+    "c": "Germ pore — region of sporopollenin thickening",
+    "d": "Tapetum — nourishes developing pollen grainsAns: cHint/Explanation:A germ pore is where sporopollenin is absent (an aperture), not a thickening."
+  },
+  "key": null,
+  "hint": null
+}

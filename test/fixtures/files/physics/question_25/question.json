@@ -1,0 +1,12 @@
+{
+  "number": 25,
+  "text": "When a body is earth connected, electrons from the earth flow into the body. This means the body is",
+  "options": {
+    "a": "Unchanged",
+    "b": "Charged positively",
+    "c": "Charged negatively",
+    "d": "an insulator"
+  },
+  "key": "b",
+  "hint": "When a positively charged body connected to earth, electrons flows from earth to body and body becomes neutral. <img src=\"image_11.jpeg\"/>"
+}

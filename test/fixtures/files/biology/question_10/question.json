@@ -1,0 +1,12 @@
+{
+  "number": 10,
+  "text": "The diameter of pollen grain is about",
+  "options": {
+    "a": "25 – 50 micrometers",
+    "b": "20 – 25 micrometers",
+    "c": "50 – 80 micrometers",
+    "d": "15 – 25 micrometers"
+  },
+  "key": "a",
+  "hint": "Pollen grains are generally 25–50 μm in diameter."
+}

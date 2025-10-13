@@ -1,0 +1,12 @@
+{
+  "number": 12,
+  "text": "If there are two metallic spheres of same radii but one is solid and the other is hollow, then",
+  "options": {
+    "a": "Solid sphere can be given more charge",
+    "b": "Hollow sphere can be given more charge",
+    "c": "They can be charged equally (maximum)",
+    "d": "None of the above"
+  },
+  "key": "c",
+  "hint": "In case of metallic sphere either solid or hollow, the charge will reside on the surface of the sphere. Since both spheres have same surface area, so they can hold equal maximum charge."
+}

@@ -1,0 +1,12 @@
+{
+  "number": 21,
+  "text": "Assertion: The tyres of aircrafts are slightly conducting. Reason: If a conductor is connected to ground, the extra charge induced on conductor will flow to ground.",
+  "options": {
+    "a": "Both (A) and (R) are correct and (R) is not the correct explanation of (A)",
+    "b": "(A) is correct but (R) is not correct",
+    "c": "(A) is not correct but (R) is correct",
+    "d": "Both (A) and (R) are correct and (R) is the correct explanation of (A)"
+  },
+  "key": "d",
+  "hint": "During take-off and landing, the friction between tyres and the run way may cause electrification of tyres. Due to conducting nature of tyre, the charge so collected is conducted to a ground and electrical sparking is avoided."
+}

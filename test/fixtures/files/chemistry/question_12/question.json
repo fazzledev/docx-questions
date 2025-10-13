@@ -1,0 +1,12 @@
+{
+  "number": 12,
+  "text": "Regarding molality, which of the following statements are correctA) Units of molarity gm-moles kg-1 B) Molarity of dibasic acid is half of its normality C)  <math display=\"block\"> <mrow> <mfrac> <mrow>Normality&#x00D7;GEW</mrow> <mrow>GMW</mrow> </mfrac> </mrow> </math> D) Molarity always equals to its molality",
+  "options": {
+    "a": "A, B",
+    "b": "D, B",
+    "c": "B, C",
+    "d": "A, C"
+  },
+  "key": "c",
+  "hint": "In case of molarity (a) units: g moles lit−1(b) For Dibasic acid, or N = M ×2(c) N = M × n-factor  <math display=\"block\"> <mrow> <mi>M</mi> <mo>=</mo> <mfrac> <mrow> <mn>1</mn> </mrow> <mrow> <mn>2</mn> </mrow> </mfrac> <mo>&#x00D7;</mo> <mi>N</mi> </mrow> </math> <math display=\"block\"> <mrow> <mi>M</mi> <mo>=</mo> <mfrac> <mrow> <mi>N</mi> <mo>&#x00D7;</mo> <mi>G</mi> <mi>E</mi> <mi>w</mi> </mrow> <mrow> <mi>G</mi> <mi>n</mi> <mi>w</mi> </mrow> </mfrac> </mrow> </math> (d) Molarity always is not equal to molality"
+}

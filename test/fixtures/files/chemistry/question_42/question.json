@@ -1,0 +1,12 @@
+{
+  "number": 42,
+  "text": "Study the given statements and choose the correct option.  (i) 3.62 mass percentage of sodium hypochlorite in water is used as commercial bleaching solution.  (ii) 35% volume percentage of ethylene glycol is used as an antifreeze (as coolent in car engines).  (iii) Concentration of dissolved oxygen in a litre of sea water is 5.8 ppm.",
+  "options": {
+    "a": "Statements (i) and (ii) are correct",
+    "b": "Statements (i) and (iii) are correct",
+    "c": "Statements (ii) and (iii) are correct",
+    "d": "Statements (i),(ii) and (iii) are correct"
+  },
+  "key": "d",
+  "hint": "Conceptual"
+}

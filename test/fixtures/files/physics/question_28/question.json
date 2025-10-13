@@ -1,0 +1,12 @@
+{
+  "number": 28,
+  "text": "There are two types of electric charges-positive charges and negative charges.  The property which differentiates the two types of charges is",
+  "options": {
+    "a": "Field of charge",
+    "b": "amount of charge",
+    "c": "Strength of charge",
+    "d": "Polarity of charge"
+  },
+  "key": "d",
+  "hint": "The property which differentiates the two types of charges is called the polarity of charge."
+}

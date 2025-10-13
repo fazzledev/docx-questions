@@ -1,0 +1,12 @@
+{
+  "number": 56,
+  "text": "Estimate the total negative charge in 1g of water. Given that Avogadro number = 6.02 × <math><msup><mn>10</mn><mn>23</mn></msup></math> and molecular weight of water = 18.",
+  "options": {
+    "a": "6.25 × <math><msup><mn>10</mn><mn>4</mn></msup></math>C",
+    "b": "5.35 × <math><msup><mn>10</mn><mn>4</mn></msup></math>C",
+    "c": "1.76 × <math><msup><mn>10</mn><mn>4</mn></msup></math>C",
+    "d": "1.25 × <math><msup><mn>10</mn><mn>4</mn></msup></math>C"
+  },
+  "key": "b",
+  "hint": "One molecule of water (<math><msub><mi>H</mi><mn>2</mn></msub></math>O) contains 2 + 8 i.e., 10 electrons, Number of molecules in 1 g of water, <math display=\"block\"> <mrow>n=<mfrac><mrow>Avogadro<mtext>&#x2009;</mtext>number</mrow><mrow>atomic<mtext>&#x2009;</mtext>weight</mrow></mfrac>=<mfrac><mrow>6.02&#x00D7;1<msup><mrow>0</mrow><mrow>23</mrow></msup></mrow><mrow>18</mrow></mfrac>=3.344&#x00D7;1<msup><mrow>0</mrow><mrow>22</mrow></msup></mrow> </math> Therefore, number of electrons in 1g of water, n`= n × 10 = 3.344 × <math><msup><mn>10</mn><mn>22</mn></msup></math>× 10 = 3.334 × <math><msup><mn>10</mn><mn>23</mn></msup></math> The negative charge possessed by 1 g of water, q = n` e = 3.344 × <math><msup><mn>10</mn><mn>23</mn></msup></math>× 1.6 × <math><msup><mn>10</mn><mn>-19</mn></msup></math> = 5.35 × <math><msup><mn>10</mn><mn>4</mn></msup></math>C"
+}

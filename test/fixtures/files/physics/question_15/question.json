@@ -1,0 +1,12 @@
+{
+  "number": 15,
+  "text": "A thin metallic spherical shell contains a charge Q on it.  A point charge q is placed at the centre of the shell and another charge <math><msub><mi>q</mi><mn>1 </mn></msub></math>is placed outside it as shown in figure.  All the three charges are positive. <img src=\"image_10.png\"/> The force on the charge at the centre is",
+  "options": {
+    "a": "to wards left",
+    "b": "towards right",
+    "c": "Upward",
+    "d": "zero"
+  },
+  "key": "d",
+  "hint": "Note that there is no field inside the metallic shell and hence no force is experienced by the charge at the centre."
+}

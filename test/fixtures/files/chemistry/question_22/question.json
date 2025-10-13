@@ -1,0 +1,12 @@
+{
+  "number": 22,
+  "text": "The density of ‘x’ M solution (‘x’ molar) of NaOH is 1.12 g mL-1. While in molality, the concentration of the solution is 3m (3 molal). Then x is  (Given : Molar mass of NaOH is 40 g/mol)",
+  "options": {
+    "a": "3.5",
+    "b": "3.0",
+    "c": "3.8",
+    "d": "2.8"
+  },
+  "key": "b",
+  "hint": "<math display=\"block\"> <mtable columnalign=\"left\"> <mtr> <mtd> <mrow>Molality&#x00A0;=<mfrac><mrow>1000<mo>&#x00D7;</mo>Molarity</mrow><mrow><mn>1</mn><mn>0</mn><mn>0</mn><mn>0</mn><mo>&#x00D7;</mo>density-molarity&#x00A0;&#x00D7;&#x00A0;molar&#x00A0;mass&#x00A0;of&#x00A0;solute</mrow></mfrac></mrow> </mtd> </mtr> <mtr> <mtd> <mrow> <mn>3</mn> <mo>=</mo> <mfrac> <mrow> <mn>1</mn> <mn>0</mn> <mn>0</mn> <mn>0</mn> <mo>&#x00D7;</mo> <mi>x</mi> </mrow> <mrow> <mn>1</mn> <mn>0</mn> <mn>0</mn> <mn>0</mn> <mo>&#x00D7;</mo> <mn>1</mn> <mo>.</mo> <mn>1</mn> <mn>2</mn> <mo>&#x2212;</mo> <mrow> <mo>(</mo> <mrow> <mi>x</mi> <mo>&#x00D7;</mo> <mn>4</mn> <mn>0</mn> </mrow> <mo>)</mo> </mrow> </mrow> </mfrac> <mo>&#x21D2;</mo> <mi>x</mi> <mo>=</mo> <mn>3</mn> </mrow> </mtd> </mtr> </mtable> </math>"
+}

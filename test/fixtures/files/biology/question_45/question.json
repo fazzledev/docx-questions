@@ -1,0 +1,12 @@
+{
+  "number": 45,
+  "text": "Choose the correct sequence of events in the development of a pollen grain:",
+  "options": {
+    "a": "Microspore → Pollen grain → Male gamete",
+    "b": "Microspore → Male gamete → Pollen grain",
+    "c": "Microspore → Female gamete → Pollen grain",
+    "d": "Male gamete → Pollen grain → Microspore"
+  },
+  "key": "a",
+  "hint": "Microspores develop into pollen grains, which contain male gametes."
+}

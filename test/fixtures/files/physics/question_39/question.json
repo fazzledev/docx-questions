@@ -1,0 +1,12 @@
+{
+  "number": 39,
+  "text": "An object of mass 1 kg contains 4 × <math><msup><mn>10</mn><mn>20</mn></msup></math> atoms.  If one electron is removed from every atom of the solid, the charge gained by the solid in 1 g is",
+  "options": {
+    "a": "2.8C",
+    "b": "6.4 × <math><msup><mn>10</mn><mn>-2</mn></msup></math>C",
+    "c": "3.6 × <math><msup><mn>10</mn><mn>-3</mn></msup></math> C",
+    "d": "9.2 × <math><msup><mn>10</mn><mn>-4</mn></msup></math>C"
+  },
+  "key": "b",
+  "hint": "Here,  Number of electrons removed = number of atoms in 1 g  or   <math display=\"block\"> <mrow>n=<mfrac><mrow><mn>4</mn><mo>&#x00D7;</mo><mn>1</mn><msup><mrow><mn>0</mn></mrow><mrow><mn>2</mn><mn>0</mn></mrow></msup></mrow><mrow><mn>1</mn><msup><mrow><mn>0</mn></mrow><mrow><mn>3</mn></mrow></msup></mrow></mfrac><mo>=</mo><mn>4</mn><mo>&#x00D7;</mo><mn>1</mn><msup><mrow><mn>0</mn></mrow><mrow><mn>1</mn><mn>7</mn></mrow></msup></mrow> </math> [F05C] Charge, q = ne = 4 × <math><msup><mn>10</mn><mn>17</mn></msup></math>× 1.6 × <math><msup><mn>10</mn><mn>-19</mn></msup></math> C  = 6.4 × <math><msup><mn>10</mn><mn>-2</mn></msup></math>C"
+}

@@ -1,0 +1,12 @@
+{
+  "number": 60,
+  "text": "Which of the following is the correct structure of a mature pollen grain?",
+  "options": {
+    "a": "It contains only a generative cell.",
+    "b": "It contains two sperm cells and a tube cell.",
+    "c": "It contains the ovule.",
+    "d": "It contains the female gametophyte."
+  },
+  "key": "b",
+  "hint": "A mature pollen grain consists of two sperm cells and a tube cell, which play a role in fertilization."
+}

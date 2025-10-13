@@ -1,0 +1,12 @@
+{
+  "number": 15,
+  "text": "If each pollen sac of a typical anther has 16 pollengrainshow many meiotic divisions occur in the anther to produce all these pollengrains?",
+  "options": {
+    "a": "16",
+    "b": "8",
+    "c": "32",
+    "d": "4"
+  },
+  "key": "a",
+  "hint": "Typical anther has 4 pollen sacs.Each MMC meiosis → 4 microspores.If each sac has 16 grains → anther has 64 grains → 64/4 = 16 meiotic divisions."
+}

@@ -1,0 +1,12 @@
+{
+  "number": 11,
+  "text": "Pollen grains of large number of species can be stored for years in",
+  "options": {
+    "a": "Liquid oxygen at –196[F0B0]C",
+    "b": "Liquid oxygen at –96[F0B0]C",
+    "c": "Liquid nitrogen at –96[F0B0]C",
+    "d": "Liquid nitrogen at –196[F0B0]C"
+  },
+  "key": "d",
+  "hint": "Pollen can be stored for long durations in liquid nitrogen (−196 °C) (cryopreservation)."
+}

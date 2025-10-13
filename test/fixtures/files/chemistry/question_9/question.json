@@ -1,0 +1,12 @@
+{
+  "number": 9,
+  "text": "Calculate molality of 1 litre solution of 93% <math><msub><mi>H</mi><mn>2</mn></msub></math>S<math><msub><mi>O</mi><mn>4 </mn></msub></math>by volume. The density of solution is 1.84 g ml-1",
+  "options": {
+    "a": "9.42",
+    "b": "10.42",
+    "c": "11.42",
+    "d": "12.42"
+  },
+  "key": "b",
+  "hint": "Given <math><msub><mi>H</mi><mn>2</mn></msub></math>S<math><msub><mi>O</mi><mn>4</mn></msub></math> is 93 % volume  Wt. of <math><msub><mi>H</mi><mn>2</mn></msub></math>S<math><msub><mi>O</mi><mn>4</mn></msub></math> = 93 g Volume of solution = 100 ml Weight of solution = 100 × 1.84 gm = 184 g Wt. of water = 184 – 93 = 91 g Molality = = <math display=\"block\"> <mrow> <mfrac> <mrow>Moles</mrow> <mrow>wt.&#x00A0;of&#x00A0;water&#x00A0;in&#x00A0;kg</mrow> </mfrac> </mrow> </math>"
+}

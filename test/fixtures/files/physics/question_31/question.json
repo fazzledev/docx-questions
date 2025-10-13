@@ -1,0 +1,12 @@
+{
+  "number": 31,
+  "text": "Object may acquire an excess or deficiency of charge by",
+  "options": {
+    "a": "Hammering",
+    "b": "heating",
+    "c": "shaking",
+    "d": "rubbing"
+  },
+  "key": "d",
+  "hint": "Object can be charged by rubbing.  During rubbing some of the free electrons may get transferred from one object to other."
+}

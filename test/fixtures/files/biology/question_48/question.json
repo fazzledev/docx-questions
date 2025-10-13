@@ -1,0 +1,12 @@
+{
+  "number": 48,
+  "text": "During microsporogenesis, sporogenous tissue undergoes meiosis to form microspore tetrads. The ploidy of each microspore in the tetrad is",
+  "options": {
+    "a": "2n",
+    "b": "n",
+    "c": "3n",
+    "d": "Varies with speciesAns: bHint/Explanation:Meiosis halves the chromosome number → haploid (n) microspores."
+  },
+  "key": null,
+  "hint": null
+}
