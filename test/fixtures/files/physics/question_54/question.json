@@ -1,0 +1,12 @@
+{
+  "number": 54,
+  "text": "The metal knob of a gold leaf electroscope is touched with a positively charged rod. When it is taken away the leaves stay separated. Now the metal knob is touched by negatively charged rod. The separation between the leaves",
+  "options": {
+    "a": "Increases",
+    "b": "Decreases",
+    "c": "remains same",
+    "d": "First increases then decreases."
+  },
+  "key": "b",
+  "hint": "On touching the metal knob with a positively charged rod some electrons from the gold leaves get transferred to the rod making gold leaves positively charged and they get separated. When a negatively charged rod is touched with metal knob some negative charge flows to the gold leaves lessening the positive charge there and the separation between the leaves decreases."
+}

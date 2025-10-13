@@ -1,0 +1,12 @@
+{
+  "number": 26,
+  "text": "A ball with charge -50 e is placed at the centre of a hollow spherical shell which has a net charge of -50 e. What is the charge on the shell’s outer surface",
+  "options": {
+    "a": "-50e",
+    "b": "zero",
+    "c": "-100e",
+    "d": "+100e"
+  },
+  "key": "c",
+  "hint": "<img src=\"image_12.png\"/> Charge on outer surface = -50e – 50e = -100e."
+}

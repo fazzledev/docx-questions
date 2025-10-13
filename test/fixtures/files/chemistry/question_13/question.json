@@ -1,0 +1,12 @@
+{
+  "number": 13,
+  "text": "If a substance ‘A’ dissolves in solution of a mixture of ‘B’ and ‘C’ with their respective number of moles as <math><msub><mi>n</mi><mn>A</mn></msub></math>, <math><msub><mi>n</mi><mn>B</mn></msub></math> and <math><msub><mi>n</mi><mn>C</mn></msub></math>, Mole fraction of C in the solution is:",
+  "options": {
+    "a": "<math display=\"block\"> <mrow> <mfrac> <mrow> <msub> <mrow>n</mrow> <mrow>C</mrow> </msub> </mrow> <mrow><msub><mrow>n</mrow><mrow>A</mrow></msub>&#x00D7;<msub><mrow>n</mrow><mrow>B</mrow></msub>&#x00D7;<msub><mrow>n</mrow><mrow>C</mrow></msub></mrow> </mfrac> </mrow> </math>",
+    "b": "<math display=\"block\"> <mrow> <mfrac> <mrow> <msub> <mrow>n</mrow> <mrow>C</mrow> </msub> </mrow> <mrow><msub><mrow>n</mrow><mrow>A</mrow></msub>+<msub><mrow>n</mrow><mrow>B</mrow></msub>+<msub><mrow>n</mrow><mrow>C</mrow></msub></mrow> </mfrac> </mrow> </math>",
+    "c": "<math display=\"block\"> <mrow> <mfrac> <mrow> <msub> <mrow>n</mrow> <mrow>C</mrow> </msub> </mrow> <mrow><msub><mrow>n</mrow><mrow>A</mrow></msub>-<msub><mrow>n</mrow><mrow>B</mrow></msub>-<msub><mrow>n</mrow><mrow>C</mrow></msub></mrow> </mfrac> </mrow> </math>",
+    "d": "<math display=\"block\"> <mrow> <mfrac> <mrow> <msub> <mrow>n</mrow> <mrow>B</mrow> </msub> </mrow> <mrow><msub><mrow>n</mrow><mrow>A</mrow></msub>+<msub><mrow>n</mrow><mrow>B</mrow></msub></mrow> </mfrac> </mrow> </math>"
+  },
+  "key": "b",
+  "hint": "Mole fraction of ‘C’ = = <math display=\"block\"> <mrow> <mfrac> <mrow> <msub> <mrow>n</mrow> <mrow>C</mrow> </msub> </mrow> <mrow><msub><mrow>n</mrow><mrow>A</mrow></msub>+<msub><mrow>n</mrow><mrow>B</mrow></msub>+<msub><mrow>n</mrow><mrow>C</mrow></msub></mrow> </mfrac> </mrow> </math> 14. The molarity of the solution containing 7.1 g of N<math><msub><mi>a</mi><mn>2</mn></msub></math>S<math><msub><mi>O</mi><mn>4</mn></msub></math> in 100 ml of aqueous solution is a) 2 M b) 0.5 M c) 1 M d) 0.05 M Key: b"
+}

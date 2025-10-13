@@ -1,0 +1,12 @@
+{
+  "number": 7,
+  "text": "A glass rod rubbed with silk is used to charge a gold leaf electroscope and the leaves are observed to diverge.  The electroscope thus charged is exposed to X-rays for a short period.  Then",
+  "options": {
+    "a": "The divergence of leaves will not be affected",
+    "b": "The leaves will diverge further",
+    "c": "The leaves will collapse",
+    "d": "The leaves will melt"
+  },
+  "key": "b",
+  "hint": "Charge on glass rod is positive, so charge on gold leaves will also be positive. Due to X-rays, more electrons from leaves will be emitted, so leaves becomes more positive and diverge further."
+}

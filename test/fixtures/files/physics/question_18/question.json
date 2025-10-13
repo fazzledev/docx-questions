@@ -1,0 +1,12 @@
+{
+  "number": 18,
+  "text": "Assertion: Vehicle carrying highly inflammable materials have hanging chains, slightly touching the ground. Reason: The body of a vehicle gets charged when moving through air at high speed.",
+  "options": {
+    "a": "Both (A) and (R) are correct and (R) is not the correct explanation of (A)",
+    "b": "(A) is correct but (R) is not correct",
+    "c": "(A) is not correct but (R) is correct",
+    "d": "Both (A) and (R) are correct and (R) is the correct explanation of (A)"
+  },
+  "key": "d",
+  "hint": "It is true that body of vehicle is charged, when the vehicle is moving through air at high speed. Because of this, the vehicles, which are carrying highly inflammable material, have hanging chains, which touch slightly the ground. This chain transfers the charge to the ground (earth). Hence there is no harm to the vehicle."
+}

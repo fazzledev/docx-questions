@@ -1,0 +1,137 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+require 'pathname'
+require 'fileutils'
+require_relative '../lib/docx/questions'
+
+class ExtractQuestionsCLI
+  def initialize
+    @options = {}
+    @parser = OptionParser.new do |opts|
+      opts.banner = "Usage: extract_questions [options] <docx_file>"
+
+      opts.on("-o", "--output FILE", "Output zip file path (default: same name as input)") do |file|
+        @options[:output] = file
+      end
+
+      opts.on("-d", "--debug", "Enable debug mode") do
+        @options[:debug] = true
+      end
+
+      opts.on("-h", "--help", "Show this help message") do
+        puts opts
+        exit
+      end
+
+      opts.on("-v", "--version", "Show version") do
+        puts "Extract Questions CLI v1.0.0"
+        exit
+      end
+    end
+  end
+
+  def run(args)
+    @parser.parse!(args)
+
+    if args.empty?
+      puts "Error: No input file specified"
+      puts @parser
+      exit 1
+    end
+
+    input_file = args[0]
+
+    unless File.exist?(input_file)
+      puts "Error: File '#{input_file}' not found"
+      exit 1
+    end
+
+    unless input_file.downcase.end_with?('.docx')
+      puts "Error: Input file must be a .docx file"
+      exit 1
+    end
+
+    # Determine output file
+    output_file = @options[:output]
+    unless output_file
+      input_path = Pathname.new(input_file)
+      output_file = input_path.basename.sub_ext('.zip').to_s
+    else
+      # If output is a directory (ends with /) or is an existing directory, use the same filename as input
+      if output_file.end_with?('/') || File.directory?(output_file)
+        input_path = Pathname.new(input_file)
+        filename = input_path.basename.sub_ext('.zip').to_s
+        output_file = File.join(output_file, filename)
+        # Create the directory if it doesn't exist
+        output_dir = File.dirname(output_file)
+        unless output_dir == '.'
+          FileUtils.mkdir_p(output_dir)
+        end
+      else
+        # Create the directory if it doesn't exist
+        output_dir = File.dirname(output_file)
+        unless output_dir == '.'
+          FileUtils.mkdir_p(output_dir)
+        end
+      end
+    end
+
+    puts "Extracting questions from: #{input_file}"
+    puts "Output will be saved to: #{output_file}"
+    puts "Debug mode: #{@options[:debug] ? 'enabled' : 'disabled'}"
+    puts
+
+    begin
+      # Extract questions
+      result = Docx::Questions.extract_json(input_file, debug: @options[:debug])
+
+      # Write output
+      File.write(output_file, result)
+
+      puts "Success!"
+      puts "Output size: #{result.bytesize} bytes"
+      puts "File saved to: #{output_file}"
+
+      # Show summary
+      show_summary(result)
+
+    rescue => e
+      puts "Error: #{e.message}"
+      if @options[:debug]
+        puts "Backtrace:"
+        puts e.backtrace.first(10)
+      end
+      exit 1
+    end
+  end
+
+  private
+
+  def show_summary(zip_content)
+    require 'zip'
+
+    puts "\nSummary:"
+    Zip::File.open_buffer(zip_content) do |zip_file|
+      questions = zip_file.entries.count { |e| e.name.end_with?('question.json') }
+      images = zip_file.entries.count { |e| e.name.end_with?('.png') || e.name.end_with?('.jpg') || e.name.end_with?('.jpeg') }
+
+      puts "  Questions extracted: #{questions}"
+      puts "  Images extracted: #{images}"
+
+      if questions > 0
+        puts "  Question folders:"
+        zip_file.entries.select { |e| e.name.end_with?('question.json') }.each do |entry|
+          folder_name = File.dirname(entry.name)
+          puts "    - #{folder_name}"
+        end
+      end
+    end
+  end
+end
+
+# Run the CLI if this file is executed directly
+if __FILE__ == $0
+  cli = ExtractQuestionsCLI.new
+  cli.run(ARGV)
+end

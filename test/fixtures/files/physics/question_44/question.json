@@ -1,0 +1,12 @@
+{
+  "number": 44,
+  "text": "In figure, two positive charges, <math><msub><mi>q</mi><mn>2 </mn></msub></math>and <math><msub><mi>q</mi><mn>3 </mn></msub></math>fixed along the y axis, exert a net electric force in the  +x-direction on a charge fixed along the x-axis. If a positive charge Q is added at (x, 0), the force on <math><msub><mi>q</mi><mn>1</mn></msub></math>: <img src=\"image_13.png\"/>",
+  "options": {
+    "a": "Shall increase along the positive x-axis.",
+    "b": "Shall decrease along the positive x-axis.",
+    "c": "Shall point along the negative x-axis.",
+    "d": "Shall increase but the direction changes because of the intersection of Q with <math><msub><mi>q</mi><mn>2</mn></msub></math> and <math><msub><mi>q</mi><mn>3</mn></msub></math>."
+  },
+  "key": "a",
+  "hint": "As shown in the figure, since positive charge <math><msub><mi>q</mi><mn>2</mn></msub></math> and <math><msub><mi>q</mi><mn>3</mn></msub></math> exert a net force in the +X-direction on the charge <math><msub><mi>q</mi><mn>1</mn></msub></math> fixed along the x-axis, the charge <math><msub><mi>q</mi><mn>1</mn></msub></math> is negative. Obviously, due to addition of positive charge Q at (x, 0), the force on −q shall increase along the positive x-axis. <img src=\"image_14.png\"/>"
+}

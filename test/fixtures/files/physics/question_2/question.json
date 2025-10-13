@@ -1,0 +1,12 @@
+{
+  "number": 2,
+  "text": "In general, metallic ropes are suspended on the carriers which take inflammable material.  The reason is",
+  "options": {
+    "a": "There speed is controlled",
+    "b": "To keep the centre of gravity of the carrier nearer to the earth",
+    "c": "To keep the body of the carrier in contact with the earth",
+    "d": "Nothing should be placed under the carrier"
+  },
+  "key": "c",
+  "hint": "For providing path to charges induced on the surface of the carriers which take inflammable material."
+}

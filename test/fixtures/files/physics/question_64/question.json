@@ -1,0 +1,12 @@
+{
+  "number": 64,
+  "text": "Estimate the total negative charges in 1 g of ammonia. (Given: <math><msub><mi>N</mi><mn>A </mn></msub></math>= 6.023x<math><msup><mn>10</mn><mn>23</mn></msup></math>, Molecular weight of N<math><msub><mi>H</mi><mn>3</mn></msub></math> is 17 g).",
+  "options": {
+    "a": "56.6 kC",
+    "b": "566 mC",
+    "c": "655 nC",
+    "d": "655 mC"
+  },
+  "key": "a",
+  "hint": "One molecule of Ammonia contains (7+3)=10 electrons. No. molecules in 1 g of N<math><msub><mi>H</mi><mn>3</mn></msub></math>, N = <math><msub><mi>N</mi><mn>A</mn></msub></math>/molecular weight  N = 6.023x<math><msup><mn>10</mn><mn>23</mn></msup></math>/17x=3.54x<math><msup><mn>10</mn><mn>22</mn></msup></math> No. electrons in 1 g of ammonia =3.54x<math><msup><mn>10</mn><mn>22</mn></msup></math>x10=3.54x<math><msup><mn>10</mn><mn>23</mn></msup></math> The negative charge possessed by 1 g of ammonia, Q=ne=3.54x<math><msup><mn>10</mn><mn>23</mn></msup></math>x1.6x<math><msup><mn>10</mn><mn>-19</mn></msup></math> Q = 5.66x<math><msup><mn>10</mn><mn>4</mn></msup></math>C"
+}

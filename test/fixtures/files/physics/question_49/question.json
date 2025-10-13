@@ -1,0 +1,12 @@
+{
+  "number": 49,
+  "text": "A conductor has 14.4 ×<math><msup><mn>10</mn><mn>-19</mn></msup></math>C positive charge. The conductor has (charge on electron = 1.6×<math><msup><mn>10</mn><mn>-19</mn></msup></math>C)",
+  "options": {
+    "a": "9 electrons in excess",
+    "b": "27 electrons in short",
+    "c": "27 electrons in excess",
+    "d": "9 electrons in short"
+  },
+  "key": "d",
+  "hint": "A conductor has positive charge. So, there is a deficiency of electrons."
+}

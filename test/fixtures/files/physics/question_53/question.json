@@ -1,0 +1,12 @@
+{
+  "number": 53,
+  "text": "Match the entries of column I with that of Column II.",
+  "options": {
+    "a": "(A) → (2), (B) → (3), (C) → (1), (D) → (4)",
+    "b": "(A) → (3), (B) → (1), (C) → (2), (D) → (4)",
+    "c": "(A) → (1), (B) → (4), (C) → (3), (D) → (2)",
+    "d": "(A) → (1), (B) → (2), (C) → (3), (D) → (4)"
+  },
+  "key": "b",
+  "hint": null
+}

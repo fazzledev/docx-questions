@@ -1,0 +1,12 @@
+{
+  "number": 5,
+  "text": "Which of the following is a quantitative description of the solution?",
+  "options": {
+    "a": "Dilute",
+    "b": "Concentrated",
+    "c": "Saturated",
+    "d": "Molar"
+  },
+  "key": "d",
+  "hint": "Dilute, concentrated and saturated terms are qualitative methods of description of concentration of solution whereas molar or molarity is quantitative method."
+}

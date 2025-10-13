@@ -1,0 +1,12 @@
+{
+  "number": 48,
+  "text": "One metallic sphere A is given positive charge whereas another identical metallic sphere B of exactly same mass as of A is given equal amount of negative charge. Then,",
+  "options": {
+    "a": "Mass of A and mass of B still remain equal",
+    "b": "Mass of A increases",
+    "c": "Mass of B decreases",
+    "d": "Mass of B increases"
+  },
+  "key": "d",
+  "hint": "Negative charge means excess of electron which increases the mass of sphere B."
+}

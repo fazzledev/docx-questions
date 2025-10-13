@@ -1,0 +1,12 @@
+{
+  "number": 2,
+  "text": "Find the incorrect statement from the following",
+  "options": {
+    "a": "Flower is a fascinating organ of angiosperms.",
+    "b": "Flower is a modified shoot",
+    "c": "All flowers have both male and female sex organs",
+    "d": "Flowers are morphological and embryological marvels"
+  },
+  "key": "c",
+  "hint": "Flowers may be bisexual or unisexual. Not all flowers have both sex organs; many are unisexual (e.g., cucurbits, papaya). 3. The site of sexual reproduction is a) Leaf b) Fruit c) Flower d) Seed Key: c"
+}

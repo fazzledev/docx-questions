@@ -1,0 +1,12 @@
+{
+  "number": 4,
+  "text": "Two bottles A and B contain 2M and 2m aqueous solutions of sulphuric acid respectively, then",
+  "options": {
+    "a": "A is more concentrated than B",
+    "b": "B is more concentrated than A",
+    "c": "Conc. of A and B are equal",
+    "d": "It is impossible to compare the concentrations"
+  },
+  "key": "a",
+  "hint": "In aqueous solution 2M is more concentrated."
+}

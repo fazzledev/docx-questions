@@ -1,0 +1,12 @@
+{
+  "number": 20,
+  "text": "Assertion: The whole charge of a conductor cannot be transferred to another isolated conductor. Reason: The total transfer of charge from one conductor to another is possible.",
+  "options": {
+    "a": "Both (A) and (R) are correct and (R) is not the correct explanation of (A)",
+    "b": "(A) is correct but (R) is not correct",
+    "c": "(A) is not correct but (R) is correct",
+    "d": "Both (A) and (R) are correct and (R) is the correct explanation of (A)"
+  },
+  "key": "c",
+  "hint": "The whole charge of a conductor can be transferred to another isolated conductor, if it is placed inside the hollow insulated conductor and connected with it. 21. Assertion: The tyres of aircrafts are slightly conducting. Reason: If a conductor is connected to ground, the extra charge induced on conductor will flow to ground.  a) Both (A) and (R) are correct and (R) is not the correct explanation of (A) b) (A) is correct but (R) is not correct c) (A) is not correct but (R) is correct  d) Both (A) and (R) are correct and (R) is the correct explanation of (A) Key: d"
+}

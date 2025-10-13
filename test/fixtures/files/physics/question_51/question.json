@@ -1,0 +1,12 @@
+{
+  "number": 51,
+  "text": "A ball with charge − 50e is placed at the centre of a hollow spherical shell having a charge of − 50e. What is the charge on the shell’s outer surface?",
+  "options": {
+    "a": "− 50e",
+    "b": "Zero",
+    "c": "− 100e",
+    "d": "+ 100e"
+  },
+  "key": "c",
+  "hint": "Let the induced charge on inner surface and outer surface is <math><msub><mi>q</mi><mn>1</mn></msub></math> and <math><msub><mi>q</mi><mn>2</mn></msub></math> respectively, then  <math><msub><mi>q</mi><mn>1</mn></msub></math>+ <math><msub><mi>q</mi><mn>2</mn></msub></math> = −50e. Here, charge <math><msub><mi>q</mi><mn>1 </mn></msub></math>induced due to ball is + 50e. So, +50e + <math><msub><mi>q</mi><mn>2</mn></msub></math> = -50e ⇒ <math><msub><mi>q</mi><mn>2</mn></msub></math> = -100e"
+}

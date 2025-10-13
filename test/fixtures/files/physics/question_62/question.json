@@ -1,0 +1,12 @@
+{
+  "number": 62,
+  "text": "A metal sphere is being charged by induction using a charged rod, but the sequence of diagrams showing the process misplaced. <img src=\"image_16.png\"/> Correct order of charging is",
+  "options": {
+    "a": "I → II → III → IV → V",
+    "b": "V → II → III → I → IV",
+    "c": "V → II → I → III → IV",
+    "d": "IV → II → III → I → V"
+  },
+  "key": "c",
+  "hint": "When charged rod is brought near uncharged conductor near end of conductor has opposite charge. When for end of this conductor is connected is ground (i.e., earthed), charge of far end flows down to ground when for end connection and rod are removed charge on conductor spreads uniformly on surface. LEVEL-3"
+}

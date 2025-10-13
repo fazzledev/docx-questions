@@ -1,0 +1,12 @@
+{
+  "number": 9,
+  "text": "A charged metallic ball is lowered into an insulated metal can. <img src=\"image_5.png\"/> The ball is made to touch the bottom of the can.  Then it is placed on the disc of electroscope shown below.  Final observation must be that <img src=\"image_6.png\"/>",
+  "options": {
+    "a": "Leaves of electroscope diverge",
+    "b": "Leaves of electroscope converge",
+    "c": "Leaves of electroscope remain unaffected",
+    "d": "Leaves of electroscope oscillate"
+  },
+  "key": "b",
+  "hint": "When charged metallic ball touches the bottom of can, all of its charge goes to the outer surface of the can. (Net charge on a conductor lies only on its surface).When ball is withdrawn from the can, it is uncharged. When ball is placed on the disc of electroscope .Final charge on the leaves is reduced so leaves electroscope converges. 10. An electroscope is given a positive charge, causing its foil leaves to separate.  When an object is brought near the top plate of the electroscope, the foils separate even further. We conclude <img src=\"image_7.png\"/> a) That the object is positively charged b) that the object is electrically neutral c) That the object is negatively charged d) none of these  Key:a"
+}

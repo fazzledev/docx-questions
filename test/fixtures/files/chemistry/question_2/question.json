@@ -1,0 +1,12 @@
+{
+  "number": 2,
+  "text": "Example for solid in gas type of solution",
+  "options": {
+    "a": "<math><msub><mi>O</mi><mn>2</mn></msub></math> in <math><msub><mi>H</mi><mn>2</mn></msub></math>O",
+    "b": "Camphor in <math><msub><mi>N</mi><mn>2</mn></msub></math>",
+    "c": "CHC<math><msub><mi>l</mi><mn>3</mn></msub></math> in <math><msub><mi>N</mi><mn>2</mn></msub></math>",
+    "d": "Cu in gold"
+  },
+  "key": "b",
+  "hint": "Solid in gas type,  Solid – solute Gas – solvent Camphor in <math><msub><mi>N</mi><mn>2</mn></msub></math>, Camphor – solute  (S) Nitrogen – solvent  (g)"
+}

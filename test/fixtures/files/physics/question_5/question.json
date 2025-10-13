@@ -1,0 +1,12 @@
+{
+  "number": 5,
+  "text": "The diagram shows the arrangement of three small uniformly charged spheres A, B and C.  The arrows indicate the direction of the electrostatic forces acting between the spheres (for example, the left arrow on sphere A indicates the electrostatic force on sphere A due to sphere B) At least two of the spheres are positively charged.  Which sphere, if any, could be negatively charged? <img src=\"image_3.png\"/>",
+  "options": {
+    "a": "Sphere A",
+    "b": "sphere B",
+    "c": "sphere C",
+    "d": "none of the spheres"
+  },
+  "key": "a",
+  "hint": "It can be seen from the diagram that only the sphere B and sphere C repel. Hence they both must be the same type. According to the fact that at least two spheres are positively charged. Since attraction occurs for two remaining pairs it can be concluded that the sphere A is negatively charged."
+}

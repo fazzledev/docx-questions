@@ -1,0 +1,12 @@
+{
+  "number": 16,
+  "text": "A gaseous mixture contains four gases A, B, C and D. The mole fraction of B is 0.5. The mole fraction of A is",
+  "options": {
+    "a": "0.525",
+    "b": "0.375",
+    "c": "0.625",
+    "d": "0.732"
+  },
+  "key": "b",
+  "hint": "χA+χB+χC+χD = 1  χB=0.5 χA should be less (or) Than 0.5"
+}

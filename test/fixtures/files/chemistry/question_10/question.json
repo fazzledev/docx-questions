@@ -1,0 +1,12 @@
+{
+  "number": 10,
+  "text": "A solution is prepared by adding 2g of glucose into 18 g of water. Calculate the mass percent of the glucose.",
+  "options": {
+    "a": "20 %",
+    "b": "10 %",
+    "c": "12.5 %",
+    "d": "10.5 %"
+  },
+  "key": "b",
+  "hint": "<math display=\"block\"> <mtable columnalign=\"left\"> <mtr> <mtd> <mrow> <mn>&#x0025;</mn> <mo stretchy=\"false\">(</mo> <mi>w</mi> <mo>/</mo> <mi>w</mi> <mo stretchy=\"false\">)</mo> <mo>=</mo> <mfrac> <mrow> <mn>2</mn> </mrow> <mrow> <mn>2</mn> <mo>+</mo> <mn>1</mn> <mn>8</mn> </mrow> </mfrac> <mo>&#x00D7;</mo> <mn>1</mn> <mn>0</mn> <mn>0</mn> </mrow> </mtd> </mtr> <mtr> <mtd> <mrow> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mo>=</mo> <mfrac> <mrow> <mn>2</mn> </mrow> <mrow> <mn>2</mn> <mn>0</mn> </mrow> </mfrac> <mo>&#x00D7;</mo> <mn>1</mn> <mn>0</mn> <mn>0</mn> </mrow> </mtd> </mtr> <mtr> <mtd> <mrow> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mtext>&#x2009;</mtext> <mo>=</mo> <mn>1</mn> <mn>0</mn> <mn>&#x0025;</mn> </mrow> </mtd> </mtr> </mtable> </math> 11. The molarity of pure water is  <math display=\"block\"> <mrow> <mrow> <mo>(</mo> <mrow> <msub> <mrow> <mi>d</mi> </mrow> <mrow> <msub> <mrow> <mi>H</mi> </mrow> <mrow> <mn>2</mn> </mrow> </msub> <mi>O</mi> </mrow> </msub> <mo>=</mo> <mn>1</mn> <mi>g</mi> <mo>/</mo> <mi>m</mi> <mi>L</mi> </mrow> <mo>)</mo> </mrow> </mrow> </math> a) 50 M b) 18 M c) 55.6 M d) 100 M Key: c"
+}

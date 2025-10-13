@@ -1,0 +1,12 @@
+{
+  "number": 50,
+  "text": "Which of the following is correct regarding electric charge? (i) If a body is having positive charge, then there is shortage of electrons. (ii) If a body is having negative charge, then there is excess of electrons. (iii) Minimum possible charge = ± 1.6 × <math><msup><mn>10</mn><mn>-19</mn></msup></math>C.  (iv) Charge is quantised, i.e. Q = ± ne, where n = 1, 2, 3, 4,…",
+  "options": {
+    "a": "Both (i) and (ii)",
+    "b": "both (ii) and (iii)",
+    "c": "(i), (ii), (iii)",
+    "d": "all of these"
+  },
+  "key": "d",
+  "hint": null
+}

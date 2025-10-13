@@ -1,0 +1,12 @@
+{
+  "number": 3,
+  "text": "The matrix  is the matrix reflection in the line <math> <mrow> <mrow> <mo>[</mo> <mrow> <mtable> <mtr columnalign=\"center\"> <mtd columnalign=\"center\"> <mn>0</mn> </mtd> <mtd columnalign=\"center\"> <mn>1</mn> </mtd> </mtr> <mtr columnalign=\"center\"> <mtd columnalign=\"center\"> <mn>1</mn> </mtd> <mtd columnalign=\"center\"> <mn>0</mn> </mtd> </mtr> </mtable> </mrow> <mo>]</mo> </mrow> </mrow> </math>",
+  "options": {
+    "a": "x = 1",
+    "b": "x + y = 1",
+    "c": "y = 1",
+    "d": "x = y"
+  },
+  "key": "d",
+  "hint": "<math> <mrow> <mo>&#x2235;</mo> <mrow> <mo>[</mo> <mrow> <mtable> <mtr columnalign=\"center\"> <mtd columnalign=\"center\"> <mn>0</mn> </mtd> <mtd columnalign=\"center\"> <mn>1</mn> </mtd> </mtr> <mtr columnalign=\"center\"> <mtd columnalign=\"center\"> <mn>1</mn> </mtd> <mtd columnalign=\"center\"> <mn>0</mn> </mtd> </mtr> </mtable> </mrow> <mo>]</mo> </mrow> <mrow> <mo>[</mo> <mrow> <mtable> <mtr columnalign=\"center\"> <mtd columnalign=\"center\"> <mi>x</mi> </mtd> <mtd columnalign=\"center\"> <mi>y</mi> </mtd> </mtr> </mtable> </mrow> <mo>]</mo> </mrow> <mo>=</mo> <mrow> <mo>[</mo> <mrow> <mtable> <mtr columnalign=\"center\"> <mtd columnalign=\"center\"> <mi>y</mi> </mtd> <mtd columnalign=\"center\"> <mi>x</mi> </mtd> </mtr> </mtable> </mrow> <mo>]</mo> </mrow> <mo>=</mo> <mrow> <mo>[</mo> <mrow> <mtable> <mtr columnalign=\"center\"> <mtd columnalign=\"center\"> <mi>X</mi> </mtd> <mtd columnalign=\"center\"> <mi>Y</mi> </mtd> </mtr> </mtable> </mrow> <mo>]</mo> </mrow> </mrow> </math> Then, X = y and Y = x i.e. y = x"
+}

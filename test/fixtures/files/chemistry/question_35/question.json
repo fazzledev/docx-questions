@@ -1,0 +1,12 @@
+{
+  "number": 35,
+  "text": "Match the following",
+  "options": {
+    "a": "A – (q), B – (p), C – (s), D – (r)",
+    "b": "A – (s), B – (r), C – (p), D – (q)",
+    "c": "A – (r), B – (q), C – (s), D – (p)",
+    "d": "A – (r), B – (p), C – (q), D – (s)"
+  },
+  "key": "d",
+  "hint": "Conceptual"
+}

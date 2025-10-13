@@ -153,8 +153,49 @@ module Docx
       parts[0].strip
     end
 
-    def self.extract_questions(docx_path)
+    def self.extract_image_from_node(node, zip_file, relationship_targets, question_number)
+      # Define namespaces for image extraction
+      image_namespaces = {
+        "w" => "http://schemas.openxmlformats.org/wordprocessingml/2006/main",
+        "a" => "http://schemas.openxmlformats.org/drawingml/2006/main",
+        "r" => "http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+      }
+
+      # Look for image relationships in the node
+      image_rel = node.at_xpath(".//a:blip", image_namespaces)
+
+      if image_rel && image_rel["r:embed"]
+        rel_id = image_rel["r:embed"]
+        if (target = relationship_targets[rel_id])
+          # Read the image data
+          image_entry = zip_file.find_entry("word/#{target}")
+          if image_entry
+            @image_counter += 1
+            image_data = image_entry.get_input_stream.read
+
+            # Determine file extension from target
+            extension = File.extname(target).downcase
+            extension = ".jpg" if extension.empty? # Default to jpg
+
+            filename = "image_#{@image_counter}#{extension}"
+
+            # Store image data for this specific question
+            @question_images[question_number] ||= {}
+            @question_images[question_number][filename] = image_data
+
+            return filename
+          end
+        end
+      end
+
+      nil
+    end
+
+    def self.extract_questions(docx_path, debug: false)
       questions = []
+      @image_counter = 0
+      @question_images = {}
+      @debug = debug
 
       Zip::File.open(docx_path) do |zip_file|
         # Find and read the main document XML file and relationships file
@@ -297,14 +338,18 @@ module Docx
                     # Extract key and hint from question content
                     if question_content.include?("Hint:")
                       parts = question_content.split("Hint:")
+                      puts "DEBUG: Hint split parts: #{parts.inspect}" if @debug
                       main_content = parts[0].strip
-                      hint_text = parts[1].strip
+                      hint_text = parts[1]&.strip
+                      puts "DEBUG: hint_text: #{hint_text.inspect}" if @debug
 
                       # Extract key from main content
                       if main_content.include?("Key:")
                         key_parts = main_content.split("Key:")
+                        puts "DEBUG: Key split parts: #{key_parts.inspect}" if @debug
                         main_text = key_parts[0].strip
-                        key_text = key_parts[1].strip
+                        key_text = key_parts[1]&.strip
+                        puts "DEBUG: key_text: #{key_text.inspect}" if @debug
 
                         # Extract options from main text
                         options = extract_options(main_text)
@@ -320,10 +365,13 @@ module Docx
                       end
                     else
                       # No hint, check for key only
+                      puts "DEBUG: No hint found, question_content: #{question_content.inspect}" if @debug
                       if question_content.include?("Key:")
                         key_parts = question_content.split("Key:")
+                        puts "DEBUG: Key split parts (no hint): #{key_parts.inspect}" if @debug
                         main_text = key_parts[0].strip
-                        key_text = key_parts[1].strip
+                        key_text = key_parts[1]&.strip
+                        puts "DEBUG: key_text (no hint): #{key_text.inspect}" if @debug
 
                         # Extract options from main text
                         options = extract_options(main_text)
@@ -360,7 +408,21 @@ module Docx
 
             # Check for images
             if node.at_xpath(".//w:drawing", namespaces) || node.at_xpath(".//w:pict", namespaces)
-              current_question << "<img>"
+              # We need to determine the current question number
+              current_q_num = nil
+              if inside_question && !current_question.empty?
+                question_text = current_question.join(" ").strip
+                if question_text.match(/^(\d+)\./)
+                  current_q_num = $1.to_i
+                end
+              end
+
+              image_filename = extract_image_from_node(node, zip_file, relationship_targets, current_q_num)
+              if image_filename
+                current_question << "<img src=\"#{image_filename}\"/>"
+              else
+                current_question << "<img>"
+              end
             end
 
             # Check for OLE objects (MathType equations)
@@ -456,10 +518,49 @@ module Docx
       questions
     end
 
-    def self.extract_json(docx_path)
-      questions = extract_questions(docx_path)
+    def self.extract_json(docx_path, debug: false)
+      questions = extract_questions(docx_path, debug: debug)
+      create_questions_zip(questions)
+    end
+
+    def self.create_questions_zip(questions)
+      require "zip"
       require "json"
-      JSON.pretty_generate({ questions: questions })
+      require "tempfile"
+
+      # Create a temporary zip file
+      temp_zip = Tempfile.new([ "questions", ".zip" ])
+      temp_zip.close
+
+      Zip::OutputStream.open(temp_zip.path) do |zip|
+        questions.each_with_index do |question, index|
+          # Create folder name for each question
+          folder_name = "question_#{question[:number] || (index + 1)}"
+
+          # Create JSON content for this question
+          question_json = JSON.pretty_generate(question)
+
+          # Add the question.json file to the zip
+          zip.put_next_entry("#{folder_name}/question.json")
+          zip.write(question_json)
+
+          # Add images folder and images for this question
+          question_number = question[:number] || (index + 1)
+          if @question_images && @question_images[question_number] && !@question_images[question_number].empty?
+            zip.put_next_entry("#{folder_name}/images/")
+            @question_images[question_number].each do |filename, image_data|
+              zip.put_next_entry("#{folder_name}/images/#{filename}")
+              zip.write(image_data)
+            end
+          end
+        end
+      end
+
+      # Read the zip file content and return it
+      zip_content = File.read(temp_zip.path)
+      temp_zip.unlink
+
+      zip_content
     end
   end
 end

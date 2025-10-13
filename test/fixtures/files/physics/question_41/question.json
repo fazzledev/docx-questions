@@ -1,0 +1,12 @@
+{
+  "number": 41,
+  "text": "Assertion: The charge on body can be increased or decreased in terms of electronic charge e. Reason: Quantisation of charge means that the charge on a body is the integral multiple of electronic  charge e.",
+  "options": {
+    "a": "If both assertion and reason are true and reason is the correct explanation of assertion",
+    "b": "If both assertion and reason are true but reason is not the correct explanation of assertion",
+    "c": "If assertion is true but reason is false",
+    "d": "If both assertion and reason are false"
+  },
+  "key": "a",
+  "hint": "All the observable charges have to be integral multiple of e. Thus if a body contains <math><msub><mi>n</mi><mn>1</mn></msub></math> electrons and <math><msub><mi>n</mi><mn>2</mn></msub></math> protons, the total amount of charge on the body is <math><msub><mi>n</mi><mn>2</mn></msub></math>e + <math><msub><mi>n</mi><mn>1</mn></msub></math>(-e) = (<math><msub><mi>n</mi><mn>2</mn></msub></math> – <math><msub><mi>n</mi><mn>1</mn></msub></math>) e. Since <math><msub><mi>n</mi><mn>1</mn></msub></math> and <math><msub><mi>n</mi><mn>2</mn></msub></math> are integers, their difference is also an integer. Thus the charge on anybody is always an integral multiple of e and can be increased or decreased in terms of e."
+}

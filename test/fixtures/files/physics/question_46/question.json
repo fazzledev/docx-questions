@@ -1,0 +1,12 @@
+{
+  "number": 46,
+  "text": "Two conductors are of same shape and size. One of copper and the other of aluminium (less conducting) are placed in an uniform electric field. The charge induced in aluminium:-",
+  "options": {
+    "a": "Will be less than that in copper",
+    "b": "Will be more than that in copper",
+    "c": "Will be equal to that in copper",
+    "d": "cannot be compared with that of copper"
+  },
+  "key": "c",
+  "hint": "Same charge induced in both spheres. (εr→same)"
+}
