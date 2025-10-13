@@ -124,8 +124,10 @@ module Docx
         mathml = ::Regexp.last_match(1).gsub(/\s+/, " ").strip if mathml =~ %r{(<math.*?</math>)}m
         mathml
       rescue StandardError => e
-        puts "Conversion error: #{e.class} - #{e.message}"
-        puts e.backtrace
+        if @debug
+          puts "Conversion error: #{e.class} - #{e.message}"
+          puts e.backtrace.first(3)
+        end
         nil
       ensure
         temp_file.unlink
